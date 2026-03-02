@@ -1,7 +1,5 @@
-
 .DS_Store
-.idea/misc.xml
-.idea/vcs.xml
-.idea/workspace.xml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/inspectionProfiles/Project_Default.xml
+
+# Ignore IDE and egg directories recursively
+.idea/
+.egg/

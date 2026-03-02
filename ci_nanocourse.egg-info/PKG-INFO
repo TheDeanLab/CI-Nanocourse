@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: ci-nanocourse
+Version: 0.1.0
+Summary: A teaching repository for continuous integration with GitHub.
+Requires-Python: >=3.9.7
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"

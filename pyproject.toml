@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ci-nanocourse"
+version = "0.1.0"
+description = "A teaching repository for continuous integration with GitHub."
+requires-python = ">=3.9.7"
+dependencies = [
+  "numpy",
+  "matplotlib",
+]
+
+[project.optional-dependencies]
+docs = [
+  "sphinx",
+]

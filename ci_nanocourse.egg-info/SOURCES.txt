@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+ci_nanocourse.egg-info/PKG-INFO
+ci_nanocourse.egg-info/SOURCES.txt
+ci_nanocourse.egg-info/dependency_links.txt
+ci_nanocourse.egg-info/requires.txt
+ci_nanocourse.egg-info/top_level.txt
