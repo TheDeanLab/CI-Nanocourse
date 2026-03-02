@@ -408,12 +408,6 @@ backgroundSize: contain
 - Confirm that seaborn was included in the install
 - Launch python, import seaborn, and if time permits, plot something with seaborn.
 - Install the docs optional dependencies.
----
----
-layout: center
-class: text-center
----
-# Intermission
 
 ---
 layout: center
@@ -422,6 +416,7 @@ class: text-center
 # Lecture 3
 ## Git Essentials
 
+---
 # Git Essentials
 ## When git push comes to shove
 
