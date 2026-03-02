@@ -417,107 +417,101 @@ class: text-center
 ## Git Essentials
 
 ---
+layout: image-right
+image: /images/lecture-03/s02_img01.png
+backgroundSize: contain
+---
+
 # Git Essentials
 ## When git push comes to shove
-
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s01_img01.png" alt="lecture-03 slide 01 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Git Flow
 - A fixed branching model that defines different branches for features, releases, and hotfixes.
 - Provides a structured workflow that is especially useful for larger teams and projects.
+
+
+---
+layout: image-right
+image: /images/lecture-03/s02_img01.png
+backgroundSize: contain
 ---
 
 # Git Essentials
 ## Release Branching
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s02_img01.png" alt="lecture-03 slide 02 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
-
 - Branches are created for potential releases.
 - Allows for specific features to be included or excluded from releases and for patching release-specific issues.
 - “master” or “main” used for production releases.
+
+
+---
+layout: image-right
+image: /images/lecture-03/s02_img01.png
+backgroundSize: contain
 ---
 
 # Git Essentials
 ## Feature Branching
 
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s03_img01.png" alt="lecture-03 slide 03 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
-
 - Each new feature or bugfix is developed in a separate branch derived from the develop branch.
 - Keeps the develop branch more stable.
 - Allows multiple features to be developed in parallel without interference.
----
 
+---
+layout: image-right
+image: /images/lecture-03/s02_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Trunk Based Development
-
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s04_img01.png" alt="lecture-03 slide 04 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Developers work in short-lived branches derived from develop, ensuring that code is integrated frequently.
 - Reduces merge conflict complexity by promoting regular merges.
 - Long-lived branches can lead to complex, hard-to-resolve merge conflicts.
 - Ensures that code in the develop branch is always production-ready.
+
+---
+layout: two-cols-header
 ---
 
 # Git Essentials
 ## Fear of Commitment.
 
+::left::
 
 <!-- photos:start -->
 <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s05_img01.png" alt="lecture-03 slide 05 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s05_img02.png" alt="lecture-03 slide 05 image 2" class="max-h-30 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s05_img03.png" alt="lecture-03 slide 05 image 3" class="max-h-30 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s05_img02.png" alt="lecture-03 slide 05 image 2" class="max-h-40 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s05_img03.png" alt="lecture-03 slide 05 image 3" class="max-h-40 30 w-auto object-contain rounded shadow" />
 </div>
 <!-- photos:end -->
 
+::right::
 - Using structured, meaningful commit messages to make history more readable and to allow for automated changelog generation.
+
+
+---
+layout: image-right
+image: /images/lecture-03/s02_img01.png
+backgroundSize: contain
 ---
 
 # Git Essentials
 ## Pull/Merge Requests
 
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s06_img01.png" alt="lecture-03 slide 06 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
-
 - Before merging a feature branch into the develop, a pull (or merge) request is created.
 - Allows team members to review code, ensuring quality and consistency.
 - Pull requests should preferably be manageable in size (~400 lines of code max), and accompanied with unit tests (more following).
+
+---
+layout: image-right
+image: /images/lecture-03/s07_img02.png
+backgroundSize: contain
 ---
 
 # Git Essentials
 ## Rebase vs Merge
-
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s07_img01.png" alt="lecture-03 slide 07 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s07_img02.png" alt="lecture-03 slide 07 image 2" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Instead of merging, use rebasing to apply feature branch changes on top of the main branch.
 - Provides a cleaner, linear project history but requires a more cautious approach to avoid conflicts.
@@ -530,11 +524,10 @@ class: text-center
 <!-- photos:start -->
 <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
   <img src="/images/lecture-03/s08_img01.png" alt="lecture-03 slide 08 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s08_img02.png" alt="lecture-03 slide 08 image 2" class="max-h-30 w-auto object-contain rounded shadow" />
 </div>
 <!-- photos:end -->
 
-- What if you don’t have write access to a repository?
+What if you don’t have write access to a repository?
 - Create fork in GitHub and clone the repository.
 - Set upstream remote to help synchronize your fork with the original repository.
 - Create a branch.
@@ -542,15 +535,33 @@ class: text-center
 - Sync with upstream, update any conflicts if they arise.
 - Push changes to fork.
 - Navigate to fork on GitHub, and click “New pull request”.
-- [https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
-- git clone <repository_URL>
-- 2. git remote add upstream <original_repository_URL>
-- 3. git checkout -b <branch_name>
-- 4A. git add .
-- 4B. git commit -m "Describe the changes made"
-- 5A. git fetch upstream
-- 5B. git merge upstream/main
-- 6. git push origin <branch_name>
+---
+
+# Git Essentials
+## Advanced Pull Requests
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s08_img01.png" alt="lecture-03 slide 08 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
+
+<!-- code:start -->
+```bash
+git clone <repository_URL>
+git remote add upstream <original_repository_URL>
+git checkout -b <branch_name>
+git add .
+git commit -m "Describe the changes made"
+git fetch upstream
+git merge upstream/main
+git push origin <branch_name>
+```
+<!-- code:end -->
+
+
 ---
 
 # Git Essentials
@@ -568,17 +579,14 @@ class: text-center
 - The content between <<<<<<< and ======= is your branch's changes, while the content between ======= and >>>>>>> is from the branch you're trying to merge or rebase with.
 - Edit the file to resolve the conflict. This might mean choosing one change over the other, combining both changes, or even making a new change altogether.
 - Once resolved, remove the conflict markers (<<<<<<<, =======, >>>>>>>).
----
 
+---
+layout: image-right
+image: /images/lecture-03/s10_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Placing “Blame”
-
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s10_img01.png" alt="lecture-03 slide 10 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - git blame is a tool to trace changes in a file back to the commit that introduced them. Use it as a diagnostic tool to understand the history of specific lines of code, not to assign fault.
 - When examining the output, consider the broader context of changes. A developer might have moved or reformatted code, so they appear as the "blamer," even if they didn't originally write the logic. Dive deeper into the commit message and associated discussions for a full understanding.
@@ -592,34 +600,29 @@ class: text-center
 - Often triggered upon generation of a pull request.
 - Actions can be multi-faceted, and include code reformatting, testing, documentation generation, etc.
 - More to follow…
----
 
+---
+layout: image-right
+image: /images/lecture-03/s12_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Issue Tracking
 
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s12_img01.png" alt="lecture-03 slide 12 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - GitHub provides integrated issue, branch, and PR tracking.
 - Each issue assigned a number (#638) which can be used as a tag in commits, comments, etc.
 - Can be designated with a label (e.g., low priority).
 - Can be assigned to an individual.
 - Linked PRs automatically
----
 
+---
+layout: image-right
+image: /images/lecture-03/s13_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Issue Creation
-
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s13_img01.png" alt="lecture-03 slide 13 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Title - A concise and descriptive title that summarizes the issue.
 - Description - A clear and detailed description of the issue. Explain what you expected to happen and what actually happened.
@@ -627,17 +630,14 @@ class: text-center
 - Traceback - Detailed output from the console/terminal stating what the problem is.
 - Environment Information - Python version (e.g., Python 3.8.5), Operating System and version (e.g., Ubuntu 20.04, Windows 10), version of the software or library causing the issue, any other relevant libraries or tools and their versions.
 - Error Messages/Logs - Include any error messages, stack traces, or logs that are displayed when the issue occurs. Use code blocks or attach files if the logs are extensive.
----
 
+---
+layout: image-right
+image: /images/lecture-03/s14_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Issue Creation
-
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s14_img01.png" alt="lecture-03 slide 14 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Screenshots or Screen Recordings - Visual aids can be extremely helpful in understanding the nature of the problem, especially for UI/UX related issues.
 - Severity and Impact - Indicate how critical the issue is (e.g., blocking, critical, minor) and its impact on the software's functionality.
@@ -647,18 +647,25 @@ class: text-center
 - Labels and Tags - If the repository has predefined labels (e.g., "bug", "enhancement", "documentation"), apply the relevant ones to your issue.
 - Regression Information - Mention if the issue is a regression, i.e., a feature that used to work in a previous version but is broken in the current one. Indicate the last working version, if known.
 - Providing comprehensive information when creating an issue not only helps maintainers diagnose and fix problems faster but also fosters a collaborative environment where community members can assist each other more effectively.
----
 
+---
+layout: two-cols-header
+---
 # Git Essentials
 ## Issue Formatting
 
+::left::
 
 <!-- photos:start -->
 <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
   <img src="/images/lecture-03/s16_img01.png" alt="lecture-03 slide 16 image 1" class="max-h-30 w-auto object-contain rounded shadow" />
+    <div>
+    </div>
   <img src="/images/lecture-03/s16_img02.png" alt="lecture-03 slide 16 image 2" class="max-h-30 w-auto object-contain rounded shadow" />
 </div>
 <!-- photos:end -->
+
+::right:: 
 
 - GitHub Issues support styling with Markdown.
 - Can create checklists, headers, links, images, mention people/teams/issues/pull requests, quote code, create blocks, dropdowns, and more.
@@ -685,12 +692,6 @@ class: text-center
 
 - Make your own repo on GitHub
 - Create a pyproject.toml file.
----
----
-layout: center
-class: text-center
----
-# Intermission
 
 ---
 layout: center
@@ -700,10 +701,7 @@ class: text-center
 ## Organization and MVC
 
 ---
-layout: image-right
-image: /images/lecture-04/t01_from_s01.png
-backgroundSize: contain
----
+
 # Repository Organizational Strategies
 ## Fighting Entropy
 
@@ -716,11 +714,7 @@ backgroundSize: contain
   - scripts/: For utility scripts and auxiliary code.
   - data/: For data files, if applicable.
 ---
----
-layout: image-right
-image: /images/lecture-04/t02_from_s02.png
-backgroundSize: contain
----
+
 # Repository Organizational Strategies
 ## Must Haves
 
@@ -731,12 +725,14 @@ backgroundSize: contain
   - Licensing information.
 - License - Include a LICENSE file that clearly states the licensing terms.
 - Badges - Use badges in the README.md to quickly display project status, such as build status, test coverage, and package version.
----
+
+
 ---
 layout: image-right
 image: /images/lecture-04/t03_from_s03.png
 backgroundSize: contain
 ---
+
 # Repository Organizational Strategies
 ## Must Haves
 
@@ -745,7 +741,7 @@ backgroundSize: contain
 - docs - Use tools like Sphinx to generate documentation. Host it on platforms like Read the Docs for easy access.
 - test - Write unit tests and possibly integrate coverage tools like coverage.py to ensure code quality.
 - src - Code location.
----
+
 ---
 layout: image-right
 image: /images/lecture-04/t04_from_s04.png
@@ -759,20 +755,17 @@ backgroundSize: contain
 - Issue and PR Templates - Use issue and PR templates to ensure consistency and completeness in submissions. This can be done with .github/ISSUE_TEMPLATE and .github/PULL_REQUEST_TEMPLATE directories.
 - Security - Use tools like Dependabot to automatically check for vulnerabilities in dependencies and suggest updates.
 - Contribution Guidelines - A CONTRIBUTING.md file detailing how others can contribute, the process for submitting pull requests, and any coding standards.
----
 
-# Code Organizational Strategies
-## Fighting Entropy
-
-- Organizing code in Python is crucial for maintainability, scalability, and clarity.
 ---
 
 # Code Organizational Strategies
 ## A Sisyphean Task
 
-- Modularity - Divide your code into modules and packages. Each module should have a specific responsibility aligned with the MVC pattern.
-- Naming Conventions - Use clear and descriptive naming conventions. For example:  `data_source.py`, `file_management.py`, `data_visualization.py`.
-- Code Reusability - Abstract out common functionalities into utility functions or base classes to avoid repetition and enhance reusability.
+- Organizing code in Python is crucial for maintainability, scalability, and clarity.
+
+  - Modularity - Divide your code into modules and packages. Each module should have a specific responsibility aligned with the MVC pattern.
+  - Naming Conventions - Use clear and descriptive naming conventions. For example:  `data_source.py`, `file_management.py`, `data_visualization.py`.
+  - Code Reusability - Abstract out common functionalities into utility functions or base classes to avoid repetition and enhance reusability.
 ---
 
 # Model-View-Controller Architecture
@@ -860,6 +853,7 @@ backgroundSize: contain
 - Build – Convert source code files into a standalone software that anyone can run on their machine.
 
 - Test – Evaluate and verify software can do what it is supposed to do.
+
 ---
 layout: image-right
 image: /images/lecture-05/t04_from_s04.png
