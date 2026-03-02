@@ -5,19 +5,6 @@ class: text-center
 # Introduction to Python Software Development on GitHub
 ---
 
-# Introduction
-## About Us
-
-- Conor McFadden
-- M.S. Medical Physics
-- B.S. Applied Physics
-- Kevin Dean
-- Ph.D. Biochemistry
-- B.A. Chemistry
-- [https://www.dean-lab.org/](https://www.dean-lab.org/)
-- [https://github.com/TheDeanLab](https://github.com/TheDeanLab)
----
-
 # Course Structure
 ## Day 1
 
@@ -106,6 +93,13 @@ class: text-center
 
 # Basic Git Commands and Workflows
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s12_img01.png" alt="lecture-01 slide 12 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Git Up, Git Out, and Git Something
 - Repository
 - Definition: A repository, often abbreviated as "repo", is a storage location where all the files and revision history of a project reside.
@@ -116,6 +110,14 @@ class: text-center
 # Basic Git Commands and Workflows
 ## Cloning a Repo
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s13_img01.png" alt="lecture-01 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-01/s13_img02.png" alt="lecture-01 slide 13 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Cloning: Downloads a repository onto your machine locally with all necessary information for tracking code development.
 - git clone - Clones a repository into a newly created directory, and creates remote-tracking branches for each branch in the cloned repository.
 - [https://git-scm.com/docs/git-clone](https://git-scm.com/docs/git-clone)
@@ -123,6 +125,13 @@ class: text-center
 
 # Basic Git Commands and Workflows
 ## Isolating Development
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s14_img01.png" alt="lecture-01 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Branch
 - Definition: A branch is a lightweight movable pointer that points to a specific commit.
@@ -133,6 +142,14 @@ class: text-center
 
 # Basic Git Commands and Workflows
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s16_img01.png" alt="lecture-01 slide 16 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-01/s16_img02.png" alt="lecture-01 slide 16 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Creation: Creating a new branch does not create a new copy of the repository. Instead, it's a lightweight pointer to a commit. This makes branching in Git very fast and efficient.
 - git branch - List, create, or delete branches.
 - Creating a New Branch
@@ -142,6 +159,14 @@ class: text-center
 # Basic Git Commands and Workflows
 ## Switching to a Branch
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s17_img01.png" alt="lecture-01 slide 17 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-01/s17_img02.png" alt="lecture-01 slide 17 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Switching: You can easily switch between branches using the git checkout command (or git switch in newer versions of Git).
 - git checkout - Switch branches.
 - [https://git-scm.com/docs/git-checkout](https://git-scm.com/docs/git-checkout)
@@ -149,6 +174,14 @@ class: text-center
 
 # Basic Git Commands and Workflows
 ## Merging a Branch
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s18_img01.png" alt="lecture-01 slide 18 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-01/s18_img02.png" alt="lecture-01 slide 18 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Merging: Once work on a branch is complete, it can be "merged" back into another branch, usually the main branch. This integrates the changes made in the branch into the main line of development.
 - git merge - Join two or more development histories together.
@@ -167,6 +200,13 @@ class: text-center
 
 # Basic Git Commands and Workflows
 ## Cheat to Compete with GitHub Desktop
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s20_img01.png" alt="lecture-01 slide 20 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - User-Friendly Interface: GitHub Desktop provides a graphical user interface, making it more intuitive and accessible for those not comfortable with the command-line.
 - Easy Conflict Resolution: The tool visually presents merge conflicts and offers guidance on resolving them, streamlining the process.

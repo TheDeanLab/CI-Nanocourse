@@ -1,6 +1,13 @@
 # Environment Management with Anaconda
 ## Creating Reproducible Development Environments
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s02_img01.png" alt="lecture-02 slide 02 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - An environment is like a sandbox or petri dish, ensuring that the software setup for one project doesn't interfere with another.
 - This enables a stable and reproducible development space.
 - Version Inconsistencies: Python libraries and tools are constantly evolving. Different projects might require different versions of the same library, leading to potential conflicts and unexpected behavior.
@@ -29,6 +36,13 @@
 
 # Environment Management with Anaconda
 ## Activating Your New Environment
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s07_img01.png" alt="lecture-02 slide 07 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - List all Environments:
   - conda env list
@@ -59,6 +73,13 @@
 # Environment Management with Anaconda
 ## Creating a New Environment from a Text File
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s10_img01.png" alt="lecture-02 slide 10 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Each package, and all of its dependencies, explicitly imported from a package manager (pip, conda, etc.)*
 - Version Control
 - (e.g., pyserial==3.5)
@@ -81,10 +102,24 @@
 
 # Environment Management with Anaconda
 ## Creating a New Environment from a YAML File
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s13_img01.png" alt="lecture-02 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-02/s13_img02.png" alt="lecture-02 slide 13 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 ---
 
 # Advanced Environment Management
 ## Creating a New Environment from a pyproject.toml File
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s14_img01.png" alt="lecture-02 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Standardization: PEP 518 introduced pyproject.toml as a standardized configuration file for Python packaging, aiming to provide a single source of truth for package configurations. This unified approach reduces fragmentation in the packaging ecosystem.
 - Extensibility: pyproject.toml is designed to be extensible. It can accommodate configurations for various tools like setuptools, black, mypy, and more, all in one place. This centralized configuration avoids the proliferation of various config files in a project's root directory.

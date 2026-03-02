@@ -1,6 +1,13 @@
 # Git Essentials
 ## When git push comes to shove
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s01_img01.png" alt="lecture-03 slide 01 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Git Flow
 - A fixed branching model that defines different branches for features, releases, and hotfixes.
 - Provides a structured workflow that is especially useful for larger teams and projects.
@@ -8,6 +15,13 @@
 
 # Git Essentials
 ## Release Branching
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s02_img01.png" alt="lecture-03 slide 02 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Branches are created for potential releases.
 - Allows for specific features to be included or excluded from releases and for patching release-specific issues.
@@ -17,6 +31,13 @@
 # Git Essentials
 ## Feature Branching
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s03_img01.png" alt="lecture-03 slide 03 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Each new feature or bugfix is developed in a separate branch derived from the develop branch.
 - Keeps the develop branch more stable.
 - Allows multiple features to be developed in parallel without interference.
@@ -24,6 +45,13 @@
 
 # Git Essentials
 ## Trunk Based Development
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s04_img01.png" alt="lecture-03 slide 04 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Developers work in short-lived branches derived from develop, ensuring that code is integrated frequently.
 - Reduces merge conflict complexity by promoting regular merges.
@@ -34,11 +62,27 @@
 # Git Essentials
 ## Fear of Commitment.
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s05_img01.png" alt="lecture-03 slide 05 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s05_img02.png" alt="lecture-03 slide 05 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s05_img03.png" alt="lecture-03 slide 05 image 3" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Using structured, meaningful commit messages to make history more readable and to allow for automated changelog generation.
 ---
 
 # Git Essentials
 ## Pull/Merge Requests
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s06_img01.png" alt="lecture-03 slide 06 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Before merging a feature branch into the develop, a pull (or merge) request is created.
 - Allows team members to review code, ensuring quality and consistency.
@@ -48,12 +92,28 @@
 # Git Essentials
 ## Rebase vs Merge
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s07_img01.png" alt="lecture-03 slide 07 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s07_img02.png" alt="lecture-03 slide 07 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Instead of merging, use rebasing to apply feature branch changes on top of the main branch.
 - Provides a cleaner, linear project history but requires a more cautious approach to avoid conflicts.
 ---
 
 # Git Essentials
 ## Advanced Pull Requests
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s08_img01.png" alt="lecture-03 slide 08 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s08_img02.png" alt="lecture-03 slide 08 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - What if you don’t have write access to a repository?
 - Create fork in GitHub and clone the repository.
@@ -77,6 +137,13 @@
 # Git Essentials
 ## Resolving Conflicts
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s09_img01.png" alt="lecture-03 slide 09 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Git will notify you of "merge conflicts" when attempting to merge or rebase.
 - Within the conflicted files, Git uses conflict markers (<<<<<<<, =======, >>>>>>>) to indicate the conflicting sections.
 - The content between <<<<<<< and ======= is your branch's changes, while the content between ======= and >>>>>>> is from the branch you're trying to merge or rebase with.
@@ -86,6 +153,13 @@
 
 # Git Essentials
 ## Placing “Blame”
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s10_img01.png" alt="lecture-03 slide 10 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - git blame is a tool to trace changes in a file back to the commit that introduced them. Use it as a diagnostic tool to understand the history of specific lines of code, not to assign fault.
 - When examining the output, consider the broader context of changes. A developer might have moved or reformatted code, so they appear as the "blamer," even if they didn't originally write the logic. Dive deeper into the commit message and associated discussions for a full understanding.
@@ -104,6 +178,13 @@
 # Git Essentials
 ## Issue Tracking
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s12_img01.png" alt="lecture-03 slide 12 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - GitHub provides integrated issue, branch, and PR tracking.
 - Each issue assigned a number (#638) which can be used as a tag in commits, comments, etc.
 - Can be designated with a label (e.g., low priority).
@@ -113,6 +194,13 @@
 
 # Git Essentials
 ## Issue Creation
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s13_img01.png" alt="lecture-03 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Title - A concise and descriptive title that summarizes the issue.
 - Description - A clear and detailed description of the issue. Explain what you expected to happen and what actually happened.
@@ -124,6 +212,13 @@
 
 # Git Essentials
 ## Issue Creation
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s14_img01.png" alt="lecture-03 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Screenshots or Screen Recordings - Visual aids can be extremely helpful in understanding the nature of the problem, especially for UI/UX related issues.
 - Severity and Impact - Indicate how critical the issue is (e.g., blocking, critical, minor) and its impact on the software's functionality.
@@ -138,6 +233,14 @@
 # Git Essentials
 ## Issue Formatting
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s16_img01.png" alt="lecture-03 slide 16 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s16_img02.png" alt="lecture-03 slide 16 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - GitHub Issues support styling with Markdown.
 - Can create checklists, headers, links, images, mention people/teams/issues/pull requests, quote code, create blocks, dropdowns, and more.
 - [https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
@@ -145,6 +248,14 @@
 
 # Git Essentials
 ## Branch Linking
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s17_img01.png" alt="lecture-03 slide 17 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s17_img02.png" alt="lecture-03 slide 17 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - By creating a branch that is directly linked to the issue, all progress on that issue is tracked.
 - When a PR is approved, the issue is automatically closed.

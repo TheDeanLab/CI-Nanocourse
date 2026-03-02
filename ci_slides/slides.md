@@ -1,42 +1,44 @@
 ---
 theme: default
 title: CI Nanocourse
-info: Lectures 1-9 converted from Keynote/PPTX source material.
 mdc: true
----
-
----
 layout: cover
 class: text-center
 ---
-# CI Nanocourse
-## Lectures 1-9 (Slidev Conversion Draft)
 
----
-layout: center
-class: text-center
----
-# Lecture 1
-## Introduction to Collaborative Software Development
-
----
-layout: cover
-class: text-center
----
 # Introduction to Python Software Development on GitHub
+## March 5-6, 2026
+---
+layout: two-cols-header
 ---
 
 # Introduction
 ## About Us
 
-- Conor McFadden
-- M.S. Medical Physics
-- B.S. Applied Physics
+::left::
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s02_img01.jpg" alt="lecture-01 slide 02 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Kevin Dean
-- Ph.D. Biochemistry
-- B.A. Chemistry
-- [https://www.dean-lab.org/](https://www.dean-lab.org/)
-- [https://github.com/TheDeanLab](https://github.com/TheDeanLab)
+  - Ph.D. Biochemistry
+  - B.A. Chemistry
+
+::right::
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s02_img02.png" alt="lecture-01 slide 02 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
+- Conor McFadden
+  - M.S. Medical Physics
+  - B.S. Applied Physics
+
 ---
 
 # Course Structure
@@ -127,6 +129,13 @@ class: text-center
 
 # Basic Git Commands and Workflows
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s12_img01.png" alt="lecture-01 slide 12 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Git Up, Git Out, and Git Something
 - Repository
 - Definition: A repository, often abbreviated as "repo", is a storage location where all the files and revision history of a project reside.
@@ -137,6 +146,14 @@ class: text-center
 # Basic Git Commands and Workflows
 ## Cloning a Repo
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s13_img01.png" alt="lecture-01 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-01/s13_img02.png" alt="lecture-01 slide 13 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Cloning: Downloads a repository onto your machine locally with all necessary information for tracking code development.
 - git clone - Clones a repository into a newly created directory, and creates remote-tracking branches for each branch in the cloned repository.
 - [https://git-scm.com/docs/git-clone](https://git-scm.com/docs/git-clone)
@@ -144,6 +161,13 @@ class: text-center
 
 # Basic Git Commands and Workflows
 ## Isolating Development
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s14_img01.png" alt="lecture-01 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Branch
 - Definition: A branch is a lightweight movable pointer that points to a specific commit.
@@ -154,6 +178,14 @@ class: text-center
 
 # Basic Git Commands and Workflows
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s16_img01.png" alt="lecture-01 slide 16 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-01/s16_img02.png" alt="lecture-01 slide 16 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Creation: Creating a new branch does not create a new copy of the repository. Instead, it's a lightweight pointer to a commit. This makes branching in Git very fast and efficient.
 - git branch - List, create, or delete branches.
 - Creating a New Branch
@@ -163,6 +195,14 @@ class: text-center
 # Basic Git Commands and Workflows
 ## Switching to a Branch
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s17_img01.png" alt="lecture-01 slide 17 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-01/s17_img02.png" alt="lecture-01 slide 17 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Switching: You can easily switch between branches using the git checkout command (or git switch in newer versions of Git).
 - git checkout - Switch branches.
 - [https://git-scm.com/docs/git-checkout](https://git-scm.com/docs/git-checkout)
@@ -170,6 +210,14 @@ class: text-center
 
 # Basic Git Commands and Workflows
 ## Merging a Branch
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s18_img01.png" alt="lecture-01 slide 18 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-01/s18_img02.png" alt="lecture-01 slide 18 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Merging: Once work on a branch is complete, it can be "merged" back into another branch, usually the main branch. This integrates the changes made in the branch into the main line of development.
 - git merge - Join two or more development histories together.
@@ -188,6 +236,13 @@ class: text-center
 
 # Basic Git Commands and Workflows
 ## Cheat to Compete with GitHub Desktop
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-01/s20_img01.png" alt="lecture-01 slide 20 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - User-Friendly Interface: GitHub Desktop provides a graphical user interface, making it more intuitive and accessible for those not comfortable with the command-line.
 - Easy Conflict Resolution: The tool visually presents merge conflicts and offers guidance on resolving them, streamlining the process.
@@ -222,6 +277,13 @@ class: text-center
 # Environment Management with Anaconda
 ## Creating Reproducible Development Environments
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s02_img01.png" alt="lecture-02 slide 02 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - An environment is like a sandbox or petri dish, ensuring that the software setup for one project doesn't interfere with another.
 - This enables a stable and reproducible development space.
 - Version Inconsistencies: Python libraries and tools are constantly evolving. Different projects might require different versions of the same library, leading to potential conflicts and unexpected behavior.
@@ -250,6 +312,13 @@ class: text-center
 
 # Environment Management with Anaconda
 ## Activating Your New Environment
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s07_img01.png" alt="lecture-02 slide 07 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - List all Environments:
   - conda env list
@@ -280,6 +349,13 @@ class: text-center
 # Environment Management with Anaconda
 ## Creating a New Environment from a Text File
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s10_img01.png" alt="lecture-02 slide 10 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Each package, and all of its dependencies, explicitly imported from a package manager (pip, conda, etc.)*
 - Version Control
 - (e.g., pyserial==3.5)
@@ -302,10 +378,24 @@ class: text-center
 
 # Environment Management with Anaconda
 ## Creating a New Environment from a YAML File
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s13_img01.png" alt="lecture-02 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-02/s13_img02.png" alt="lecture-02 slide 13 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 ---
 
 # Advanced Environment Management
 ## Creating a New Environment from a pyproject.toml File
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-02/s14_img01.png" alt="lecture-02 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Standardization: PEP 518 introduced pyproject.toml as a standardized configuration file for Python packaging, aiming to provide a single source of truth for package configurations. This unified approach reduces fragmentation in the packaging ecosystem.
 - Extensibility: pyproject.toml is designed to be extensible. It can accommodate configurations for various tools like setuptools, black, mypy, and more, all in one place. This centralized configuration avoids the proliferation of various config files in a project's root directory.
@@ -377,6 +467,13 @@ class: text-center
 # Git Essentials
 ## When git push comes to shove
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s01_img01.png" alt="lecture-03 slide 01 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Git Flow
 - A fixed branching model that defines different branches for features, releases, and hotfixes.
 - Provides a structured workflow that is especially useful for larger teams and projects.
@@ -384,6 +481,13 @@ class: text-center
 
 # Git Essentials
 ## Release Branching
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s02_img01.png" alt="lecture-03 slide 02 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Branches are created for potential releases.
 - Allows for specific features to be included or excluded from releases and for patching release-specific issues.
@@ -393,6 +497,13 @@ class: text-center
 # Git Essentials
 ## Feature Branching
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s03_img01.png" alt="lecture-03 slide 03 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Each new feature or bugfix is developed in a separate branch derived from the develop branch.
 - Keeps the develop branch more stable.
 - Allows multiple features to be developed in parallel without interference.
@@ -400,6 +511,13 @@ class: text-center
 
 # Git Essentials
 ## Trunk Based Development
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s04_img01.png" alt="lecture-03 slide 04 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Developers work in short-lived branches derived from develop, ensuring that code is integrated frequently.
 - Reduces merge conflict complexity by promoting regular merges.
@@ -410,11 +528,27 @@ class: text-center
 # Git Essentials
 ## Fear of Commitment.
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s05_img01.png" alt="lecture-03 slide 05 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s05_img02.png" alt="lecture-03 slide 05 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s05_img03.png" alt="lecture-03 slide 05 image 3" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Using structured, meaningful commit messages to make history more readable and to allow for automated changelog generation.
 ---
 
 # Git Essentials
 ## Pull/Merge Requests
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s06_img01.png" alt="lecture-03 slide 06 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Before merging a feature branch into the develop, a pull (or merge) request is created.
 - Allows team members to review code, ensuring quality and consistency.
@@ -424,12 +558,28 @@ class: text-center
 # Git Essentials
 ## Rebase vs Merge
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s07_img01.png" alt="lecture-03 slide 07 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s07_img02.png" alt="lecture-03 slide 07 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Instead of merging, use rebasing to apply feature branch changes on top of the main branch.
 - Provides a cleaner, linear project history but requires a more cautious approach to avoid conflicts.
 ---
 
 # Git Essentials
 ## Advanced Pull Requests
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s08_img01.png" alt="lecture-03 slide 08 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s08_img02.png" alt="lecture-03 slide 08 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - What if you don’t have write access to a repository?
 - Create fork in GitHub and clone the repository.
@@ -453,6 +603,13 @@ class: text-center
 # Git Essentials
 ## Resolving Conflicts
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s09_img01.png" alt="lecture-03 slide 09 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - Git will notify you of "merge conflicts" when attempting to merge or rebase.
 - Within the conflicted files, Git uses conflict markers (<<<<<<<, =======, >>>>>>>) to indicate the conflicting sections.
 - The content between <<<<<<< and ======= is your branch's changes, while the content between ======= and >>>>>>> is from the branch you're trying to merge or rebase with.
@@ -462,6 +619,13 @@ class: text-center
 
 # Git Essentials
 ## Placing “Blame”
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s10_img01.png" alt="lecture-03 slide 10 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - git blame is a tool to trace changes in a file back to the commit that introduced them. Use it as a diagnostic tool to understand the history of specific lines of code, not to assign fault.
 - When examining the output, consider the broader context of changes. A developer might have moved or reformatted code, so they appear as the "blamer," even if they didn't originally write the logic. Dive deeper into the commit message and associated discussions for a full understanding.
@@ -480,6 +644,13 @@ class: text-center
 # Git Essentials
 ## Issue Tracking
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s12_img01.png" alt="lecture-03 slide 12 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - GitHub provides integrated issue, branch, and PR tracking.
 - Each issue assigned a number (#638) which can be used as a tag in commits, comments, etc.
 - Can be designated with a label (e.g., low priority).
@@ -489,6 +660,13 @@ class: text-center
 
 # Git Essentials
 ## Issue Creation
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s13_img01.png" alt="lecture-03 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Title - A concise and descriptive title that summarizes the issue.
 - Description - A clear and detailed description of the issue. Explain what you expected to happen and what actually happened.
@@ -500,6 +678,13 @@ class: text-center
 
 # Git Essentials
 ## Issue Creation
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s14_img01.png" alt="lecture-03 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - Screenshots or Screen Recordings - Visual aids can be extremely helpful in understanding the nature of the problem, especially for UI/UX related issues.
 - Severity and Impact - Indicate how critical the issue is (e.g., blocking, critical, minor) and its impact on the software's functionality.
@@ -514,6 +699,14 @@ class: text-center
 # Git Essentials
 ## Issue Formatting
 
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s16_img01.png" alt="lecture-03 slide 16 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s16_img02.png" alt="lecture-03 slide 16 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 - GitHub Issues support styling with Markdown.
 - Can create checklists, headers, links, images, mention people/teams/issues/pull requests, quote code, create blocks, dropdowns, and more.
 - [https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
@@ -521,6 +714,14 @@ class: text-center
 
 # Git Essentials
 ## Branch Linking
+
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-03/s17_img01.png" alt="lecture-03 slide 17 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
+  <img src="/images/lecture-03/s17_img02.png" alt="lecture-03 slide 17 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
 
 - By creating a branch that is directly linked to the issue, all progress on that issue is tracked.
 - When a PR is approved, the issue is automatically closed.
