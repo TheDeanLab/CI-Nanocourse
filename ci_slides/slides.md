@@ -1452,10 +1452,10 @@ class: text-center
 ## Verification: Formal proof that a program is correct.
 
 - Tedious to do by hand, and automated tool support for verification is 	still an active area of research.
-- Code review: Having somebody else carefully read your code, and reason informally about it, can be a good way to uncover bugs. It’s much like having somebody else proofread an essay you have written.
+- Code review: Having somebody else carefully read your code, and reason informally about it, can be a good way to uncover bugs. It’s much like having somebody else proofread an essay you have written.
 - Testing: Running the program on carefully selected inputs and checking the results.
 - User Inputs? Logic errors? Hardware bugs?
----
+
 ---
 layout: image-right
 image: /images/lecture-07/t04_from_s04.png
@@ -1481,7 +1481,8 @@ backgroundSize: contain
 - Act: action that we would like to test, function or process.
 - Assert: checking the result state to see if it matches expectations. Look at output and make judgment
 - Cleanup: cleanup tests so other downstream tests aren’t influenced by results or attributes.
----
+
+
 ---
 layout: image-right
 image: /images/lecture-07/t07_from_s07.png
@@ -1491,22 +1492,15 @@ backgroundSize: contain
 ## Just type >> pytest in prompt
 
 - Assert is True, the test passes!
----
----
-layout: image-right
-image: /images/lecture-07/t08_from_s08.png
-backgroundSize: contain
----
-# Running pytest
-## Assert is False, the test fails!
----
+
+
 ---
 layout: image-right
 image: /images/lecture-07/t09_from_s09.png
 backgroundSize: contain
 ---
 # Any “test_” function will be recognized by pytest automatically
----
+
 ---
 layout: image-right
 image: /images/lecture-07/t10_from_s10.png
@@ -1514,12 +1508,14 @@ backgroundSize: contain
 ---
 # Parameterization in tests
 ## Test multiple parameters at once using pytest parameterize
----
+
+
 ---
 layout: image-right
 image: /images/lecture-07/t11_from_s12.png
 backgroundSize: contain
 ---
+
 # Fixtures in pytest
 ## A way to set up and clean up things before and after running tests.
 
@@ -1528,14 +1524,14 @@ backgroundSize: contain
 - Avoid duplicating setup code in every test.
 - Keep test files clean and readable.
 - Automatically clean up after tests run.
----
+
 ---
 layout: image-right
 image: /images/lecture-07/t12_from_s13.png
 backgroundSize: contain
 ---
 # Fixtures in pytest
----
+
 ---
 layout: image-right
 image: /images/lecture-07/t13_from_s14.png
@@ -1547,7 +1543,7 @@ backgroundSize: contain
 - test_controller.py
 - Fixtures  conftest.py
 - Yield keyword to free resources after test.
----
+
 ---
 layout: image-right
 image: /images/lecture-07/t14_from_s15.png
@@ -1592,27 +1588,16 @@ class: text-center
 # Lecture 8
 ## GitHub Actions
 
----
-layout: image-right
-image: /images/lecture-08/t01_from_s01.png
-backgroundSize: contain
----
-# Setting up a CI/CD Pipeline in GitHub Actions
-## Introduction to Python Software Development on GitHub 2023
 
-- Lyda Hill Department of Bioinformatics
-- UT Southwestern Medical Center
-- [https://www.eslflashcards.com/set/action-flashcards-set-a/](https://www.eslflashcards.com/set/action-flashcards-set-a/)
 ---
----
-layout: image-right
+layout: image
 image: /images/lecture-08/t02_from_s02.png
 backgroundSize: contain
 ---
 # GitHub Actions Dashboard
+
 ---
----
-layout: image-right
+layout: image
 image: /images/lecture-08/t03_from_s03-04.png
 backgroundSize: contain
 ---
@@ -1621,7 +1606,7 @@ backgroundSize: contain
 
 # Let’s create a GitHub workflow
 ## You can follow along at https://docs.github.com/en/actions/quickstart
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t05_from_s06.png
@@ -1633,7 +1618,7 @@ backgroundSize: contain
 - Create the .github folder
 - Create the .github/workflows folder
 - Create github-actions-demo.yml
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t06_from_s07.png
@@ -1642,9 +1627,9 @@ backgroundSize: contain
 # github-actions-demo.yml
 
 - [https://docs.github.com/en/actions/quickstart](https://docs.github.com/en/actions/quickstart)
+
 ---
----
-layout: image-right
+layout: image
 image: /images/lecture-08/t07_from_s08-09.png
 backgroundSize: contain
 ---
@@ -1657,13 +1642,13 @@ backgroundSize: contain
 - Expressions evaluate what’s inside them
 - `${{ github.actor }} evaluates to octocat in the example`
 - `${{ github.actor == ”octocat” }} evaluates to true`
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t09_from_s11.png
 backgroundSize: contain
 ---
-# What does               do?
+# What do these entries do?
 ## It triggers the jobs under jobs when code is git pushed to the repository
 
 - There are other events. For example,this will trigger a job
@@ -1671,19 +1656,18 @@ backgroundSize: contain
   - when a Pull Request is opened
   - if we hit ”Run workflow” in the Actionsdashboard
 ---
----
-layout: image-right
-image: /images/lecture-08/t10_from_s12.png
-backgroundSize: contain
----
+
 # Defining the jobs
 ## What is jobs?
+
+<!-- photos:start -->
+<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+  <img src="/images/lecture-08/t11_from_s13-14-15-16-17-18-19.png" alt="lecture-02 slide 13 image 1" class="max-h-80 w-auto object-contain rounded shadow" />
+</div>
+<!-- photos:end -->
+
 ---
----
-layout: image-right
-image: /images/lecture-08/t11_from_s13-14-15-16-17-18-19.png
-backgroundSize: contain
----
+
 # Defining the jobs
 ## What is jobs? The key that holds all the jobs that run in the workflow file.
 
@@ -1693,7 +1677,7 @@ backgroundSize: contain
 - What does runs-on: ubuntu-latest mean? This workflow will run on an Ubuntu Linux virtual machine.
 - What are steps?
 - What are steps? The key that holds all of the steps to run in this job.
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t12_from_s20-21.png
@@ -1706,40 +1690,41 @@ backgroundSize: contain
 ## We can copy commands that work locally into run: operations
 
 - We can find common actions on the GitHub Marketplace: https://github.com/marketplace?type=actions
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t14_from_s23.png
 backgroundSize: contain
 ---
 # GitHub Marketplace
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t15_from_s24.png
 backgroundSize: contain
 ---
 # Search for Codecov
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t16_from_s25.png
 backgroundSize: contain
 ---
 # Click “Use latest version”
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t17_from_s26.png
 backgroundSize: contain
 ---
 # Copy the action as a step in your job
----
+
 ---
 layout: image-right
 image: /images/lecture-08/t18_from_s27.png
 backgroundSize: contain
 ---
+
 # There’s an action for everything
 ---
 
@@ -1783,7 +1768,7 @@ backgroundSize: contain
 - Architecture – How do the pieces of the software fit together?
 - Technical – How does each function work? Application programming interface (API) docs.
 - End user – Getting started guides. How-tos.
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t04_from_s04.png
@@ -1792,7 +1777,7 @@ backgroundSize: contain
 # Software licenses are an important part of documentation, and should be chosen based on what you want to do with your software
 
 - [https://choosealicense.com/](https://choosealicense.com/)
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t05_from_s05.png
@@ -1814,7 +1799,7 @@ backgroundSize: contain
 - Markdown (.md)
 - reStructuredText (.rst)
 - Many more: https://en.wikipedia.org/wiki/List_of_document_markup_languages
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t08_from_s08.png
@@ -1824,7 +1809,7 @@ backgroundSize: contain
 
 - [https://www.markdownguide.org/cheat-sheet/](https://www.markdownguide.org/cheat-sheet/)
 - [https://sphinx-tutorial.readthedocs.io/cheatsheet/](https://sphinx-tutorial.readthedocs.io/cheatsheet/)
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t09_from_s09.png
@@ -1843,7 +1828,7 @@ backgroundSize: contain
   - Badges, if applicable
   - See https://github.com/mwaskom/seaborn/blob/master/README.md for a good example
 - GitHub will display README.md by default on the home page of your repo
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t11_from_s11.png
@@ -1853,7 +1838,7 @@ backgroundSize: contain
 ## reStructuredText
 
 - Google style
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t12_from_s12.png
@@ -1871,7 +1856,6 @@ backgroundSize: contain
 - Compile documentation languages to PDFs, HTML, etc.
 - [https://wiki.python.org/moin/DocumentationTools](https://wiki.python.org/moin/DocumentationTools)
 ---
----
 layout: image-right
 image: /images/lecture-09/t14_from_s14.png
 backgroundSize: contain
@@ -1881,7 +1865,7 @@ backgroundSize: contain
 - [https://www.sphinx-doc.org/](https://www.sphinx-doc.org/)
 - Compiles Python docstrings and reStructuredText files to PDFs, HTML
 - Can be modified to use Markdown: https://www.sphinx-doc.org/en/master/usage/markdown.html
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t15_from_s15-16.png
@@ -1899,7 +1883,7 @@ backgroundSize: contain
 
 - pip install –e .[docs] from within your repository folder(pip install –e ‘.[docs]’ on a Mac)
 - This installs the optional dependencies listed under docs in pyproject.toml
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t18_from_s19-20.png
@@ -1909,7 +1893,7 @@ backgroundSize: contain
 ## Create a docs/ folder in your repo.
 
 - Run sphinx-quickstart in this folder.
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t19_from_s21.png
@@ -1917,14 +1901,13 @@ backgroundSize: contain
 ---
 # Directory structure of documentation folder
 ---
----
 layout: image-right
 image: /images/lecture-09/t20_from_s22.png
 backgroundSize: contain
 ---
 # Now try make html in the docs folder
 ## There’s a web page! But nothing on it.
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t21_from_s23.png
@@ -1935,7 +1918,7 @@ backgroundSize: contain
 
 - It is empty by default
 - You can add documents by listing them in three
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t22_from_s24-25.png
@@ -1944,7 +1927,7 @@ backgroundSize: contain
 # Autosummary helps us with the API documentation
 
 - [https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
----
+
 ---
 layout: image-right
 image: /images/lecture-09/t23_from_s26.png
@@ -1955,7 +1938,8 @@ backgroundSize: contain
 
 - These allow us to change the way data is presented on different pages
 - For example, the autosummary module template is located at
----
+
+
 ---
 layout: image-right
 image: /images/lecture-09/t24_from_s27.png
@@ -1963,14 +1947,16 @@ backgroundSize: contain
 ---
 # Templates enable us to produce a more comprehensive autosummary
 ## custom_module.rst: https://github.com/sphinx-doc/sphinx/issues/7912#issue-650871700
----
+
+
 ---
 layout: image-right
 image: /images/lecture-09/t25_from_s28.png
 backgroundSize: contain
 ---
 # Templates enable us to produce a more comprehensive autosummary
----
+
+
 ---
 layout: image-right
 image: /images/lecture-09/t26_from_s29.png
@@ -1987,7 +1973,8 @@ backgroundSize: contain
 
 - Ideally, we do this automatically, updating whenever new documentation is written.
 - GitHub actions lets you do this easily with GitHub Pages.
----
+
+
 ---
 layout: image-right
 image: /images/lecture-09/t28_from_s32.png
