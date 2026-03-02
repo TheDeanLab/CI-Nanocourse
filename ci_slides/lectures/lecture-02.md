@@ -1,5 +1,3 @@
-<!-- lecture-02 -->
----
 # Environment Management with Anaconda
 ## Creating Reproducible Development Environments
 
@@ -11,6 +9,7 @@
 - Ease of Sharing: With a well-managed environment, developers can easily share their projects, ensuring that others can run their code without stumbling upon missing dependencies or version issues.
 - Isolation: Keeping project environments separate ensures that specific dependencies or version requirements of one project don't interfere with another, leading to cleaner and more stable development.
 ---
+
 # Environment Management with Anaconda
 ## Miniconda vs Anaconda
 
@@ -21,11 +20,13 @@
   - Miniconda is ideal for users who are conscious about disk space, or who prefer to have more control over their environment setup.
   - Anaconda is suited for those who want a comprehensive package suite without the need to manually install popular data science tools.
 ---
+
 # Advanced Environment Management
 ## Activity #2
 
 - Install Miniconda
 ---
+
 # Environment Management with Anaconda
 ## Activating Your New Environment
 
@@ -38,6 +39,7 @@
 - List Environment Packages:
   - conda list
 ---
+
 # Advanced Environment Management
 ## Activity #3
 
@@ -45,6 +47,7 @@
 - Activate the environment, list its installed packages.
 - Launch python, and run a basic print statement.
 ---
+
 # Environment Management with Anaconda
 ## What is a Package?
 
@@ -52,6 +55,7 @@
 - Version Management: Each package has specific versioning, allowing users to install, update, or rollback to particular versions as needed, ensuring compatibility and stability in projects.
 - Dependency Handling: When a package is installed in Anaconda, the system automatically manages and installs any required dependencies, ensuring seamless functionality and reducing manual setup efforts.
 ---
+
 # Environment Management with Anaconda
 ## Creating a New Environment from a Text File
 
@@ -62,6 +66,7 @@
 - (e.g., sys_platform == “darwin”)
 - *Note: Do not mix package managers. Environment can become unstable.
 ---
+
 # Environment Management with Anaconda
 ## What is a YAML File?
 
@@ -73,9 +78,11 @@
 - Comments: Supports comments using the # symbol, allowing for annotations within the file.
 - Widespread Usage: It's commonly used in various applications, including configuration for CI/CD tools, Kubernetes configurations, and defining infrastructure as code.
 ---
+
 # Environment Management with Anaconda
 ## Creating a New Environment from a YAML File
 ---
+
 # Advanced Environment Management
 ## Creating a New Environment from a pyproject.toml File
 
@@ -86,6 +93,7 @@
 - Modern Tooling Compatibility: Modern packaging and build tools like poetry and flit natively use pyproject.toml, showcasing a move towards this standard in the Python community.
 - Improved Isolation: With pyproject.toml, build dependencies can be isolated from the project's dependencies, ensuring that the build process doesn't affect the project's environment or vice versa.
 ---
+
 # Environment Management with Anaconda
 ## Creating a New Environment
 
@@ -97,6 +105,7 @@
   - conda create --name EnvironmentName
   - pip install -e .
 ---
+
 # Advanced Environment Management
 ## Activity #4
 
@@ -104,6 +113,7 @@
 - Install the required dependencies for the CI-Nanocourse repository using the pyproject.toml file.
 - Confirm that the installation is correct and that the dependencies can be imported upon launching python.
 ---
+
 # Environment Management with Anaconda
 ## Environment Tips and Tricks
 
@@ -111,6 +121,7 @@
 - Be judicious with your dependencies.
 - Be explicit with your dependencies.
 ---
+
 # Advanced Environment Management
 ## What Approach is Best?
 
@@ -119,6 +130,7 @@
 - Significant step forward in the standardization and enhancement of Python packaging tools.
 - It offers several benefits over text and YAML files
 ---
+
 # Advanced Environment Management
 ## Activity #5
 
@@ -127,6 +139,7 @@
 - Confirm that seaborn was included in the install
 - Launch python, import seaborn, and if time permits, plot something with seaborn.
 - Install the docs optional dependencies.
+---
 ---
 layout: center
 class: text-center

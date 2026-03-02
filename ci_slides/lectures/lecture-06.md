@@ -1,7 +1,6 @@
-<!-- lecture-06 -->
----
 # Code Quality, Code Formatting, and Linting
 ---
+
 # Outline
 ## Defining Clean Code
 
@@ -10,6 +9,7 @@
 - Utilizing pre-commit hooks to enforce coding standards and maintain code with Github.
 - Exercise
 ---
+
 # What is Clean Code?
 ## Readable - Code is read more often than it is written. It should be easy to understand.
 
@@ -20,6 +20,7 @@
 - Type hinted.
 - Testable.
 ---
+
 # PEP 8 Naming Conventions
 ## Classes - CamelCase (MyClass)
 
@@ -30,6 +31,7 @@
 - Single quotes and double quotes are treated the same (just pick one and be consistent)
 - Triple quotes should always be “””Your text here””” not ‘’’Your text here’’’
 ---
+
 # Variable Naming
 ## - Use descriptive, lowercase names – Variables should be meaningful and easy to understand.
 
@@ -45,6 +47,7 @@
 - - Avoid reserved keywords – Prevent conflicts with Python’s built-in functions.
   - ✅ class_name = "Intro to CI"    ❌ class = "Intro to CI" (conflicts with the class keyword)
 ---
+
 # Functions Naming
 ## - Use lowercase with underscores – Improves readability and consistency.
 
@@ -61,6 +64,7 @@
   - ✅ class Example:  def __private_method(self): Double underscore automatically renamed within a class…
   - ❌ def __method(): (not necessary outside classes)
 ---
+
 # Class Naming
 ## Use CapWords (PascalCase) – Each word starts with a capital letter, with no underscores.
 
@@ -76,6 +80,7 @@
 - Exception classes should end with `Error` – Makes it clear they are exceptions.
   - ✅ class ValidationError(Exception):    ❌ class ValidationIssue:
 ---
+
 # Line Formatting
 
 - def process_large_dataset(data):
@@ -84,6 +89,7 @@
 - def process_large_dataset_with_very_long_name(data, additional_parameters, more_params):
 - """This line is way too long and hard to read."""
 ---
+
 # Line Formatting
 ## import os
 
@@ -96,6 +102,7 @@
 - import os, sys  # Harder to modify later
 - x = 5; y = 10; print(x + y)  # Harder to read
 ---
+
 # In-line Comments
 ## comments should not contradict the code
 
@@ -103,6 +110,7 @@
 - comments should have a space after the # sign with the first word capitalized
 - don’t litter commented code throughout your software.
 ---
+
 # Documenting Code
 
 - def divide(a, b):
@@ -123,6 +131,7 @@
 - ZeroDivisionError
 - If b is zero.
 ---
+
 # Coding Principles
 ## Don’t Repeat Yourself
 
@@ -131,23 +140,27 @@
 - Split classes into multiple subclasses, inheritances, abstractions, interfaces.
 - SOLID Principles of Coding: (https://www.pentalog.com/blog/it-development-technology/solid-principles-object-oriented-programming/)
 ---
+
 # Methods to Improve Code Formatting
 ## Decorators
 
 - Define inner function inside function to call instead of defining inner function in each function call
 - Improves modularity
 ---
+
 # Methods to Improve Code Formatting
 ## Context Managers
 
 - Manage how to interact with external databases and files.
 - Automatically opens and closes files, avoiding complications when errors occur.
 ---
+
 # Methods to Improve Code Formatting
 ## Iterators
 
 - Use functions to iterate through variables
 ---
+
 # Linting and Code Formatting
 
 - Linting identifies formatting errors that can alter functionality of code and can correct for formatting
@@ -155,6 +168,7 @@
 - Code formatting changes stylistic appearance of code
 - Linting is distinct from formatting because linting analyzes how the code runs and detects errors whereas formatting only restructures how code appears.
 ---
+
 # Automated Linting and Code Formatting
 ## Pylint: Python Code Linter
 
@@ -162,18 +176,22 @@
 - Black: code formatter
 - Ruff: rust optimized code formatter and linter
 ---
+
 # Black: Automated Code formatting
 ## Black is an automated code formatter that is able to automatically format code to PEP8 standards
 ---
+
 # Ruff: Automated Code Linting
 ## Identify unused variables and imports for removal.
 
 - Style guides for code and whitespace organization
 - 700 different rules
 ---
+
 # Ruff: Automated Code Linting
 ## Removing unused variables and imports.
 ---
+
 # Configuring Ruff
 ## 700 different rules
 
@@ -184,12 +202,14 @@
 - Rules can be configured to specific styles or ignored to match the needs of your project
 - [https://docs.astral.sh/ruff/configuration/](https://docs.astral.sh/ruff/configuration/)
 ---
+
 # Configuring Ruff in IDE such as VSCODE
 
 - Many IDEs such as vscode or pycharm have built in linters that identify smaller coding errors and improve code formatting
 - Possible to install Ruff into vscode
 - Linting is run when files are opened or saved
 ---
+
 # Integrate Ruff or Black into github using pre-commit hooks
 ## A good way to format code is when committing code into Github
 
@@ -198,6 +218,7 @@
 - Add a pre-commit config file called .pre-commit-config.yaml to project
 - In yaml file: add ruff repo
 ---
+
 # Conclusions
 ## Code formatting and organizing is an important part coding
 
@@ -205,11 +226,13 @@
 - Linting can be implemented as a precommit hook and can be part of IDEs such as vscode or pycharm
 - Clean code will lead to more understandable, reliable, and reproducible code.
 ---
+
 # Exercise
 ## Set up Ruff locally in your environment.
 
 - Set up a pre-commit hook to run Ruff and black and install it in pyproject.toml to format calculator codebase.
 ---
+
 # Further Reading
 ## Ruff documentation: https://docs.astral.sh/ruff/
 
@@ -217,6 +240,7 @@
 - Linting in vscode: https://code.visualstudio.com/docs/python/linting
 - Pre-commit documentation: https://pre-commit.com
 ---
+
 # First Run Ruff Locally to identify errors
 ## Installing Ruff in your environment using
 
@@ -225,6 +249,7 @@
 - Go to src folder
 - Type “ruff check .” In command line
 ---
+
 # Setting up a Pre-commit
 ## First Install Pre-commit
 
@@ -234,6 +259,7 @@
 - In .pre-commit-config.yaml file
   - Add the following pre-commit information
 ---
+
 # Editing .pre-commit-config.yaml file
 ## Configure .pre-commit-config.yaml file to use ruff
 
@@ -243,6 +269,7 @@
   - [https://pre-commit.com/hooks.html](https://pre-commit.com/hooks.html)
   - Push yaml file to repo on github
 ---
+
 # Using pre-commit
 ## To install pre-commit hooks from configuration yaml file
 

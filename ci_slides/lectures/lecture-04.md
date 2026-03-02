@@ -1,5 +1,3 @@
-<!-- lecture-04 -->
----
 # Repository Organizational Strategies
 ## Fighting Entropy
 
@@ -12,6 +10,7 @@
   - scripts/: For utility scripts and auxiliary code.
   - data/: For data files, if applicable.
 ---
+
 # Repository Organizational Strategies
 ## Must Haves
 
@@ -23,6 +22,7 @@
 - License - Include a LICENSE file that clearly states the licensing terms.
 - Badges - Use badges in the README.md to quickly display project status, such as build status, test coverage, and package version.
 ---
+
 # Repository Organizational Strategies
 ## Must Haves
 
@@ -32,6 +32,7 @@
 - test - Write unit tests and possibly integrate coverage tools like coverage.py to ensure code quality.
 - src - Code location.
 ---
+
 # Repository Organizational Strategies
 ## Bonus Tools
 
@@ -41,11 +42,13 @@
 - Security - Use tools like Dependabot to automatically check for vulnerabilities in dependencies and suggest updates.
 - Contribution Guidelines - A CONTRIBUTING.md file detailing how others can contribute, the process for submitting pull requests, and any coding standards.
 ---
+
 # Code Organizational Strategies
 ## Fighting Entropy
 
 - Organizing code in Python is crucial for maintainability, scalability, and clarity.
 ---
+
 # Code Organizational Strategies
 ## A Sisyphean Task
 
@@ -53,6 +56,7 @@
 - Naming Conventions - Use clear and descriptive naming conventions. For example:  `data_source.py`, `file_management.py`, `data_visualization.py`.
 - Code Reusability - Abstract out common functionalities into utility functions or base classes to avoid repetition and enhance reusability.
 ---
+
 # Model-View-Controller Architecture
 ## A Guiding Framework
 
@@ -61,6 +65,7 @@
 - The "Controller" manages user input, interpreting it to update the model and view accordingly, acting as a bridge between the two.
 - The Model-View-Controller (MVC) architecture is a design pattern that separates software applications into three interconnected components.
 ---
+
 # Model-View-Controller Architecture
 ## The View
 
@@ -76,6 +81,7 @@
   - Provides native-looking GUI applications for Windows, macOS, and Linux.
 - Python offers a variety of libraries and frameworks for creating Graphical User Interfaces (GUIs). Here are some of the most popular ones:
 ---
+
 # Model-View-Controller Architecture
 ## The View
 
@@ -85,6 +91,7 @@
 - Reactive to Model - The View reflects changes in the Model. When the data in the Model changes, the View updates automatically to display the latest information to the user.
 - Decoupled from Model and Controller - To maintain the separation of concerns, the View should be decoupled from the Model and Controller. This means changes in the View shouldn't directly affect the Model's data or the Controller's logic, ensuring modularity and ease of maintenance.
 ---
+
 # Model-View-Controller Architecture
 ## The Controller
 
@@ -94,6 +101,7 @@
 - Logic Execution - While the Model deals with data and the View deals with presentation, the Controller is where much of the application's business logic is executed. It determines how the application should respond to various user inputs and actions.
 - State Management - The Controller often manages the flow of data and the state of the application. It can decide which View to display next, fetch data from the Model to update the View, or store data in the Model based on user input.
 ---
+
 # Model-View-Controller Architecture
 ## The Model
 
@@ -102,11 +110,13 @@
 - Data Notification - When data in the Model changes, it can notify the View so that the interface can be updated accordingly. This ensures that the user interface reflects the current state of the data.
 - Logic - While the Controller handles user interactions, the Model contains the core logic that dictates how data can be created, stored, modified, and retrieved. It enforces rules, constraints, and validations related to the data.
 ---
+
 # Git Essentials
 ## Activity #7
 
 - Upload individual files to GitHub
 - Place code in appropriate organizational structure.
+---
 ---
 layout: center
 class: text-center

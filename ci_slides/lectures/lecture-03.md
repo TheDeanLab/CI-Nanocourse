@@ -1,5 +1,3 @@
-<!-- lecture-03 -->
----
 # Git Essentials
 ## When git push comes to shove
 
@@ -7,6 +5,7 @@
 - A fixed branching model that defines different branches for features, releases, and hotfixes.
 - Provides a structured workflow that is especially useful for larger teams and projects.
 ---
+
 # Git Essentials
 ## Release Branching
 
@@ -14,6 +13,7 @@
 - Allows for specific features to be included or excluded from releases and for patching release-specific issues.
 - “master” or “main” used for production releases.
 ---
+
 # Git Essentials
 ## Feature Branching
 
@@ -21,6 +21,7 @@
 - Keeps the develop branch more stable.
 - Allows multiple features to be developed in parallel without interference.
 ---
+
 # Git Essentials
 ## Trunk Based Development
 
@@ -29,11 +30,13 @@
 - Long-lived branches can lead to complex, hard-to-resolve merge conflicts.
 - Ensures that code in the develop branch is always production-ready.
 ---
+
 # Git Essentials
 ## Fear of Commitment.
 
 - Using structured, meaningful commit messages to make history more readable and to allow for automated changelog generation.
 ---
+
 # Git Essentials
 ## Pull/Merge Requests
 
@@ -41,12 +44,14 @@
 - Allows team members to review code, ensuring quality and consistency.
 - Pull requests should preferably be manageable in size (~400 lines of code max), and accompanied with unit tests (more following).
 ---
+
 # Git Essentials
 ## Rebase vs Merge
 
 - Instead of merging, use rebasing to apply feature branch changes on top of the main branch.
 - Provides a cleaner, linear project history but requires a more cautious approach to avoid conflicts.
 ---
+
 # Git Essentials
 ## Advanced Pull Requests
 
@@ -68,6 +73,7 @@
 - 5B. git merge upstream/main
 - 6. git push origin <branch_name>
 ---
+
 # Git Essentials
 ## Resolving Conflicts
 
@@ -77,6 +83,7 @@
 - Edit the file to resolve the conflict. This might mean choosing one change over the other, combining both changes, or even making a new change altogether.
 - Once resolved, remove the conflict markers (<<<<<<<, =======, >>>>>>>).
 ---
+
 # Git Essentials
 ## Placing “Blame”
 
@@ -84,6 +91,7 @@
 - When examining the output, consider the broader context of changes. A developer might have moved or reformatted code, so they appear as the "blamer," even if they didn't originally write the logic. Dive deeper into the commit message and associated discussions for a full understanding.
 - Integrate with Tools and GUIs - While the command-line version of git blame is powerful, several graphical user interfaces and tools offer more intuitive visualizations, helping to quickly pinpoint when and why changes were made.
 ---
+
 # Git Essentials
 ## Event Driven Tests
 
@@ -92,6 +100,7 @@
 - Actions can be multi-faceted, and include code reformatting, testing, documentation generation, etc.
 - More to follow…
 ---
+
 # Git Essentials
 ## Issue Tracking
 
@@ -101,6 +110,7 @@
 - Can be assigned to an individual.
 - Linked PRs automatically
 ---
+
 # Git Essentials
 ## Issue Creation
 
@@ -111,6 +121,7 @@
 - Environment Information - Python version (e.g., Python 3.8.5), Operating System and version (e.g., Ubuntu 20.04, Windows 10), version of the software or library causing the issue, any other relevant libraries or tools and their versions.
 - Error Messages/Logs - Include any error messages, stack traces, or logs that are displayed when the issue occurs. Use code blocks or attach files if the logs are extensive.
 ---
+
 # Git Essentials
 ## Issue Creation
 
@@ -123,6 +134,7 @@
 - Regression Information - Mention if the issue is a regression, i.e., a feature that used to work in a previous version but is broken in the current one. Indicate the last working version, if known.
 - Providing comprehensive information when creating an issue not only helps maintainers diagnose and fix problems faster but also fosters a collaborative environment where community members can assist each other more effectively.
 ---
+
 # Git Essentials
 ## Issue Formatting
 
@@ -130,17 +142,20 @@
 - Can create checklists, headers, links, images, mention people/teams/issues/pull requests, quote code, create blocks, dropdowns, and more.
 - [https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 ---
+
 # Git Essentials
 ## Branch Linking
 
 - By creating a branch that is directly linked to the issue, all progress on that issue is tracked.
 - When a PR is approved, the issue is automatically closed.
 ---
+
 # Git Essentials
 ## Activity #6
 
 - Make your own repo on GitHub
 - Create a pyproject.toml file.
+---
 ---
 layout: center
 class: text-center

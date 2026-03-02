@@ -1,10 +1,10 @@
-<!-- lecture-01 -->
 ---
 layout: cover
 class: text-center
 ---
 # Introduction to Python Software Development on GitHub
 ---
+
 # Introduction
 ## About Us
 
@@ -17,6 +17,7 @@ class: text-center
 - [https://www.dean-lab.org/](https://www.dean-lab.org/)
 - [https://github.com/TheDeanLab](https://github.com/TheDeanLab)
 ---
+
 # Course Structure
 ## Day 1
 
@@ -25,6 +26,7 @@ class: text-center
 - Organizational Strategies, and Collaborative Development Workflows
 - Pre-Commit Hooks, Linters, Code Formatters
 ---
+
 # Course Structure
 ## Day 2
 
@@ -33,6 +35,7 @@ class: text-center
 - Public-Facing Documentation
 - Stable Releases
 ---
+
 # Expectations
 ## Coding with Python
 
@@ -44,6 +47,7 @@ class: text-center
 - Bonus
   - Parallel Processing with Python (multi-threading, multi-processing)…
 ---
+
 # Goals
 ## Building a Foundation
 
@@ -52,6 +56,7 @@ class: text-center
 - Work collaboratively on software development.
 - Be able to contribute to an Open-Source Project.
 ---
+
 # The Importance of Collaboration
 ## Teamwork is Dreamwork
 
@@ -62,6 +67,7 @@ class: text-center
 - Adaptability & Flexibility: In a collaborative setting, teams are better equipped to adapt to changes, be it in project requirements, technologies, or methodologies. The collective knowledge ensures a smoother transition and quicker adaptation.
 - Knowledge Transfer & Skill Enhancement: Collaboration is a learning experience. Developers can share knowledge, introduce peers to new tools or methodologies, and elevate the overall skill set of the team.
 ---
+
 # Overview of Version Control Systems
 ## Git, Subversion, …
 
@@ -75,6 +81,7 @@ class: text-center
   - Branching: Allows development of features in isolation.
 - VCS is foundational for collaborative, error-free, and efficient software development.
 ---
+
 # An Introduction to Git
 ## And its role in facilitating team-based development.
 
@@ -83,6 +90,7 @@ class: text-center
   - Enables software to be developed locally (on a developer's machine) or remote (on a server or hosted platforms like GitHub), facilitating collaboration and version control for projects of any size.
   - Provides control over contributors to code.
 ---
+
 # An Introduction to Git
 ## Installing Git
 
@@ -95,6 +103,7 @@ class: text-center
 - Linux
   - Installed using Linux distribution package manager. If on BioHPC, available as a module (module load git/v2.5.3)
 ---
+
 # Basic Git Commands and Workflows
 
 - Git Up, Git Out, and Git Something
@@ -103,6 +112,7 @@ class: text-center
 - It acts as the central hub for a project's codebase, allowing developers to clone, pull, and push changes to and from it.
 - A repository contains the information that Git uses to track the progression of a project.
 ---
+
 # Basic Git Commands and Workflows
 ## Cloning a Repo
 
@@ -110,6 +120,7 @@ class: text-center
 - git clone - Clones a repository into a newly created directory, and creates remote-tracking branches for each branch in the cloned repository.
 - [https://git-scm.com/docs/git-clone](https://git-scm.com/docs/git-clone)
 ---
+
 # Basic Git Commands and Workflows
 ## Isolating Development
 
@@ -119,6 +130,7 @@ class: text-center
 - This facilitates parallel development, where multiple features or fixes can be developed simultaneously without interfering with each other.
 - Main Branch: By default, every Git repository starts with a branch called "master" or, more recently, "main". This is the primary branch where stable, production-ready code resides.
 ---
+
 # Basic Git Commands and Workflows
 
 - Creation: Creating a new branch does not create a new copy of the repository. Instead, it's a lightweight pointer to a commit. This makes branching in Git very fast and efficient.
@@ -126,6 +138,7 @@ class: text-center
 - Creating a New Branch
 - [https://git-scm.com/docs/git-branch](https://git-scm.com/docs/git-branch)
 ---
+
 # Basic Git Commands and Workflows
 ## Switching to a Branch
 
@@ -133,6 +146,7 @@ class: text-center
 - git checkout - Switch branches.
 - [https://git-scm.com/docs/git-checkout](https://git-scm.com/docs/git-checkout)
 ---
+
 # Basic Git Commands and Workflows
 ## Merging a Branch
 
@@ -140,6 +154,7 @@ class: text-center
 - git merge - Join two or more development histories together.
 - [https://git-scm.com/docs/git-merge](https://git-scm.com/docs/git-merge)
 ---
+
 # Basic Git Commands and Workflows
 ## Challenges with Git
 
@@ -149,6 +164,7 @@ class: text-center
 - Staging Changes: Deciding what changes to stage for a commit can be cumbersome, especially in large codebases.
 - Switching Context: Frequent switching between branches and keeping track of which branch you're on can be error-prone.
 ---
+
 # Basic Git Commands and Workflows
 ## Cheat to Compete with GitHub Desktop
 
@@ -159,6 +175,7 @@ class: text-center
 - Branch Management: Switching between branches, creating new branches, and merging becomes a couple-of-clicks operation, reducing the chances of errors.
 - [https://desktop.github.com/](https://desktop.github.com/)
 ---
+
 # Basic Git and Workflows
 ## Activity #1
 
@@ -167,6 +184,7 @@ class: text-center
 - Download GitHub Desktop
 - Clone the class repo: https://github.com/TheDeanLab/CI-Nanocourse
 - Using command-line and the GitHub Desktop, create a branch, and switch between main and the branch you created.
+---
 ---
 layout: center
 class: text-center

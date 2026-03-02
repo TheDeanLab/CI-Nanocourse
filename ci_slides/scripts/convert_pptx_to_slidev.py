@@ -174,20 +174,13 @@ def render_slide(slide: SlideData) -> str:
             "# Intermission\n"
         )
 
-    content: list[str] = ["---"]
+    content: list[str] = []
 
     heading = slide.title.strip()
     subtitle = slide.subtitle.strip()
 
     if not heading and subtitle and not slide.bullets:
-        content.extend(
-            [
-                "layout: cover",
-                "class: text-center",
-                "---",
-                f"# {format_text(subtitle)}",
-            ]
-        )
+        content.extend(["---", "layout: cover", "class: text-center", "---", f"# {format_text(subtitle)}"])
         return "\n".join(content) + "\n"
 
     if heading:
@@ -211,10 +204,17 @@ def render_slide(slide: SlideData) -> str:
 
 
 def render_lecture(lecture_name: str, slides: list[SlideData]) -> str:
-    output: list[str] = [f"<!-- {lecture_name} -->\n"]
-    for slide in slides:
-        output.append(render_slide(slide))
-    return "\n".join(part.rstrip() for part in output).rstrip() + "\n"
+    rendered_slides = [render_slide(slide).rstrip() for slide in slides]
+    if not rendered_slides:
+        return ""
+
+    output = rendered_slides[0]
+    for next_slide in rendered_slides[1:]:
+        if next_slide.startswith("---\n"):
+            output += "\n---\n" + next_slide
+        else:
+            output += "\n---\n\n" + next_slide
+    return output.rstrip() + "\n"
 
 
 def parse_args() -> argparse.Namespace:
