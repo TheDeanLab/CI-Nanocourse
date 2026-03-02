@@ -207,11 +207,10 @@ backgroundSize: contain
 ## Cheat to Compete with GitHub Desktop
 
 
-- User-Friendly Interface: GitHub Desktop provides a graphical user interface, making it more intuitive and accessible for those not comfortable with the command-line.
-- Easy Conflict Resolution: The tool visually presents merge conflicts and offers guidance on resolving them, streamlining the process.
-- Visual History: Users can easily see the commit history, changes made, and the structure of branches, aiding understanding and navigation.
-- Drag-and-Drop Staging: Users can quickly select changes for staging by dragging and dropping, making the process efficient.
-- Branch Management: Switching between branches, creating new branches, and merging becomes a couple-of-clicks operation, reducing the chances of errors.
+- GUI is easier for Git beginners.
+- Visual history and branch view.
+- Click-based merge conflict support.
+- Simple staging and commit workflow.
 - [https://desktop.github.com/](https://desktop.github.com/)
 ---
 
@@ -355,12 +354,11 @@ backgroundSize: contain
 ## Creating a New Environment from a pyproject.toml File
 
 
-- Standardization: PEP 518 introduced pyproject.toml as a standardized configuration file for Python packaging, aiming to provide a single source of truth for package configurations. This unified approach reduces fragmentation in the packaging ecosystem.
-- Extensibility: pyproject.toml is designed to be extensible. It can accommodate configurations for various tools like setuptools, black, mypy, and more, all in one place. This centralized configuration avoids the proliferation of various config files in a project's root directory.
-- Build System Specifications: pyproject.toml allows package maintainers to specify which build system should be used and what the build dependencies are. This ensures that the right tools and versions are used during the build process.
-- Clear Dependency Specification: While requirements.txt or YAML files list dependencies, pyproject.toml allows for a more detailed specification, including build dependencies, which are essential for reproducibility and consistent builds.
-- Modern Tooling Compatibility: Modern packaging and build tools like poetry and flit natively use pyproject.toml, showcasing a move towards this standard in the Python community.
-- Improved Isolation: With pyproject.toml, build dependencies can be isolated from the project's dependencies, ensuring that the build process doesn't affect the project's environment or vice versa.
+- `pyproject.toml` is the modern Python packaging standard (PEP 518).
+- Centralizes metadata and dependencies.
+- Declares build backend and build dependencies.
+- Works with tools like `setuptools`, `poetry`, and `flit`.
+- Improves reproducible builds.
 ---
 
 # Environment Management with Anaconda
@@ -588,9 +586,10 @@ backgroundSize: contain
 # Git Essentials
 ## Placing “Blame”
 
-- git blame is a tool to trace changes in a file back to the commit that introduced them. Use it as a diagnostic tool to understand the history of specific lines of code, not to assign fault.
-- When examining the output, consider the broader context of changes. A developer might have moved or reformatted code, so they appear as the "blamer," even if they didn't originally write the logic. Dive deeper into the commit message and associated discussions for a full understanding.
-- Integrate with Tools and GUIs - While the command-line version of git blame is powerful, several graphical user interfaces and tools offer more intuitive visualizations, helping to quickly pinpoint when and why changes were made.
+- `git blame` shows the last commit for each line.
+- Use it to trace history, not assign fault.
+- Check commit messages and PRs for context.
+- GUI tools can make blame output easier to read.
 ---
 
 # Git Essentials
@@ -624,12 +623,12 @@ backgroundSize: contain
 # Git Essentials
 ## Issue Creation
 
-- Title - A concise and descriptive title that summarizes the issue.
-- Description - A clear and detailed description of the issue. Explain what you expected to happen and what actually happened.
-- Steps to Reproduce - Step-by-step guide on how to reproduce the issue. This helps maintainers replicate the problem on their end.
-- Traceback - Detailed output from the console/terminal stating what the problem is.
-- Environment Information - Python version (e.g., Python 3.8.5), Operating System and version (e.g., Ubuntu 20.04, Windows 10), version of the software or library causing the issue, any other relevant libraries or tools and their versions.
-- Error Messages/Logs - Include any error messages, stack traces, or logs that are displayed when the issue occurs. Use code blocks or attach files if the logs are extensive.
+- Title: concise and descriptive.
+- Expected behavior vs actual behavior.
+- Steps to reproduce.
+- Full traceback or error output.
+- Environment: OS, Python, package versions.
+- Relevant logs.
 
 ---
 layout: image-right
@@ -639,14 +638,11 @@ backgroundSize: contain
 # Git Essentials
 ## Issue Creation
 
-- Screenshots or Screen Recordings - Visual aids can be extremely helpful in understanding the nature of the problem, especially for UI/UX related issues.
-- Severity and Impact - Indicate how critical the issue is (e.g., blocking, critical, minor) and its impact on the software's functionality.
-- Possible Solutions or Workarounds - If you're aware of any solutions or temporary workarounds for the issue, share them. This can be helpful for both maintainers and other users facing the same problem.
-- Code Samples - If applicable, provide minimal code samples that can help in reproducing the issue. Use proper formatting or link to a gist or repo.
-- Additional Context - Any other information that might be relevant, such as how often the issue occurs, whether it's sporadic or consistent, any patterns noticed, etc.
-- Labels and Tags - If the repository has predefined labels (e.g., "bug", "enhancement", "documentation"), apply the relevant ones to your issue.
-- Regression Information - Mention if the issue is a regression, i.e., a feature that used to work in a previous version but is broken in the current one. Indicate the last working version, if known.
-- Providing comprehensive information when creating an issue not only helps maintainers diagnose and fix problems faster but also fosters a collaborative environment where community members can assist each other more effectively.
+- Add screenshots or recordings when useful.
+- Include severity and user impact.
+- Provide workaround or minimal repro code.
+- Add labels and regression details when relevant.
+- Include extra context: frequency and scope.
 
 ---
 layout: two-cols-header
@@ -736,11 +732,11 @@ backgroundSize: contain
 # Repository Organizational Strategies
 ## Must Haves
 
-- Include a .gitignore - List files and directories that should be excluded from version control, such as compiled bytecode (*.pyc), virtual environment directories, IDE configuration files, etc.
-- Requirements File - Use requirements.txt for specifying dependencies or consider using a pyproject.toml for more modern dependency management.
-- docs - Use tools like Sphinx to generate documentation. Host it on platforms like Read the Docs for easy access.
-- test - Write unit tests and possibly integrate coverage tools like coverage.py to ensure code quality.
-- src - Code location.
+- `.gitignore` for generated and local-only files.
+- `requirements.txt` or `pyproject.toml` for dependencies.
+- `docs/` for documentation.
+- `tests/` for automated validation.
+- `src/` for application code.
 
 ---
 layout: image-right
@@ -750,11 +746,11 @@ backgroundSize: contain
 # Repository Organizational Strategies
 ## Bonus Tools
 
-- Code of Conduct - Include a CODE_OF_CONDUCT.md to set community standards and ensure a welcoming and inclusive environment.
-- Changelog - Maintain a CHANGELOG.md to track and document all the changes made in the software over time.
-- Issue and PR Templates - Use issue and PR templates to ensure consistency and completeness in submissions. This can be done with .github/ISSUE_TEMPLATE and .github/PULL_REQUEST_TEMPLATE directories.
-- Security - Use tools like Dependabot to automatically check for vulnerabilities in dependencies and suggest updates.
-- Contribution Guidelines - A CONTRIBUTING.md file detailing how others can contribute, the process for submitting pull requests, and any coding standards.
+- `CODE_OF_CONDUCT.md` for community expectations.
+- `CONTRIBUTING.md` for contributor workflow.
+- `CHANGELOG.md` for release history.
+- Issue/PR templates for consistent submissions.
+- Dependabot (or similar) for dependency security.
 
 ---
 
