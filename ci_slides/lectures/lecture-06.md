@@ -83,6 +83,24 @@
 
 # Line Formatting
 
+<!-- code:start -->
+```python
+def process_large_dataset(data):
+    """Processes a dataset and returns useful statistics."""
+    # implementation here
+    return {}
+
+
+def process_large_dataset_with_very_long_name(
+    data,
+    additional_parameters,
+    more_params,
+):
+    """Prefer wrapped signatures over single long lines."""
+    return {}
+```
+<!-- code:end -->
+
 - def process_large_dataset(data):
 - """Processes a dataset and returns useful statistics."""
 - Lines should not exceed 79 characters – Improves readability, especially in side-by-side comparisons.
@@ -92,6 +110,17 @@
 
 # Line Formatting
 ## import os
+
+<!-- code:start -->
+```python
+import os
+import sys
+
+x = 5
+y = 10
+print(x + y)
+```
+<!-- code:end -->
 
 - import sys
 - x = 5
@@ -112,6 +141,35 @@
 ---
 
 # Documenting Code
+
+<!-- code:start -->
+```python
+def divide(a: float, b: float) -> float:
+    """
+    Divides two numbers.
+
+    Parameters
+    ----------
+    a : float
+        Numerator.
+    b : float
+        Denominator.
+
+    Returns
+    -------
+    float
+        Result of division.
+
+    Raises
+    ------
+    ZeroDivisionError
+        If `b` is 0.
+    """
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return a / b
+```
+<!-- code:end -->
 
 - def divide(a, b):
 - """
@@ -144,6 +202,26 @@
 # Methods to Improve Code Formatting
 ## Decorators
 
+<!-- code:start -->
+```python
+from functools import wraps
+
+
+def log_runtime(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        print(f"Running {fn.__name__}...")
+        return fn(*args, **kwargs)
+
+    return wrapper
+
+
+@log_runtime
+def load_dataset(path):
+    return open(path, encoding="utf-8").read()
+```
+<!-- code:end -->
+
 - Define inner function inside function to call instead of defining inner function in each function call
 - Improves modularity
 ---
@@ -151,12 +229,36 @@
 # Methods to Improve Code Formatting
 ## Context Managers
 
+<!-- code:start -->
+```python
+from pathlib import Path
+
+config_path = Path("settings.toml")
+
+with config_path.open("r", encoding="utf-8") as f:
+    config_text = f.read()
+```
+<!-- code:end -->
+
 - Manage how to interact with external databases and files.
 - Automatically opens and closes files, avoiding complications when errors occur.
 ---
 
 # Methods to Improve Code Formatting
 ## Iterators
+
+<!-- code:start -->
+```python
+def iter_valid_rows(rows):
+    for row in rows:
+        if row.get("is_valid"):
+            yield row
+
+
+for row in iter_valid_rows(records):
+    print(row["id"])
+```
+<!-- code:end -->
 
 - Use functions to iterate through variables
 ---
@@ -179,10 +281,25 @@
 
 # Black: Automated Code formatting
 ## Black is an automated code formatter that is able to automatically format code to PEP8 standards
+
+<!-- code:start -->
+```bash
+black src tests
+black --check .
+black --diff .
+```
+<!-- code:end -->
 ---
 
 # Ruff: Automated Code Linting
 ## Identify unused variables and imports for removal.
+
+<!-- code:start -->
+```bash
+ruff check .
+ruff check . --fix
+```
+<!-- code:end -->
 
 - Style guides for code and whitespace organization
 - 700 different rules
@@ -194,6 +311,18 @@
 
 # Configuring Ruff
 ## 700 different rules
+
+<!-- code:start -->
+```toml
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "D"]
+ignore = ["D203", "D213"]
+```
+<!-- code:end -->
 
   - Naming
   - Pydocstyles
@@ -212,6 +341,21 @@
 
 # Integrate Ruff or Black into github using pre-commit hooks
 ## A good way to format code is when committing code into Github
+
+<!-- code:start -->
+```yaml
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.13.0
+    hooks:
+      - id: ruff
+      - id: ruff-format
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+```
+<!-- code:end -->
 
 - Linters and formatters such as Ruff and Black can be integrated into Github
 - Install pre-commit in conda environment using pip install pre-commit or integrate pre-commit dependence in pyproject.toml
@@ -253,6 +397,13 @@
 # Setting up a Pre-commit
 ## First Install Pre-commit
 
+<!-- code:start -->
+```bash
+pip install pre-commit
+pre-commit sample-config > .pre-commit-config.yaml
+```
+<!-- code:end -->
+
   - pip install pre-commit
   - Add dependency in pyproject.toml (it should already be added)
 - create .pre-commit-config.yaml file and add to repo
@@ -263,6 +414,17 @@
 # Editing .pre-commit-config.yaml file
 ## Configure .pre-commit-config.yaml file to use ruff
 
+<!-- code:start -->
+```yaml
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.13.0
+    hooks:
+      - id: ruff
+      - id: ruff-format
+```
+<!-- code:end -->
+
 - Add ruff pre-commit to pre-commit.yaml file to include ruff
 - Find information for other packages for pre-commits here:
   - [https://pre-commit.com/](https://pre-commit.com/)
@@ -272,6 +434,14 @@
 
 # Using pre-commit
 ## To install pre-commit hooks from configuration yaml file
+
+<!-- code:start -->
+```bash
+pre-commit install
+pre-commit run --all-files
+pre-commit run ruff --all-files
+```
+<!-- code:end -->
 
   - pre-commit install
   - This install pre-commit hooks for each upcoming commit

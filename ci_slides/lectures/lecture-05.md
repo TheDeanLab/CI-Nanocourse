@@ -12,12 +12,18 @@
 - Continuous Delivery
 - Continuous Deployment
 ---
-
-
+---
+layout: image-right
+image: /images/lecture-05/t03_from_s03.png
+backgroundSize: contain
+---
 - [https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment)
 ---
-
-
+---
+layout: image-right
+image: /images/lecture-05/t04_from_s04.png
+backgroundSize: contain
+---
 - [https://deploybot.com/blog/continuous-development](https://deploybot.com/blog/continuous-development)
 ---
 
@@ -31,10 +37,18 @@
 - Test
 - Test – Evaluate and verify software can do what it is supposed to do.
 ---
-
+---
+layout: image-right
+image: /images/lecture-05/t07_from_s09.png
+backgroundSize: contain
+---
 # How do we know this function works?
 ---
-
+---
+layout: image-right
+image: /images/lecture-05/t08_from_s10.png
+backgroundSize: contain
+---
 # We check it with a unit test
 ---
 
@@ -53,7 +67,11 @@
 - Deploy
 - Deploy – Make the software available for use.
 ---
-
+---
+layout: image-right
+image: /images/lecture-05/t11_from_s16.png
+backgroundSize: contain
+---
 # The goal of CI/CD is to ensure developments do not stray far from the main branch
 
 - [https://www.nobledesktop.com/learn/git/git-branches](https://www.nobledesktop.com/learn/git/git-branches)
@@ -107,8 +125,16 @@
   - Etc.
 - These tools use a YAML file (or similar) to describe a series of actions that make up a workflow.
 ---
-
+---
+layout: image-right
+image: /images/lecture-05/t17_from_s22.png
+backgroundSize: contain
+---
 # GitHub Actions Dashboard
 ---
-
+---
+layout: image-right
+image: /images/lecture-05/t18_from_s23.png
+backgroundSize: contain
+---
 # GitHub Actions Workflow Example

@@ -19,7 +19,11 @@
 - Testing: Running the program on carefully selected inputs and checking the results.
 - User Inputs? Logic errors? Hardware bugs?
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t04_from_s04.png
+backgroundSize: contain
+---
 # Types of Tests
 ## Unit Test: Isolated method, function or component.
 
@@ -41,24 +45,44 @@
 - Assert: checking the result state to see if it matches expectations. Look at output and make judgment
 - Cleanup: cleanup tests so other downstream tests aren’t influenced by results or attributes.
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t07_from_s07.png
+backgroundSize: contain
+---
 # Running pytest
 ## Just type >> pytest in prompt
 
 - Assert is True, the test passes!
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t08_from_s08.png
+backgroundSize: contain
+---
 # Running pytest
 ## Assert is False, the test fails!
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t09_from_s09.png
+backgroundSize: contain
+---
 # Any “test_” function will be recognized by pytest automatically
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t10_from_s10.png
+backgroundSize: contain
+---
 # Parameterization in tests
 ## Test multiple parameters at once using pytest parameterize
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t11_from_s12.png
+backgroundSize: contain
+---
 # Fixtures in pytest
 ## A way to set up and clean up things before and after running tests.
 
@@ -68,10 +92,18 @@
 - Keep test files clean and readable.
 - Automatically clean up after tests run.
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t12_from_s13.png
+backgroundSize: contain
+---
 # Fixtures in pytest
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t13_from_s14.png
+backgroundSize: contain
+---
 # Key Binding Test in PyCalc Exercise
 ## conftest.py
 
@@ -79,7 +111,11 @@
 - Fixtures  conftest.py
 - Yield keyword to free resources after test.
 ---
-
+---
+layout: image-right
+image: /images/lecture-07/t14_from_s15.png
+backgroundSize: contain
+---
 # What is yield doing?
 ## SETUP: prepare resources
 

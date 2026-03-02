@@ -1,3 +1,8 @@
+---
+layout: image-right
+image: /images/lecture-04/t01_from_s01.png
+backgroundSize: contain
+---
 # Repository Organizational Strategies
 ## Fighting Entropy
 
@@ -10,7 +15,11 @@
   - scripts/: For utility scripts and auxiliary code.
   - data/: For data files, if applicable.
 ---
-
+---
+layout: image-right
+image: /images/lecture-04/t02_from_s02.png
+backgroundSize: contain
+---
 # Repository Organizational Strategies
 ## Must Haves
 
@@ -22,7 +31,11 @@
 - License - Include a LICENSE file that clearly states the licensing terms.
 - Badges - Use badges in the README.md to quickly display project status, such as build status, test coverage, and package version.
 ---
-
+---
+layout: image-right
+image: /images/lecture-04/t03_from_s03.png
+backgroundSize: contain
+---
 # Repository Organizational Strategies
 ## Must Haves
 
@@ -32,7 +45,11 @@
 - test - Write unit tests and possibly integrate coverage tools like coverage.py to ensure code quality.
 - src - Code location.
 ---
-
+---
+layout: image-right
+image: /images/lecture-04/t04_from_s04.png
+backgroundSize: contain
+---
 # Repository Organizational Strategies
 ## Bonus Tools
 
