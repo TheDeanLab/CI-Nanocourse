@@ -83,12 +83,12 @@ layout: two-cols-header
 # The Importance of Collaboration
 ## Teamwork is Dreamwork
 
-- Diverse Skill Sets: No single developer possesses expertise in every aspect of software development. Collaborative efforts ensure that a team with varied skills can address different facets of a project, from front-end design to back-end logic, ensuring comprehensive development.
-- Accelerated Problem-Solving: Challenges are inevitable in software development. A collaborative team can brainstorm, debate, and ideate solutions faster than an individual. This collective problem-solving often leads to more innovative and efficient solutions.
-- Continuous Feedback Loop: Collaboration fosters a culture of continuous feedback. Regular code reviews, paired programming, and open discussions ensure that errors are caught early, and best practices are consistently upheld.
-- Shared Responsibility: A collaborative environment distributes the responsibility of the project. This not only reduces the pressure on individual team members but also ensures accountability and commitment towards the project's success.
-- Adaptability & Flexibility: In a collaborative setting, teams are better equipped to adapt to changes, be it in project requirements, technologies, or methodologies. The collective knowledge ensures a smoother transition and quicker adaptation.
-- Knowledge Transfer & Skill Enhancement: Collaboration is a learning experience. Developers can share knowledge, introduce peers to new tools or methodologies, and elevate the overall skill set of the team.
+- Diverse skill sets solve broader problems.
+- Shared reviews catch bugs earlier.
+- Teams unblock issues faster than individuals.
+- Responsibility is distributed across contributors.
+- Collaboration spreads knowledge and best practices.
+- Frequent communication improves adaptability.
 ---
 
 # Overview of Version Control Systems
@@ -128,46 +128,34 @@ layout: two-cols-header
 ---
 
 # Basic Git Commands and Workflows
+## Git Up, Git Out, and Git Something
 
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-01/s12_img01.png" alt="lecture-01 slide 12 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
-
-- Git Up, Git Out, and Git Something
 - Repository
 - Definition: A repository, often abbreviated as "repo", is a storage location where all the files and revision history of a project reside.
 - It acts as the central hub for a project's codebase, allowing developers to clone, pull, and push changes to and from it.
 - A repository contains the information that Git uses to track the progression of a project.
 ---
+layout: image-right
+image: /images/lecture-01/s13_img01.png
+backgroundSize: contain
 
 # Basic Git Commands and Workflows
 ## Cloning a Repo
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-01/s13_img01.png" alt="lecture-01 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-01/s13_img02.png" alt="lecture-01 slide 13 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Cloning: Downloads a repository onto your machine locally with all necessary information for tracking code development.
 - git clone - Clones a repository into a newly created directory, and creates remote-tracking branches for each branch in the cloned repository.
 - [https://git-scm.com/docs/git-clone](https://git-scm.com/docs/git-clone)
 ---
+layout: image-right
+image: /images/lecture-01/s14_img01.png
+backgroundSize: contain
 
 # Basic Git Commands and Workflows
 ## Isolating Development
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-01/s14_img01.png" alt="lecture-01 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Branch
 - Definition: A branch is a lightweight movable pointer that points to a specific commit.
@@ -175,49 +163,40 @@ layout: two-cols-header
 - This facilitates parallel development, where multiple features or fixes can be developed simultaneously without interfering with each other.
 - Main Branch: By default, every Git repository starts with a branch called "master" or, more recently, "main". This is the primary branch where stable, production-ready code resides.
 ---
+layout: image-right
+image: /images/lecture-01/s16_img01.png
+backgroundSize: contain
 
 # Basic Git Commands and Workflows
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-01/s16_img01.png" alt="lecture-01 slide 16 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-01/s16_img02.png" alt="lecture-01 slide 16 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Creation: Creating a new branch does not create a new copy of the repository. Instead, it's a lightweight pointer to a commit. This makes branching in Git very fast and efficient.
 - git branch - List, create, or delete branches.
 - Creating a New Branch
 - [https://git-scm.com/docs/git-branch](https://git-scm.com/docs/git-branch)
 ---
+layout: image-right
+image: /images/lecture-01/s17_img01.png
+backgroundSize: contain
 
 # Basic Git Commands and Workflows
 ## Switching to a Branch
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-01/s17_img01.png" alt="lecture-01 slide 17 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-01/s17_img02.png" alt="lecture-01 slide 17 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Switching: You can easily switch between branches using the git checkout command (or git switch in newer versions of Git).
 - git checkout - Switch branches.
 - [https://git-scm.com/docs/git-checkout](https://git-scm.com/docs/git-checkout)
 ---
+layout: image-right
+image: /images/lecture-01/s18_img01.png
+backgroundSize: contain
 
 # Basic Git Commands and Workflows
 ## Merging a Branch
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-01/s18_img01.png" alt="lecture-01 slide 18 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-01/s18_img02.png" alt="lecture-01 slide 18 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Merging: Once work on a branch is complete, it can be "merged" back into another branch, usually the main branch. This integrates the changes made in the branch into the main line of development.
 - git merge - Join two or more development histories together.
@@ -227,29 +206,32 @@ layout: two-cols-header
 # Basic Git Commands and Workflows
 ## Challenges with Git
 
-- Complex Commands: Git's command-line interface can be intimidating, especially for beginners. Remembering and correctly executing multiple commands can lead to errors.
-- Merge Conflicts: Resolving conflicts when multiple developers make changes to the same section of code can be tedious and confusing.
-- Visualizing History: The command-line doesn't provide an intuitive way to visualize the commit history, branches, and their relationships.
-- Staging Changes: Deciding what changes to stage for a commit can be cumbersome, especially in large codebases.
-- Switching Context: Frequent switching between branches and keeping track of which branch you're on can be error-prone.
+- CLI syntax can be hard for beginners.
+- Merge conflicts are often time-consuming.
+- Commit history is harder to visualize in terminal.
+- Staging granular changes takes practice.
+- Frequent branch switching can cause mistakes.
 ---
+layout: image-right
+image: /images/lecture-01/s20_img01.png
+backgroundSize: contain
 
 # Basic Git Commands and Workflows
 ## Cheat to Compete with GitHub Desktop
 
+::left::
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-01/s20_img01.png" alt="lecture-01 slide 20 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
-- User-Friendly Interface: GitHub Desktop provides a graphical user interface, making it more intuitive and accessible for those not comfortable with the command-line.
-- Easy Conflict Resolution: The tool visually presents merge conflicts and offers guidance on resolving them, streamlining the process.
-- Visual History: Users can easily see the commit history, changes made, and the structure of branches, aiding understanding and navigation.
-- Drag-and-Drop Staging: Users can quickly select changes for staging by dragging and dropping, making the process efficient.
-- Branch Management: Switching between branches, creating new branches, and merging becomes a couple-of-clicks operation, reducing the chances of errors.
+- GUI lowers the barrier for Git newcomers.
+- Visual conflict tools simplify merges.
+- History and branches are easier to inspect.
+- Staging files is quick and intuitive.
+- Branch create/switch/merge workflows are streamlined.
 - [https://desktop.github.com/](https://desktop.github.com/)
+
+::right::
+
+
 ---
 
 # Basic Git and Workflows
@@ -260,48 +242,34 @@ layout: two-cols-header
 - Download GitHub Desktop
 - Clone the class repo: https://github.com/TheDeanLab/CI-Nanocourse
 - Using command-line and the GitHub Desktop, create a branch, and switch between main and the branch you created.
----
----
-layout: center
-class: text-center
----
-# Intermission
+
 
 ---
-layout: center
-class: text-center
+layout: cover
 ---
 # Lecture 2
 ## Environment Management
+---
 
 # Environment Management with Anaconda
 ## Creating Reproducible Development Environments
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-02/s02_img01.png" alt="lecture-02 slide 02 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
-
-- An environment is like a sandbox or petri dish, ensuring that the software setup for one project doesn't interfere with another.
-- This enables a stable and reproducible development space.
-- Version Inconsistencies: Python libraries and tools are constantly evolving. Different projects might require different versions of the same library, leading to potential conflicts and unexpected behavior.
-- System-wide Installation Risks: Installing libraries system-wide can lead to "dependency hell", where upgrades for one project break another.
-- Reproducibility: For scientific computing and data analysis tasks, it's crucial to reproduce results. This is impossible without consistent environment setups, especially when sharing work with peers or publishing results.
-- Ease of Sharing: With a well-managed environment, developers can easily share their projects, ensuring that others can run their code without stumbling upon missing dependencies or version issues.
-- Isolation: Keeping project environments separate ensures that specific dependencies or version requirements of one project don't interfere with another, leading to cleaner and more stable development.
+- Environments isolate dependencies per project.
+- Isolation prevents version conflicts across projects.
+- Avoids system-wide "dependency hell."
+- Improves reproducibility for research and CI.
+- Makes project setup easier to share.
 ---
 
 # Environment Management with Anaconda
 ## Miniconda vs Anaconda
 
-- Size and Content: Anaconda is a large distribution that comes pre-loaded with over 1500 packages tailored for scientific computing, data science, and machine learning. Miniconda, on the other hand, is a minimalistic distribution, containing only the package manager (conda) and a minimal set of dependencies.
-- Flexibility vs. Convenience: While Anaconda provides an out-of-the-box solution with a wide array of pre-installed packages, Miniconda offers flexibility by allowing users to install only the packages they need, helping to keep the environment lightweight.
-- Installation Size: Due to its bundled packages, Anaconda requires more disk space upon installation compared to Miniconda.
-- Use Cases:
-  - Miniconda is ideal for users who are conscious about disk space, or who prefer to have more control over their environment setup.
-  - Anaconda is suited for those who want a comprehensive package suite without the need to manually install popular data science tools.
+- Anaconda: large install with many preloaded packages.
+- Miniconda: minimal install with just conda basics.
+- Anaconda favors convenience; Miniconda favors control.
+- Miniconda is better when disk space matters.
+- Anaconda is useful for quick data-science setup.
 ---
 
 # Advanced Environment Management
@@ -309,16 +277,13 @@ class: text-center
 
 - Install Miniconda
 ---
+layout: image-right
+image: /images/lecture-02/s07_img01.png
+backgroundSize: contain
+---
 
 # Environment Management with Anaconda
 ## Activating Your New Environment
-
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-02/s07_img01.png" alt="lecture-02 slide 07 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - List all Environments:
   - conda env list
@@ -345,16 +310,13 @@ class: text-center
 - Version Management: Each package has specific versioning, allowing users to install, update, or rollback to particular versions as needed, ensuring compatibility and stability in projects.
 - Dependency Handling: When a package is installed in Anaconda, the system automatically manages and installs any required dependencies, ensuring seamless functionality and reducing manual setup efforts.
 ---
+layout: image-right
+image: /images/lecture-02/s10_img01.png
+backgroundSize: contain
+---
 
 # Environment Management with Anaconda
 ## Creating a New Environment from a Text File
-
-
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-02/s10_img01.png" alt="lecture-02 slide 10 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Each package, and all of its dependencies, explicitly imported from a package manager (pip, conda, etc.)*
 - Version Control
@@ -367,42 +329,35 @@ class: text-center
 # Environment Management with Anaconda
 ## What is a YAML File?
 
-- YAML files, typically with the .yaml or .yml extension, provide a balance between structure and readability, making them a popular choice for various configuration and data representation tasks.
-- Human-Readable Format: Designed to be easily readable by humans and is often used for configuration files.
-- Hierarchical Structure: Uses indentation to represent hierarchical data structures, such as lists and dictionaries.
-- Key-Value Pairs: Data is typically represented using key-value pairs, making it similar to Python dictionaries.
-- Multiline Strings: Supports multiline strings, making it convenient to represent longer text.
-- Comments: Supports comments using the # symbol, allowing for annotations within the file.
-- Widespread Usage: It's commonly used in various applications, including configuration for CI/CD tools, Kubernetes configurations, and defining infrastructure as code.
+- YAML (`.yml`/`.yaml`) is a human-readable config format.
+- Uses indentation to represent nested data.
+- Commonly written as key-value pairs and lists.
+- Supports comments with `#`.
+- Widely used in CI/CD and infrastructure tooling.
 ---
+layout: image-right
+image: /images/lecture-02/s13_img01.png
+backgroundSize: contain
 
 # Environment Management with Anaconda
 ## Creating a New Environment from a YAML File
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-02/s13_img01.png" alt="lecture-02 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-02/s13_img02.png" alt="lecture-02 slide 13 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
+
 ---
+layout: image-right
+image: /images/lecture-02/s14_img01.png
+backgroundSize: contain
 
 # Advanced Environment Management
 ## Creating a New Environment from a pyproject.toml File
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-02/s14_img01.png" alt="lecture-02 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
-- Standardization: PEP 518 introduced pyproject.toml as a standardized configuration file for Python packaging, aiming to provide a single source of truth for package configurations. This unified approach reduces fragmentation in the packaging ecosystem.
-- Extensibility: pyproject.toml is designed to be extensible. It can accommodate configurations for various tools like setuptools, black, mypy, and more, all in one place. This centralized configuration avoids the proliferation of various config files in a project's root directory.
-- Build System Specifications: pyproject.toml allows package maintainers to specify which build system should be used and what the build dependencies are. This ensures that the right tools and versions are used during the build process.
-- Clear Dependency Specification: While requirements.txt or YAML files list dependencies, pyproject.toml allows for a more detailed specification, including build dependencies, which are essential for reproducibility and consistent builds.
-- Modern Tooling Compatibility: Modern packaging and build tools like poetry and flit natively use pyproject.toml, showcasing a move towards this standard in the Python community.
-- Improved Isolation: With pyproject.toml, build dependencies can be isolated from the project's dependencies, ensuring that the build process doesn't affect the project's environment or vice versa.
+- `pyproject.toml` is the modern Python packaging standard (PEP 518).
+- Centralizes project metadata, dependencies, and tooling config.
+- Declares build backend and build-time requirements.
+- Works across modern tools (`setuptools`, `poetry`, `flit`).
+- Improves reproducibility with explicit dependency definitions.
 ---
 
 # Environment Management with Anaconda
@@ -450,136 +405,113 @@ class: text-center
 - Confirm that seaborn was included in the install
 - Launch python, import seaborn, and if time permits, plot something with seaborn.
 - Install the docs optional dependencies.
----
----
-layout: center
-class: text-center
----
-# Intermission
 
 ---
-layout: center
+layout: cover
 class: text-center
 ---
 # Lecture 3
 ## Git Essentials
 
+---
+layout: image-right
+image: /images/lecture-03/s01_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## When git push comes to shove
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s01_img01.png" alt="lecture-03 slide 01 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
-
 - Git Flow
 - A fixed branching model that defines different branches for features, releases, and hotfixes.
 - Provides a structured workflow that is especially useful for larger teams and projects.
+
+---
+layout: image-right
+image: /images/lecture-03/s02_img01.png
+backgroundSize: contain
 ---
 
 # Git Essentials
 ## Release Branching
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s02_img01.png" alt="lecture-03 slide 02 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Branches are created for potential releases.
 - Allows for specific features to be included or excluded from releases and for patching release-specific issues.
 - “master” or “main” used for production releases.
 ---
-
+layout: image-right
+image: /images/lecture-03/s03_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Feature Branching
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s03_img01.png" alt="lecture-03 slide 03 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Each new feature or bugfix is developed in a separate branch derived from the develop branch.
 - Keeps the develop branch more stable.
 - Allows multiple features to be developed in parallel without interference.
 ---
-
+layout: image-right
+image: /images/lecture-03/s04_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Trunk Based Development
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s04_img01.png" alt="lecture-03 slide 04 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Developers work in short-lived branches derived from develop, ensuring that code is integrated frequently.
 - Reduces merge conflict complexity by promoting regular merges.
 - Long-lived branches can lead to complex, hard-to-resolve merge conflicts.
 - Ensures that code in the develop branch is always production-ready.
 ---
-
+layout: image-right
+image: /images/lecture-03/s05_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Fear of Commitment.
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s05_img01.png" alt="lecture-03 slide 05 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s05_img02.png" alt="lecture-03 slide 05 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s05_img03.png" alt="lecture-03 slide 05 image 3" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Using structured, meaningful commit messages to make history more readable and to allow for automated changelog generation.
 ---
-
+layout: image-right
+image: /images/lecture-03/s06_img01.png
+backgroundSize: contain
+---
 # Git Essentials
 ## Pull/Merge Requests
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s06_img01.png" alt="lecture-03 slide 06 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Before merging a feature branch into the develop, a pull (or merge) request is created.
 - Allows team members to review code, ensuring quality and consistency.
 - Pull requests should preferably be manageable in size (~400 lines of code max), and accompanied with unit tests (more following).
 ---
+layout: image-right
+image: /images/lecture-03/s07_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Rebase vs Merge
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s07_img01.png" alt="lecture-03 slide 07 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s07_img02.png" alt="lecture-03 slide 07 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Instead of merging, use rebasing to apply feature branch changes on top of the main branch.
 - Provides a cleaner, linear project history but requires a more cautious approach to avoid conflicts.
 ---
+layout: image-right
+image: /images/lecture-03/s08_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Advanced Pull Requests
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s08_img01.png" alt="lecture-03 slide 08 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s08_img02.png" alt="lecture-03 slide 08 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - What if you don’t have write access to a repository?
 - Create fork in GitHub and clone the repository.
@@ -599,16 +531,14 @@ class: text-center
 - 5B. git merge upstream/main
 - 6. git push origin <branch_name>
 ---
+layout: image-right
+image: /images/lecture-03/s09_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Resolving Conflicts
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s09_img01.png" alt="lecture-03 slide 09 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - Git will notify you of "merge conflicts" when attempting to merge or rebase.
 - Within the conflicted files, Git uses conflict markers (<<<<<<<, =======, >>>>>>>) to indicate the conflicting sections.
@@ -616,20 +546,19 @@ class: text-center
 - Edit the file to resolve the conflict. This might mean choosing one change over the other, combining both changes, or even making a new change altogether.
 - Once resolved, remove the conflict markers (<<<<<<<, =======, >>>>>>>).
 ---
+layout: image-right
+image: /images/lecture-03/s10_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Placing “Blame”
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s10_img01.png" alt="lecture-03 slide 10 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
-- git blame is a tool to trace changes in a file back to the commit that introduced them. Use it as a diagnostic tool to understand the history of specific lines of code, not to assign fault.
-- When examining the output, consider the broader context of changes. A developer might have moved or reformatted code, so they appear as the "blamer," even if they didn't originally write the logic. Dive deeper into the commit message and associated discussions for a full understanding.
-- Integrate with Tools and GUIs - While the command-line version of git blame is powerful, several graphical user interfaces and tools offer more intuitive visualizations, helping to quickly pinpoint when and why changes were made.
+- `git blame` shows which commit last changed each line.
+- Use it to understand history, not assign fault.
+- Validate context by reading related commits and PRs.
+- GUI tools can make blame output easier to interpret.
 ---
 
 # Git Essentials
@@ -640,16 +569,14 @@ class: text-center
 - Actions can be multi-faceted, and include code reformatting, testing, documentation generation, etc.
 - More to follow…
 ---
+layout: image-right
+image: /images/lecture-03/s12_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Issue Tracking
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s12_img01.png" alt="lecture-03 slide 12 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - GitHub provides integrated issue, branch, and PR tracking.
 - Each issue assigned a number (#638) which can be used as a tag in commits, comments, etc.
@@ -657,71 +584,58 @@ class: text-center
 - Can be assigned to an individual.
 - Linked PRs automatically
 ---
+layout: image-right
+image: /images/lecture-03/s13_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Issue Creation
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s13_img01.png" alt="lecture-03 slide 13 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
-- Title - A concise and descriptive title that summarizes the issue.
-- Description - A clear and detailed description of the issue. Explain what you expected to happen and what actually happened.
-- Steps to Reproduce - Step-by-step guide on how to reproduce the issue. This helps maintainers replicate the problem on their end.
-- Traceback - Detailed output from the console/terminal stating what the problem is.
-- Environment Information - Python version (e.g., Python 3.8.5), Operating System and version (e.g., Ubuntu 20.04, Windows 10), version of the software or library causing the issue, any other relevant libraries or tools and their versions.
-- Error Messages/Logs - Include any error messages, stack traces, or logs that are displayed when the issue occurs. Use code blocks or attach files if the logs are extensive.
+- Title: short and descriptive.
+- Expected vs. actual behavior.
+- Steps to reproduce.
+- Full traceback or error output.
+- Environment details (OS, Python, package versions).
+- Relevant logs.
 ---
+layout: image-right
+image: /images/lecture-03/s14_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Issue Creation
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s14_img01.png" alt="lecture-03 slide 14 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
-- Screenshots or Screen Recordings - Visual aids can be extremely helpful in understanding the nature of the problem, especially for UI/UX related issues.
-- Severity and Impact - Indicate how critical the issue is (e.g., blocking, critical, minor) and its impact on the software's functionality.
-- Possible Solutions or Workarounds - If you're aware of any solutions or temporary workarounds for the issue, share them. This can be helpful for both maintainers and other users facing the same problem.
-- Code Samples - If applicable, provide minimal code samples that can help in reproducing the issue. Use proper formatting or link to a gist or repo.
-- Additional Context - Any other information that might be relevant, such as how often the issue occurs, whether it's sporadic or consistent, any patterns noticed, etc.
-- Labels and Tags - If the repository has predefined labels (e.g., "bug", "enhancement", "documentation"), apply the relevant ones to your issue.
-- Regression Information - Mention if the issue is a regression, i.e., a feature that used to work in a previous version but is broken in the current one. Indicate the last working version, if known.
-- Providing comprehensive information when creating an issue not only helps maintainers diagnose and fix problems faster but also fosters a collaborative environment where community members can assist each other more effectively.
+- Add screenshots or recordings when helpful.
+- State severity and user impact.
+- Include workarounds or minimal repro code.
+- Add labels and regression info (if applicable).
+- Extra context: frequency, patterns, scope.
 ---
+layout: image-right
+image: /images/lecture-03/s16_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Issue Formatting
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s16_img01.png" alt="lecture-03 slide 16 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s16_img02.png" alt="lecture-03 slide 16 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - GitHub Issues support styling with Markdown.
 - Can create checklists, headers, links, images, mention people/teams/issues/pull requests, quote code, create blocks, dropdowns, and more.
 - [https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 ---
+layout: image-right
+image: /images/lecture-03/s17_img01.png
+backgroundSize: contain
 
 # Git Essentials
 ## Branch Linking
 
 
-<!-- photos:start -->
-<div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-  <img src="/images/lecture-03/s17_img01.png" alt="lecture-03 slide 17 image 1" class="max-h-44 w-auto object-contain rounded shadow" />
-  <img src="/images/lecture-03/s17_img02.png" alt="lecture-03 slide 17 image 2" class="max-h-44 w-auto object-contain rounded shadow" />
-</div>
-<!-- photos:end -->
 
 - By creating a branch that is directly linked to the issue, all progress on that issue is tracked.
 - When a PR is approved, the issue is automatically closed.
@@ -740,11 +654,13 @@ class: text-center
 # Intermission
 
 ---
-layout: center
+layout: cover
 class: text-center
 ---
 # Lecture 4
 ## Organization and MVC
+
+---
 
 # Repository Organizational Strategies
 ## Fighting Entropy
@@ -784,11 +700,11 @@ class: text-center
 # Repository Organizational Strategies
 ## Bonus Tools
 
-- Code of Conduct - Include a CODE_OF_CONDUCT.md to set community standards and ensure a welcoming and inclusive environment.
-- Changelog - Maintain a CHANGELOG.md to track and document all the changes made in the software over time.
-- Issue and PR Templates - Use issue and PR templates to ensure consistency and completeness in submissions. This can be done with .github/ISSUE_TEMPLATE and .github/PULL_REQUEST_TEMPLATE directories.
-- Security - Use tools like Dependabot to automatically check for vulnerabilities in dependencies and suggest updates.
-- Contribution Guidelines - A CONTRIBUTING.md file detailing how others can contribute, the process for submitting pull requests, and any coding standards.
+- `CODE_OF_CONDUCT.md` for community standards.
+- `CHANGELOG.md` for release history.
+- Issue/PR templates for consistent reports.
+- Dependabot or similar for dependency security.
+- `CONTRIBUTING.md` for workflow and expectations.
 ---
 
 # Code Organizational Strategies
@@ -833,30 +749,30 @@ class: text-center
 # Model-View-Controller Architecture
 ## The View
 
-- User Interface - The View is responsible for displaying the user interface (UI) of the application. It defines how data is presented to the user and how the user interacts with it.
-- Receives User Input - While the View primarily focuses on display, it also captures user input, such as button clicks, text input, or gestures, and forwards them to the Controller for processing.
-- Stateless - Ideally, the View should be stateless, meaning it displays data without storing or processing it. Any data or logic-related tasks should be handled by the Model or Controller.
-- Reactive to Model - The View reflects changes in the Model. When the data in the Model changes, the View updates automatically to display the latest information to the user.
-- Decoupled from Model and Controller - To maintain the separation of concerns, the View should be decoupled from the Model and Controller. This means changes in the View shouldn't directly affect the Model's data or the Controller's logic, ensuring modularity and ease of maintenance.
+- Renders data to the user interface.
+- Captures input events and forwards them.
+- Should stay lightweight and mostly stateless.
+- Updates when model data changes.
+- Remains decoupled from business logic.
 ---
 
 # Model-View-Controller Architecture
 ## The Controller
 
-- Mediator - The Controller acts as a mediator between the Model and the View. It receives user input from the View, processes it (possibly updating the Model), and then returns the display output to the View.
-- Event Specification - It specifies which elements in the view should trigger events when selected.
-- User Input Handling - One of the primary responsibilities of the Controller is to handle user input. Whether it's a button click, form submission, or any other interaction in the View, the Controller decides what should happen in response.
-- Logic Execution - While the Model deals with data and the View deals with presentation, the Controller is where much of the application's business logic is executed. It determines how the application should respond to various user inputs and actions.
-- State Management - The Controller often manages the flow of data and the state of the application. It can decide which View to display next, fetch data from the Model to update the View, or store data in the Model based on user input.
+- Mediates between View and Model.
+- Maps UI events to application actions.
+- Handles user inputs and workflow decisions.
+- Invokes business logic and model updates.
+- Coordinates state transitions and navigation.
 ---
 
 # Model-View-Controller Architecture
 ## The Model
 
-- Data Representation - The Model represents the application's data and the rules that govern access to and updates of this data. It is the central component that holds the core functionality.
-- Data Storage - Often, the Model is responsible for retrieving or storing data, which can be in a database, file, or any other storage mechanism.
-- Data Notification - When data in the Model changes, it can notify the View so that the interface can be updated accordingly. This ensures that the user interface reflects the current state of the data.
-- Logic - While the Controller handles user interactions, the Model contains the core logic that dictates how data can be created, stored, modified, and retrieved. It enforces rules, constraints, and validations related to the data.
+- Owns application data and domain rules.
+- Reads/writes data stores (DB, files, APIs).
+- Applies validation and business constraints.
+- Notifies the View layer when data changes.
 ---
 
 # Git Essentials
@@ -872,11 +788,13 @@ class: text-center
 # Intermission
 
 ---
-layout: center
+layout: cover
 class: text-center
 ---
 # Lecture 5
 ## CI/CD Fundamentals
+
+---
 
 # CI/CD Fundamentals
 ## Introduction to Python Software Development on GitHub
@@ -994,11 +912,13 @@ class: text-center
 # GitHub Actions Workflow Example
 
 ---
-layout: center
+layout: cover
 class: text-center
 ---
 # Lecture 6
 ## Code Quality and Linting
+
+---
 
 # Code Quality, Code Formatting, and Linting
 ---
@@ -1035,52 +955,33 @@ class: text-center
 ---
 
 # Variable Naming
-## - Use descriptive, lowercase names – Variables should be meaningful and easy to understand.
+## Keep names clear and consistent
 
-  - ✅ max_users = 100  ❌ mu = 100
-- - Use underscores for multi-word names (snake case) – Improves readability.
-  - ✅ user_count = 10  ❌ userCount = 10 (CamelCase is for classes, not variables)
-- - Avoid single-letter names (except for short loops) – Be explicit.
-  - ✅ temperature_celsius = 25.0  ❌ t = 25.0
-- - Constants should be uppercase with underscores – Used for values that don’t change.
-  - ✅ MAX_RETRIES = 5  ❌ maxRetries = 5
-- - Private variables start with an underscore – Signals internal use.
-  - ✅ _cache = {}   ❌ cache = {} (unless public)
-- - Avoid reserved keywords – Prevent conflicts with Python’s built-in functions.
-  - ✅ class_name = "Intro to CI"    ❌ class = "Intro to CI" (conflicts with the class keyword)
+- Use descriptive `snake_case`: `max_users`, `user_count`.
+- Avoid vague names like `x`, `tmp`, `mu` (except tiny loops).
+- Constants use `UPPER_CASE`: `MAX_RETRIES`.
+- Internal variables can start with `_`: `_cache`.
+- Don’t shadow keywords/built-ins: avoid `class`, `list`, `format`.
 ---
 
 # Functions Naming
-## - Use lowercase with underscores – Improves readability and consistency.
+## Name functions by action
 
-  - ✅ def get_user_data():  ❌ def GetUserData(): (CamelCase is for classes)
-- - Use descriptive names – Functions should clearly indicate their purpose.
-  - ✅ def calculate_total_price():    ❌ def calc():
-- - Use verbs for function names – Functions perform actions, so names should reflect that.
-  - ✅ def fetch_records():    ❌ def records():
-- - Use a leading underscore for internal or private functions – Signals intended internal use.
-  - ✅ def _connect_to_db():    ❌ def connect_to_db(): (if meant to be private)
-- - Avoid using built-in function names – Prevents accidental overrides.
-  - ✅ def format_report():    ❌ def format(): (overrides Python’s built-in format function)
-- - Use double leading underscores only for name-mangling in classes – Rarely needed.
-  - ✅ class Example:  def __private_method(self): Double underscore automatically renamed within a class…
-  - ❌ def __method(): (not necessary outside classes)
+- Use descriptive `snake_case`: `get_user_data()`.
+- Prefer verbs: `calculate_total()`, `fetch_records()`.
+- Use leading `_` for internal helpers: `_connect_db()`.
+- Avoid overriding built-ins: don’t define `format()`, `list()`.
+- Reserve `__dunder` methods for specific class behaviors.
 ---
 
 # Class Naming
-## Use CapWords (PascalCase) – Each word starts with a capital letter, with no underscores.
+## Use CapWords (PascalCase)
 
-  - ✅ class DataProcessor:   ❌ class data_processor:
-- Class names should be nouns or noun phrases – Represents objects or entities.
-  - ✅ class UserProfile:    ❌ class processUser(): (Functions use verbs, not classes)
-- Avoid abbreviations – Use clear and meaningful names.
-  - ✅ class AuthenticationManager:    ❌ class AuthMgr:
-- Use leading underscores for internal classes – Signals that the class is for internal use only.
-  - ✅ class _InternalHelper:    ❌ class InternalHelper: (if not meant for external use)
-- Use metaclass naming convention – Append "Meta" if defining a metaclass.
-  - ✅ class CustomMeta(type):    ❌ class CustomMetaclass:
-- Exception classes should end with `Error` – Makes it clear they are exceptions.
-  - ✅ class ValidationError(Exception):    ❌ class ValidationIssue:
+- Class names are nouns: `DataProcessor`, `UserProfile`.
+- Prefer clear names over abbreviations: `AuthenticationManager`.
+- Internal-only classes can start with `_`.
+- Exception classes should end with `Error`.
+- Avoid function-style class names like `process_user`.
 ---
 
 # Line Formatting
@@ -1283,11 +1184,13 @@ class: text-center
   - We can autofix errors by specifying autofix.
 
 ---
-layout: center
+layout: cover
 class: text-center
 ---
 # Lecture 7
 ## Unit Testing and TDD
+
+---
 
 # Unit Testing and Test Driven Development
 
@@ -1404,11 +1307,13 @@ class: text-center
 - If time is remaining, parameterize the test for _calculateResult
 
 ---
-layout: center
+layout: cover
 class: text-center
 ---
 # Lecture 8
 ## GitHub Actions
+
+---
 
 # Setting up a CI/CD Pipeline in GitHub Actions
 ## Introduction to Python Software Development on GitHub 2023
@@ -1507,11 +1412,13 @@ class: text-center
 - Hint hint: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 ---
-layout: center
+layout: cover
 class: text-center
 ---
 # Lecture 9
 ## Public-Facing Documentation
+
+---
 
 # Public-facing documentation
 ## Introduction to Python Software Development on GitHub 2023
@@ -1682,3 +1589,5 @@ class: text-center
 # Exercise: Create a GitHub workflow that builds your docs and deploys it to a GitHub page
 
 - Hint: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
+---
