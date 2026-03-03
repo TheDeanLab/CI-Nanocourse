@@ -20,7 +20,6 @@ class: text-center
 - Unit Testing and Test-Driven Development (TDD)
 - Setting up Continuous Integration Pipelines on GitHub
 - Public-Facing Documentation
-- Stable Releases
 ---
 
 # Expectations
@@ -516,7 +515,7 @@ backgroundSize: contain
 ---
 
 # Git Essentials
-## Advanced Pull Requests
+## Fork-Based PR Workflow (CLI)
 
 
 <!-- photos:start -->
@@ -636,7 +635,7 @@ image: /images/lecture-03/s14_img01.png
 backgroundSize: contain
 ---
 # Git Essentials
-## Issue Creation
+## Issue Creation: Helpful Additions
 
 - Add screenshots or recordings when useful.
 - Include severity and user impact.
@@ -712,7 +711,7 @@ class: text-center
 ---
 
 # Repository Organizational Strategies
-## Must Haves
+## Must-Have Repository Files
 
 - README File - Always have a README.md at the root. It should include:
   - Project title and brief description.
@@ -730,7 +729,7 @@ backgroundSize: contain
 ---
 
 # Repository Organizational Strategies
-## Must Haves
+## Must-Have Repository Structure
 
 - `.gitignore` for generated and local-only files.
 - `requirements.txt` or `pyproject.toml` for dependencies.
@@ -774,7 +773,7 @@ backgroundSize: contain
 ---
 
 # Model-View-Controller Architecture
-## The View
+## The View: Responsibilities
 
 - Tkinter:
   - The standard GUI library for Python, bundled with most Python installations.
@@ -818,7 +817,7 @@ backgroundSize: contain
 - Logic - While the Controller handles user interactions, the Model contains the core logic that dictates how data can be created, stored, modified, and retrieved. It enforces rules, constraints, and validations related to the data.
 ---
 
-# Git Essentials
+# Organization and MVC
 ## Activity #7
 
 - Upload individual files to GitHub
@@ -855,16 +854,6 @@ layout: image-right
 image: /images/lecture-05/t04_from_s04.png
 backgroundSize: contain
 ---
-
-# Vocabulary
-- Build – Convert source code files into a standalone software that anyone can run on their machine.
-
-- Test – Evaluate and verify software can do what it is supposed to do.
-
----
-layout: center
----
-
 # How do we know this function works?
 
 ## Unit Tests!
@@ -1279,10 +1268,6 @@ ruff check . --fix
 - 700 different rules
 ---
 
-# Ruff: Automated Code Linting
-## Removing unused variables and imports.
----
-
 # Configuring Ruff
 ## 700 different rules
 
@@ -1335,28 +1320,6 @@ repos:
 - Install pre-commit in conda environment using pip install pre-commit or integrate pre-commit dependence in pyproject.toml
 - Add a pre-commit config file called .pre-commit-config.yaml to project
 - In yaml file: add ruff repo
----
-
-# Conclusions
-## Code formatting and organizing is an important part coding
-
-- Code formatters and linters such as ruff can be used to automatically format and detects formatting errors in code
-- Linting can be implemented as a precommit hook and can be part of IDEs such as vscode or pycharm
-- Clean code will lead to more understandable, reliable, and reproducible code.
----
-
-# Exercise
-## Set up Ruff locally in your environment.
-
-- Set up a pre-commit hook to run Ruff and black and install it in pyproject.toml to format calculator codebase.
----
-
-# Further Reading
-## Ruff documentation: https://docs.astral.sh/ruff/
-
-- Black documentation: https://black.readthedocs.io/en/stable/
-- Linting in vscode: https://code.visualstudio.com/docs/python/linting
-- Pre-commit documentation: https://pre-commit.com
 ---
 
 # First Run Ruff Locally to identify errors
@@ -1425,13 +1388,35 @@ pre-commit run ruff --all-files
   - We can autofix errors by specifying autofix.
 
 ---
+# Conclusions
+## Code formatting and organizing is an important part coding
+
+- Code formatters and linters such as ruff can be used to automatically format and detects formatting errors in code
+- Linting can be implemented as a precommit hook and can be part of IDEs such as vscode or pycharm
+- Clean code will lead to more understandable, reliable, and reproducible code.
+---
+
+# Exercise
+## Set up Ruff locally in your environment.
+
+- Set up a pre-commit hook to run Ruff and black and install it in pyproject.toml to format calculator codebase.
+---
+
+# Further Reading
+## Ruff documentation: https://docs.astral.sh/ruff/
+
+- Black documentation: https://black.readthedocs.io/en/stable/
+- Linting in vscode: https://code.visualstudio.com/docs/python/linting
+- Pre-commit documentation: https://pre-commit.com
+---
+
 layout: center
 class: text-center
 ---
 # Lecture 7
 ## Unit Testing and TDD
 
-# Unit Testing and Test Driven Development
+# Session Context
 
 - Conor McFadden
 - Continuous Integration with Python Nanocourse 2023
@@ -1526,7 +1511,7 @@ layout: image-right
 image: /images/lecture-07/t12_from_s13.png
 backgroundSize: contain
 ---
-# Fixtures in pytest
+# Fixtures in pytest: Example in PyCalc
 
 ---
 layout: image-right
@@ -1586,20 +1571,6 @@ class: text-center
 
 
 ---
-layout: image
-image: /images/lecture-08/t02_from_s02.png
-backgroundSize: contain
----
-# GitHub Actions Dashboard
-
----
-layout: image
-image: /images/lecture-08/t03_from_s03-04.png
-backgroundSize: contain
----
-# GitHub Actions Workflow Example
----
-
 # Let’s create a GitHub workflow
 ## You can follow along at https://docs.github.com/en/actions/quickstart
 
@@ -1664,15 +1635,12 @@ backgroundSize: contain
 
 ---
 
-# Defining the jobs
-## What is jobs? The key that holds all the jobs that run in the workflow file.
+# Defining the jobs: Key fields
+## `jobs` contains one or more named jobs in the workflow file.
 
-- What is Explore-GitHub-Actions?
-- What is Explore-GitHub-Actions? The name of a job.
-- What does runs-on: ubuntu-latest mean?
-- What does runs-on: ubuntu-latest mean? This workflow will run on an Ubuntu Linux virtual machine.
-- What are steps?
-- What are steps? The key that holds all of the steps to run in this job.
+- `Explore-GitHub-Actions`: the job name.
+- `runs-on: ubuntu-latest`: run this job on an Ubuntu Linux virtual machine.
+- `steps`: ordered actions/commands for that job.
 
 ---
 layout: image-right
@@ -1830,8 +1798,8 @@ layout: image-right
 image: /images/lecture-09/t11_from_s11.png
 backgroundSize: contain
 ---
-# Python docstrings can be written in a variety of documentation languages, including reStructuredText
-## reStructuredText
+# Docstring style examples
+## reStructuredText (Google style)
 
 - Google style
 
@@ -1840,7 +1808,7 @@ layout: image-right
 image: /images/lecture-09/t12_from_s12.png
 backgroundSize: contain
 ---
-# Python docstrings can be written in a variety of documentation languages, including reStructuredText
+# Docstring style examples (NumPy)
 ## NumPy style
 ---
 
@@ -1856,7 +1824,7 @@ layout: image-right
 image: /images/lecture-09/t14_from_s14.png
 backgroundSize: contain
 ---
-# is the primary documentation framework for Python
+# Sphinx is the primary documentation framework for Python
 
 - [https://www.sphinx-doc.org/](https://www.sphinx-doc.org/)
 - Compiles Python docstrings and reStructuredText files to PDFs, HTML
@@ -1950,7 +1918,7 @@ layout: image-right
 image: /images/lecture-09/t25_from_s28.png
 backgroundSize: contain
 ---
-# Templates enable us to produce a more comprehensive autosummary
+# Autosummary output with custom templates
 
 
 ---
@@ -1964,7 +1932,7 @@ backgroundSize: contain
 - What happens if you change api.rst to the following? Why?
 ---
 
-# Public-facing documentation
+# Publishing documentation with GitHub Pages
 ## We want to put our compiled HTML files on the internet.
 
 - Ideally, we do this automatically, updating whenever new documentation is written.
