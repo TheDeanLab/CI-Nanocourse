@@ -2,9 +2,11 @@
 layout: center
 class: text-center
 ---
-# Introduction to Collaborative Software Development
 
+# Introduction to Collaborative Software Development
+## Course Overview and Learning Objectives
 ---
+
 # Course Structure
 ## Day 1
 
@@ -12,9 +14,8 @@ class: text-center
 - Environment Management & Git Essentials
 - Organizational Strategies, and Collaborative Development Workflows
 - Pre-Commit Hooks, Linters, Code Formatters
----
 
-# Course Structure
+
 ## Day 2
 
 - Unit Testing and Test-Driven Development (TDD)
@@ -47,12 +48,14 @@ class: text-center
 layout: center
 class: text-center
 ---
+
 # Lecture 1
 ## Introduction to GIT
 
 ---
+
 # The Importance of Collaboration
-## Teamwork is Dreamwork
+## Why Collaboration Improves Software Quality
 
 - Diverse Skill Sets: No single developer possesses expertise in every aspect of software development. Collaborative efforts ensure that a team with varied skills can address different facets of a project, from front-end design to back-end logic, ensuring comprehensive development.
 - Accelerated Problem-Solving: Challenges are inevitable in software development. A collaborative team can brainstorm, debate, and ideate solutions faster than an individual. This collective problem-solving often leads to more innovative and efficient solutions.
@@ -77,7 +80,7 @@ class: text-center
 ---
 
 # An Introduction to Git
-## And its role in facilitating team-based development.
+## Role in Team-Based Development
 
 - What is Git?
   - A distributed version control system widely used in software development.
@@ -99,7 +102,7 @@ class: text-center
 ---
 
 # Basic Git Commands and Workflows
-## Git Up, Git Out, and Git Something
+## Core Concepts and Everyday Commands
 - Repository
 - A repository, often abbreviated as "repo", is a storage location where all the files and revision history of a project reside.
 - It acts as the central hub for a project's codebase, allowing developers to clone, pull, and push changes to and from it.
@@ -141,6 +144,7 @@ class: text-center
 ---
 
 # Basic Git Commands and Workflows
+## Creating and Managing Branches
 
 
 <!-- photos:start -->
@@ -202,8 +206,9 @@ layout: image-right
 image: /images/lecture-01/s20_img01.png
 backgroundSize: contain
 ---
+
 # Basic Git Commands and Workflows
-## Cheat to Compete with GitHub Desktop
+## Using GitHub Desktop for Beginner-Friendly Workflows
 
 
 - GUI is easier for Git beginners.
@@ -213,7 +218,7 @@ backgroundSize: contain
 - [https://desktop.github.com/](https://desktop.github.com/)
 ---
 
-# Basic Git and Workflows
+# Basic Git Workflows
 ## Activity #1
 
 - Install Git
@@ -227,10 +232,12 @@ backgroundSize: contain
 layout: center
 class: text-center
 ---
+
 # Lecture 2
 ## Environment Management
 
 ---
+
 # Environment Management with Anaconda
 ## Creating Reproducible Development Environments
 
@@ -265,6 +272,7 @@ layout: image-right
 image: /images/lecture-02/s07_img01.png
 backgroundSize: contain
 ---
+
 # Environment Management with Anaconda
 ## Activating Your New Environment
 
@@ -325,6 +333,7 @@ backgroundSize: contain
 ---
 layout: two-cols-header
 ---
+
 # Environment Management with Anaconda
 ## Creating a New Environment from a YAML File
 
@@ -349,6 +358,7 @@ layout: image-right
 image: /images/lecture-02/s14_img01.png
 backgroundSize: contain
 ---
+
 # Advanced Environment Management
 ## Creating a New Environment from a pyproject.toml File
 
@@ -410,6 +420,7 @@ backgroundSize: contain
 layout: center
 class: text-center
 ---
+
 # Lecture 3
 ## Git Essentials
 
@@ -420,7 +431,7 @@ backgroundSize: contain
 ---
 
 # Git Essentials
-## When git push comes to shove
+## Branching Strategies for Collaborative Development
 
 - Git Flow
 - A fixed branching model that defines different branches for features, releases, and hotfixes.
@@ -460,6 +471,7 @@ layout: image-right
 image: /images/lecture-03/s02_img01.png
 backgroundSize: contain
 ---
+
 # Git Essentials
 ## Trunk Based Development
 
@@ -473,7 +485,7 @@ layout: two-cols-header
 ---
 
 # Git Essentials
-## Fear of Commitment.
+## Writing Clear, Useful Commit Messages
 
 ::left::
 
@@ -582,6 +594,7 @@ layout: image-right
 image: /images/lecture-03/s10_img01.png
 backgroundSize: contain
 ---
+
 # Git Essentials
 ## Placing “Blame”
 
@@ -604,6 +617,7 @@ layout: image-right
 image: /images/lecture-03/s12_img01.png
 backgroundSize: contain
 ---
+
 # Git Essentials
 ## Issue Tracking
 
@@ -619,6 +633,7 @@ layout: image-right
 image: /images/lecture-03/s13_img01.png
 backgroundSize: contain
 ---
+
 # Git Essentials
 ## Issue Creation
 
@@ -634,6 +649,7 @@ layout: image-right
 image: /images/lecture-03/s14_img01.png
 backgroundSize: contain
 ---
+
 # Git Essentials
 ## Issue Creation: Helpful Additions
 
@@ -646,6 +662,7 @@ backgroundSize: contain
 ---
 layout: two-cols-header
 ---
+
 # Git Essentials
 ## Issue Formatting
 
@@ -692,6 +709,7 @@ layout: two-cols-header
 layout: center
 class: text-center
 ---
+
 # Lecture 4
 ## Organization and MVC
 
@@ -742,6 +760,7 @@ layout: image-right
 image: /images/lecture-04/t04_from_s04.png
 backgroundSize: contain
 ---
+
 # Repository Organizational Strategies
 ## Bonus Tools
 
@@ -754,7 +773,7 @@ backgroundSize: contain
 ---
 
 # Code Organizational Strategies
-## A Sisyphean Task
+## Maintaining Structure as Projects Scale
 
 - Organizing code in Python is crucial for maintainability, scalability, and clarity.
 
@@ -827,13 +846,14 @@ backgroundSize: contain
 layout: center
 class: text-center
 ---
+
 # Lecture 5
 ## CI/CD Fundamentals
 
 ---
 
 # What does CI/CD stand for?
-## Continuous Integration
+## Continuous Integration, Delivery, and Deployment
 
 - Continuous Delivery
 - Continuous Deployment
@@ -845,15 +865,16 @@ backgroundSize: contain
 ---
 
 # Vocabulary
+## Core CI/CD Terminology
 - Build – Convert source code files into a standalone software that anyone can run on their machine.
 
 - Test – Evaluate and verify software can do what it is supposed to do.
-
 ---
 layout: image-right
 image: /images/lecture-05/t04_from_s04.png
 backgroundSize: contain
 ---
+
 # How do we know this function works?
 
 ## Unit Tests!
@@ -876,7 +897,7 @@ def test_square(x):
 ---
 
 # Build
-## Convert source code files into a standalone software that anyone can run on their machine.
+## From Source Code to Runnable Artifacts
 
 - Test – Evaluate and verify software can do what it is supposed to do.
 - Release – A build that is a new or upgraded version of the software.
@@ -887,7 +908,9 @@ layout: image-right
 image: /images/lecture-05/t11_from_s16.png
 backgroundSize: contain
 ---
-# The goal of CI/CD is to ensure developments do not stray far from the main branch
+
+# Goal of CI/CD
+## Keep changes close to `main` through frequent integration
 
 - Main
 - New Feature
@@ -898,6 +921,7 @@ backgroundSize: contain
 ---
 
 # Why is CI/CD useful?
+## Quality, reliability, and faster feedback cycles
 
 - Ensures disparate parts of the code base work together throughout development, preventing integration challenges.
 - Protects against release of broken software.
@@ -913,7 +937,7 @@ backgroundSize: contain
 ---
 
 # Additional CI/CD tools in the workflow
-## Code quality (linter such as ruff, code formatter such as black)
+## Code quality, coverage, documentation, and security checks
 
 - Test coverage check (codecov)
 - Documentation (sphinx, numpydoc)
@@ -921,13 +945,13 @@ backgroundSize: contain
 ---
 
 # Local CI/CD workflows
-## Can run some tools, such as the linter and code formatter, before pushing code to the repository
+## Run checks locally before pushing to the repository
 
 - Can automatically run some actions using pre-commit
 ---
 
 # Running the CI/CD workflow
-## Need a continuous integration tool
+## Selecting a Continuous Integration Platform
 
   - Bitbucket (https://bitbucket.org/product/features/pipelines)
   - Jenkins (https://jenkins.io)
@@ -944,23 +968,25 @@ layout: image-right
 image: /images/lecture-05/t17_from_s22.png
 backgroundSize: contain
 ---
-# GitHub Actions Dashboard
 
+# GitHub Actions Dashboard
+## Viewing workflow runs and statuses
 ---
 layout: image-right
 image: /images/lecture-05/t18_from_s23.png
 backgroundSize: contain
 ---
-# GitHub Actions Workflow Example
 
+# GitHub Actions Workflow Example
+## Reading a basic workflow YAML file
 ---
 layout: center
 class: text-center
 ---
+
 # Lecture 6
 ## Code Quality and Linting
 
-# Code Quality, Code Formatting, and Linting
 ---
 
 # Outline
@@ -973,7 +999,7 @@ class: text-center
 ---
 
 # What is Clean Code?
-## Readable - Code is read more often than it is written. It should be easy to understand.
+## Readable, maintainable code is easier to review and evolve
 
 - Consistent formatting. Should follow PEP 8 standards for Python.
 - Meaningful names - descriptive variable, function, and class names.
@@ -995,6 +1021,7 @@ class: text-center
 ---
 
 # Variable Naming
+## Use descriptive `snake_case` identifiers
 
 - Use descriptive, lowercase names – Variables should be meaningful and easy to understand.
   - ✅ max_users = 100  ❌ mu = 100
@@ -1008,10 +1035,10 @@ class: text-center
   - ✅ _cache = {}   ❌ cache = {} (unless public)
 - Avoid reserved keywords – Prevent conflicts with Python’s built-in functions.
   - ✅ class_name = "Intro to CI"    ❌ class = "Intro to CI" (conflicts with the class keyword)
-
 ---
 
-# Functions Naming
+# Function Naming
+## Choose verb-based, descriptive function names
 
 - Use lowercase with underscores – Improves readability and consistency.
   - ✅ def get_user_data():  ❌ def GetUserData(): (CamelCase is for classes)
@@ -1025,10 +1052,10 @@ class: text-center
   - ✅ def format_report():    ❌ def format(): (overrides Python’s built-in format function)
 - Use double leading underscores only for name-mangling in classes – Rarely needed.
   - ✅ class Example:  def __private_method(self): Double underscore automatically renamed within a class…
-
 ---
 
 # Class Naming
+## Use `PascalCase` nouns for class names
 
 - Use CapWords (PascalCase) – Each word starts with a capital letter, with no underscores.
   - ✅ class DataProcessor:   ❌ class data_processor:
@@ -1045,6 +1072,7 @@ class: text-center
 ---
 
 # Line Formatting
+## Prefer readable line lengths and wrapped signatures
 
 <!-- code:start -->
 ```python
@@ -1066,7 +1094,6 @@ def process_large_dataset_with_very_long_name(
 
 - Lines should not exceed 79 characters
 - Improves readability, especially in side-by-side comparisons.
-
 ---
 
 # Line Formatting
@@ -1096,7 +1123,7 @@ print(x + y)
 ---
 
 # In-line Comments
-## comments should not contradict the code
+## Comments Should Clarify, Not Contradict
 
 - comments should be complete sentences
 - comments should have a space after the # sign with the first word capitalized
@@ -1104,6 +1131,7 @@ print(x + y)
 ---
 
 # Documenting Code
+## Write clear, structured docstrings
 
 <!-- code:start -->
 ```python
@@ -1227,6 +1255,7 @@ for row in iter_valid_rows(records):
 ---
 
 # Linting and Code Formatting
+## Static analysis versus style formatting
 
 - Linting identifies formatting errors that can alter functionality of code and can correct for formatting
   - Indentation errors, unused variables, etc. Enforces PEP 8 standards.
@@ -1242,8 +1271,8 @@ for row in iter_valid_rows(records):
 - Ruff: rust optimized code formatter and linter
 ---
 
-# Black: Automated Code formatting
-## Black is an automated code formatter that is able to automatically format code to PEP8 standards
+# Black: Automated Code Formatting
+## Automatically enforce consistent style with Black
 
 <!-- code:start -->
 ```bash
@@ -1255,7 +1284,7 @@ black --diff .
 ---
 
 # Ruff: Automated Code Linting
-## Identify unused variables and imports for removal.
+## Detect unused imports, variables, and style violations
 
 <!-- code:start -->
 ```bash
@@ -1269,7 +1298,7 @@ ruff check . --fix
 ---
 
 # Configuring Ruff
-## 700 different rules
+## Rule selection and configuration
 
 <!-- code:start -->
 ```toml
@@ -1291,15 +1320,16 @@ ignore = ["D203", "D213"]
 - [https://docs.astral.sh/ruff/configuration/](https://docs.astral.sh/ruff/configuration/)
 ---
 
-# Configuring Ruff in IDE such as VSCODE
+# Configuring Ruff in VS Code and Other IDEs
+## Enable real-time linting in your editor
 
 - Many IDEs such as vscode or pycharm have built in linters that identify smaller coding errors and improve code formatting
 - Possible to install Ruff into vscode
 - Linting is run when files are opened or saved
 ---
 
-# Integrate Ruff or Black into github using pre-commit hooks
-## A good way to format code is when committing code into Github
+# Integrate Ruff and Black with GitHub Pre-Commit Hooks
+## Run formatters and linters automatically at commit time
 
 <!-- code:start -->
 ```yaml
@@ -1322,8 +1352,8 @@ repos:
 - In yaml file: add ruff repo
 ---
 
-# First Run Ruff Locally to identify errors
-## Installing Ruff in your environment using
+# Run Ruff Locally to Identify Errors
+## Install Ruff and run an initial check
 
   - Pip install Ruff
 - Once installed, go to folder where repo is located
@@ -1331,8 +1361,8 @@ repos:
 - Type “ruff check .” In command line
 ---
 
-# Setting up a Pre-commit
-## First Install Pre-commit
+# Setting Up Pre-Commit
+## Install and initialize pre-commit
 
 <!-- code:start -->
 ```bash
@@ -1348,8 +1378,8 @@ pre-commit sample-config > .pre-commit-config.yaml
   - Add the following pre-commit information
 ---
 
-# Editing .pre-commit-config.yaml file
-## Configure .pre-commit-config.yaml file to use ruff
+# Editing `.pre-commit-config.yaml`
+## Configure hooks for Ruff (and optionally Black)
 
 <!-- code:start -->
 ```yaml
@@ -1370,7 +1400,7 @@ repos:
 ---
 
 # Using pre-commit
-## To install pre-commit hooks from configuration yaml file
+## Install and run hooks from configuration
 
 <!-- code:start -->
 ```bash
@@ -1388,8 +1418,9 @@ pre-commit run ruff --all-files
   - We can autofix errors by specifying autofix.
 
 ---
+
 # Conclusions
-## Code formatting and organizing is an important part coding
+## Clean, consistent code improves collaboration
 
 - Code formatters and linters such as ruff can be used to automatically format and detects formatting errors in code
 - Linting can be implemented as a precommit hook and can be part of IDEs such as vscode or pycharm
@@ -1397,13 +1428,13 @@ pre-commit run ruff --all-files
 ---
 
 # Exercise
-## Set up Ruff locally in your environment.
+## Configure local linting and pre-commit checks
 
 - Set up a pre-commit hook to run Ruff and black and install it in pyproject.toml to format calculator codebase.
 ---
 
 # Further Reading
-## Ruff documentation: https://docs.astral.sh/ruff/
+## Key references for linting and formatting
 
 - Black documentation: https://black.readthedocs.io/en/stable/
 - Linting in vscode: https://code.visualstudio.com/docs/python/linting
@@ -1413,24 +1444,28 @@ pre-commit run ruff --all-files
 layout: center
 class: text-center
 ---
+
 # Lecture 7
 ## Unit Testing and TDD
 
+---
+
 # Session Context
+## Instructor and Course Context
 
 - Conor McFadden
 - Continuous Integration with Python Nanocourse 2023
 ---
 
-# Unit Testing overview
-## Importance of unit testing in software development.
+# Unit Testing Overview
+## Why unit tests are essential for reliable code
 
 - Writing effective unit tests using python's testing frameworks.
 - Incorporating test-driven development principles
 ---
 
 # Software Review Overview
-## Verification: Formal proof that a program is correct.
+## Verification, code review, and testing in practice
 
 - Tedious to do by hand, and automated tool support for verification is 	still an active area of research.
 - Code review: Having somebody else carefully read your code, and reason informally about it, can be a good way to uncover bugs. It’s much like having somebody else proofread an essay you have written.
@@ -1442,14 +1477,16 @@ layout: image-right
 image: /images/lecture-07/t04_from_s04.png
 backgroundSize: contain
 ---
+
 # Types of Tests
-## Unit Test: Isolated method, function or component.
+## Unit, integration, and system testing levels
 
 - Integration Test: Combined Unit Tests tested as a group.
 - System (Smoke) Testing: Tests the entire system as a whole to verify that critical functionalities work.
 ---
 
 # Python Testing Frameworks
+## Comparing `unittest`, `pytest`, and `doctest`
 
 - unittest: A testing framework included in the Python standard library. It provides a basic set of tools for writing and executing tests.
 - pytest: A popular and powerful third-party testing framework. It encourages test-driven development (TDD) and provides features like fixtures and parameterized testing.
@@ -1457,7 +1494,7 @@ backgroundSize: contain
 ---
 
 # Writing a Unit Test
-## Arrange: prepare for test, preparing objects, starting or killing services, entering records.
+## Arrange, Act, Assert, and Cleanup
 
 - Act: action that we would like to test, function or process.
 - Assert: checking the result state to see if it matches expectations. Look at output and make judgment
@@ -1469,8 +1506,9 @@ layout: image-right
 image: /images/lecture-07/t07_from_s07.png
 backgroundSize: contain
 ---
-# Running pytest
-## Just type >> pytest in prompt
+
+# Running Pytest
+## Run tests from the command line with `pytest`
 
 - Assert is True, the test passes!
 
@@ -1480,15 +1518,17 @@ layout: image-right
 image: /images/lecture-07/t09_from_s09.png
 backgroundSize: contain
 ---
-# Any “test_” function will be recognized by pytest automatically
 
+# Pytest Test Discovery
+## Pytest discovers functions prefixed with `test_`
 ---
 layout: image-right
 image: /images/lecture-07/t10_from_s10.png
 backgroundSize: contain
 ---
-# Parameterization in tests
-## Test multiple parameters at once using pytest parameterize
+
+# Test Parameterization
+## Test multiple cases with `pytest.mark.parametrize`
 
 
 ---
@@ -1497,8 +1537,8 @@ image: /images/lecture-07/t11_from_s12.png
 backgroundSize: contain
 ---
 
-# Fixtures in pytest
-## A way to set up and clean up things before and after running tests.
+# Fixtures in Pytest
+## Reuse setup and teardown logic across tests
 
 - They help avoid repeating setup code in multiple tests.
 - Why Use Fixtures?
@@ -1511,15 +1551,17 @@ layout: image-right
 image: /images/lecture-07/t12_from_s13.png
 backgroundSize: contain
 ---
-# Fixtures in pytest: Example in PyCalc
 
+# Fixtures in Pytest: Example in PyCalc
+## Using shared setup in `conftest.py`
 ---
 layout: image-right
 image: /images/lecture-07/t13_from_s14.png
 backgroundSize: contain
 ---
+
 # Key Binding Test in PyCalc Exercise
-## conftest.py
+## Shared test fixtures and setup
 
 - test_controller.py
 - Fixtures  conftest.py
@@ -1530,15 +1572,16 @@ layout: image-right
 image: /images/lecture-07/t14_from_s15.png
 backgroundSize: contain
 ---
-# What is yield doing?
-## SETUP: prepare resources
+
+# What Does `yield` Do?
+## Fixture lifecycle: setup, yield, teardown
 
 - YIELD: give it to your tests
 - TEARDOWN: free your resources
 ---
 
 # Unit Testing Best Practices
-## Unit test cases should be independent.
+## Keep tests isolated, clear, and deterministic
 
 - Test only one code or component at a time.
 - Clear and consistent naming conventions.
@@ -1546,17 +1589,19 @@ backgroundSize: contain
 - “Test as you code”  Write you tests while the idea is still fresh.
 ---
 
-# Testing-Driven Development/Deployment
+# Test-Driven Development (TDD)
+## Write tests first to drive implementation
 ---
 
 # Conclusions
+## Key takeaways from unit testing and pytest
 
 - Writing tests are useful for making sure code is functioning properly and removing bugs during development
 - Pytest is a useful framework for setting up tests
 ---
 
 # Exercise
-## Install pytest in environment using pyproject.toml
+## Add test dependencies and write initial unit tests
 
 - pip install –e .[dev] or pip install –e “.[dev]” on Mac
 - Write a unit test to test _calculateResult function in controller.py
@@ -1566,21 +1611,24 @@ backgroundSize: contain
 layout: center
 class: text-center
 ---
+
 # Lecture 8
 ## GitHub Actions
 
 
 ---
-# Let’s create a GitHub workflow
-## You can follow along at https://docs.github.com/en/actions/quickstart
+
+# Creating a GitHub Workflow
+## Follow the official GitHub Actions quickstart
 
 ---
 layout: image-right
 image: /images/lecture-08/t05_from_s06.png
 backgroundSize: contain
 ---
-# Where does the workflow file go?
-## They are stored in your Git repository, under .github/workflows
+
+# Workflow File Location
+## Store workflow files in `.github/workflows`
 
 - Create the .github folder
 - Create the .github/workflows folder
@@ -1591,20 +1639,23 @@ layout: image-right
 image: /images/lecture-08/t06_from_s07.png
 backgroundSize: contain
 ---
-# github-actions-demo.yml
+
+# The `github-actions-demo.yml` Workflow
+## Workflow file structure and key sections
 
 - [https://docs.github.com/en/actions/quickstart](https://docs.github.com/en/actions/quickstart)
-
 ---
 layout: image
 image: /images/lecture-08/t07_from_s08-09.png
 backgroundSize: contain
 ---
-# What are these two lines doing??
+
+# What Do These Two Lines Do?
+## Understanding core workflow declarations
 ---
 
-# `What is ${{ }}?`
-## It’s an expression (see https://docs.github.com/en/actions/learn-github-actions/expressions)
+# What Is `${{ }}`?
+## GitHub expressions evaluate runtime context values
 
 - Expressions evaluate what’s inside them
 - `${{ github.actor }} evaluates to octocat in the example`
@@ -1615,8 +1666,9 @@ layout: image-right
 image: /images/lecture-08/t09_from_s11.png
 backgroundSize: contain
 ---
-# What do these entries do?
-## It triggers the jobs under jobs when code is git pushed to the repository
+
+# What Do These Entries Do?
+## Workflow triggers define when jobs run
 
 - There are other events. For example,this will trigger a job
   - on a git push to the main branch
@@ -1625,7 +1677,7 @@ backgroundSize: contain
 ---
 
 # Defining the jobs
-## What is jobs?
+## Understanding the `jobs` key
 
 <!-- photos:start -->
 <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
@@ -1636,7 +1688,7 @@ backgroundSize: contain
 ---
 
 # Defining the jobs: Key fields
-## `jobs` contains one or more named jobs in the workflow file.
+## A workflow can contain one or more named jobs
 
 - `Explore-GitHub-Actions`: the job name.
 - `runs-on: ubuntu-latest`: run this job on an Ubuntu Linux virtual machine.
@@ -1647,10 +1699,12 @@ layout: image-right
 image: /images/lecture-08/t12_from_s20-21.png
 backgroundSize: contain
 ---
+
 # The full Explore-GitHub-Actions job
+## Combining runner settings, steps, and actions
 ---
 
-# How can we establish a useful set of steps?
+# Building a Useful Sequence of Steps
 ## We can copy commands that work locally into run: operations
 
 - We can find common actions on the GitHub Marketplace: https://github.com/marketplace?type=actions
@@ -1660,40 +1714,45 @@ layout: image-right
 image: /images/lecture-08/t14_from_s23.png
 backgroundSize: contain
 ---
-# GitHub Marketplace
 
+# GitHub Marketplace
+## Finding reusable actions for workflows
 ---
 layout: image-right
 image: /images/lecture-08/t15_from_s24.png
 backgroundSize: contain
 ---
-# Search for Codecov
 
+# Search for Codecov
+## Locating coverage-reporting actions
 ---
 layout: image-right
 image: /images/lecture-08/t16_from_s25.png
 backgroundSize: contain
 ---
-# Click “Use latest version”
 
+# Use the Latest Version
+## Selecting the latest action reference
 ---
 layout: image-right
 image: /images/lecture-08/t17_from_s26.png
 backgroundSize: contain
 ---
-# Copy the action as a step in your job
 
+# Copy the action as a step in your job
+## Adding reusable actions under `steps`
 ---
 layout: image-right
 image: /images/lecture-08/t18_from_s27.png
 backgroundSize: contain
 ---
 
-# There’s an action for everything
+# Actions for Common CI Tasks
+## Reusable actions for testing, docs, and releases
 ---
 
 # Exercise: Add a workflow to automatically run unit tests on git push to your repository
-## Use pytest
+## Implement a workflow that runs `pytest`
 
 - Can you test on multiple versions of Python? Can you test on windows-latest and macos-latest?
 - Hint hint: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
@@ -1702,6 +1761,7 @@ backgroundSize: contain
 layout: center
 class: text-center
 ---
+
 # Lecture 9
 ## Public-Facing Documentation
 
@@ -1710,15 +1770,16 @@ layout: image-right
 image: /images/lecture-09/t01_from_s01.png
 backgroundSize: contain
 ---
-# Public-facing documentation
-## Introduction to Python Software Development on GitHub 2023
+
+# Public-Facing Documentation
+## Principles for clear and maintainable project docs
 
 - Lyda Hill Department of Bioinformatics
 - UT Southwestern Medical Center
 ---
 
 # Why do we care about documentation?
-## It helps us remember how and why we built our software.
+## Documentation supports users, collaborators, and future maintenance
 
 - It helps other people use our software.
 - It helps other people contribute to our software.
@@ -1727,7 +1788,7 @@ backgroundSize: contain
 ---
 
 # Types of documentation
-## Requirements – What does the software do? High level.
+## Requirements, architecture, API, and end-user docs
 
 - Architecture – How do the pieces of the software fit together?
 - Technical – How does each function work? Application programming interface (API) docs.
@@ -1738,19 +1799,23 @@ layout: image-right
 image: /images/lecture-09/t04_from_s04.png
 backgroundSize: contain
 ---
-# Software licenses are an important part of documentation, and should be chosen based on what you want to do with your software
+
+# Software Licenses and Project Documentation
+## Choose a license aligned with your collaboration goals
 
 - [https://choosealicense.com/](https://choosealicense.com/)
-
 ---
 layout: image-right
 image: /images/lecture-09/t05_from_s05.png
 backgroundSize: contain
 ---
-# GPLv3 is the premier copyleft license, but if you want to license your code to a company, you are better off with an MIT license
+
+# GPLv3 and MIT: Practical Trade-Offs
+## Copyleft obligations versus permissive reuse
 ---
 
 # Companies may enforce use of their own preferred licenses
+## Account for institutional and employer policy requirements
 
 - UT Southwestern’s open-source software license is here: https://www.utsouthwestern.edu/about-us/administrative-offices/technology-development/agreements/open-source-release-of-software.html
 - You MUST use this license if you develop software on any UTSW machine or for any UTSW purpose.
@@ -1758,7 +1823,7 @@ backgroundSize: contain
 ---
 
 # Documentation languages
-## Hypertext markup language (HTML) (.html)
+## HTML, Markdown, and reStructuredText basics
 
 - Markdown (.md)
 - reStructuredText (.rst)
@@ -1769,21 +1834,24 @@ layout: image-right
 image: /images/lecture-09/t08_from_s08.png
 backgroundSize: contain
 ---
+
 # Documentation languages are simple languages, close to standard word processing
+## Readable markup for technical writing
 
 - [https://www.markdownguide.org/cheat-sheet/](https://www.markdownguide.org/cheat-sheet/)
 - [https://sphinx-tutorial.readthedocs.io/cheatsheet/](https://sphinx-tutorial.readthedocs.io/cheatsheet/)
-
 ---
 layout: image-right
 image: /images/lecture-09/t09_from_s09.png
 backgroundSize: contain
 ---
+
 # GitHub uses Markdown
+## READMEs, issues, and PRs render Markdown by default
 ---
 
 # Exercise: Write a README.md
-## README.md files serve as an entry point to your entire code base. They should include
+## Essential sections for an effective README
 
   - A brief description of the project
   - Installation instructions
@@ -1798,8 +1866,9 @@ layout: image-right
 image: /images/lecture-09/t11_from_s11.png
 backgroundSize: contain
 ---
+
 # Docstring style examples
-## reStructuredText (Google style)
+## Google-style docstrings with reStructuredText
 
 - Google style
 
@@ -1808,12 +1877,13 @@ layout: image-right
 image: /images/lecture-09/t12_from_s12.png
 backgroundSize: contain
 ---
+
 # Docstring style examples (NumPy)
-## NumPy style
+## NumPy-style docstrings
 ---
 
 # Documentation frameworks
-## Automate documentation of code
+## Tools that generate docs from code and text
 
 - Import the code to generate documentation based on runtime inspection
 - Parse and analyze the code statically (without running it)
@@ -1824,26 +1894,29 @@ layout: image-right
 image: /images/lecture-09/t14_from_s14.png
 backgroundSize: contain
 ---
+
 # Sphinx is the primary documentation framework for Python
+## Generate API and narrative documentation from source
 
 - [https://www.sphinx-doc.org/](https://www.sphinx-doc.org/)
 - Compiles Python docstrings and reStructuredText files to PDFs, HTML
 - Can be modified to use Markdown: https://www.sphinx-doc.org/en/master/usage/markdown.html
-
 ---
 layout: image-right
 image: /images/lecture-09/t15_from_s15-16.png
 backgroundSize: contain
 ---
+
 # An example of a docstring compiled to HTML by Sphinx
+## From docstrings to publishable HTML output
 ---
 
-# Let’s build some documentation for our program
-## Follow along at https://www.sphinx-doc.org/en/master/usage/quickstart.html
+# Building Documentation for the Project
+## Using the Sphinx quickstart workflow
 ---
 
-# First, make sure we have the right dependencies
-## Does anyone know how to install the right sphinx dependencies for documentation?
+# Installing Documentation Dependencies
+## Install documentation dependencies from `pyproject.toml`
 
 - pip install –e .[docs] from within your repository folder(pip install –e ‘.[docs]’ on a Mac)
 - This installs the optional dependencies listed under docs in pyproject.toml
@@ -1853,8 +1926,9 @@ layout: image-right
 image: /images/lecture-09/t18_from_s19-20.png
 backgroundSize: contain
 ---
-# Let’s generate a source folder
-## Create a docs/ folder in your repo.
+
+# Generating the Documentation Source Folder
+## Initialize a `docs/` project with `sphinx-quickstart`
 
 - Run sphinx-quickstart in this folder.
 
@@ -1863,22 +1937,26 @@ layout: image-right
 image: /images/lecture-09/t19_from_s21.png
 backgroundSize: contain
 ---
+
 # Directory structure of documentation folder
+## Understanding `source/`, `_build/`, and configuration files
 ---
 layout: image-right
 image: /images/lecture-09/t20_from_s22.png
 backgroundSize: contain
 ---
-# Now try make html in the docs folder
-## There’s a web page! But nothing on it.
+
+# Build HTML in the `docs` Folder
+## Build output exists before content is configured
 
 ---
 layout: image-right
 image: /images/lecture-09/t21_from_s23.png
 backgroundSize: contain
 ---
-# The toctree defines what we see
-## toctree stands for Table of Contents Tree
+
+# How `toctree` Defines Site Navigation
+## Control site navigation with the `toctree`
 
 - It is empty by default
 - You can add documents by listing them in three
@@ -1888,17 +1966,19 @@ layout: image-right
 image: /images/lecture-09/t22_from_s24-25.png
 backgroundSize: contain
 ---
+
 # Autosummary helps us with the API documentation
+## Automatically generate API reference stubs
 
 - [https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html)
-
 ---
 layout: image-right
 image: /images/lecture-09/t23_from_s26.png
 backgroundSize: contain
 ---
+
 # Templating
-## Sphinx uses Jinja templates (https://jinja.palletsprojects.com/)
+## Customize generated pages with Jinja templates
 
 - These allow us to change the way data is presented on different pages
 - For example, the autosummary module template is located at
@@ -1909,8 +1989,9 @@ layout: image-right
 image: /images/lecture-09/t24_from_s27.png
 backgroundSize: contain
 ---
+
 # Templates enable us to produce a more comprehensive autosummary
-## custom_module.rst: https://github.com/sphinx-doc/sphinx/issues/7912#issue-650871700
+## Reference template for richer module pages
 
 
 ---
@@ -1918,22 +1999,25 @@ layout: image-right
 image: /images/lecture-09/t25_from_s28.png
 backgroundSize: contain
 ---
-# Autosummary output with custom templates
 
+# Autosummary output with custom templates
+## Enhance generated pages with custom Jinja templates
 
 ---
 layout: image-right
 image: /images/lecture-09/t26_from_s29.png
 backgroundSize: contain
 ---
-# Exercises
+
+# Documentation Exercises
+## Hands-on documentation practice
 
 - Write installation.rst and/or quickstart.rst. Compile the new docs to HTML. Verify the compilation worked by opening the docs in your web browser.
 - What happens if you change api.rst to the following? Why?
 ---
 
 # Publishing documentation with GitHub Pages
-## We want to put our compiled HTML files on the internet.
+## Publish compiled documentation automatically
 
 - Ideally, we do this automatically, updating whenever new documentation is written.
 - GitHub actions lets you do this easily with GitHub Pages.
@@ -1944,12 +2028,15 @@ layout: image-right
 image: /images/lecture-09/t28_from_s32.png
 backgroundSize: contain
 ---
+
 # GitHub Pages
+## Host documentation directly from your repository
 
 - [https://pages.github.com/](https://pages.github.com/)
 - Hosts websites directly out of a GitHub repository
 ---
 
 # Exercise: Create a GitHub workflow that builds your docs and deploys it to a GitHub page
+## Automate docs build and deployment with GitHub Actions
 
 - Hint: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
