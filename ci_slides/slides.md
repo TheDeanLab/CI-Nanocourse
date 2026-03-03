@@ -607,10 +607,10 @@ backgroundSize: contain
 # Git Essentials
 ## Event Driven Tests
 
-- Automatically building, testing, and deploying changes to ensure new commits don't break existing functionality and meet quality standards.
-- Often triggered upon generation of a pull request.
-- Actions can be multi-faceted, and include code reformatting, testing, documentation generation, etc.
-- More to follow…
+- Run automated checks when repository events occur (push, pull request, release).
+- Start with fast checks: linting and unit tests.
+- Add project-specific checks: documentation build, coverage, and security scans.
+- In this course, we implement these checks with GitHub Actions in Lecture 8.
 
 ---
 layout: image-right
@@ -852,11 +852,12 @@ class: text-center
 
 ---
 
-# What does CI/CD stand for?
-## Continuous Integration, Delivery, and Deployment
+# What Is CI/CD?
+## CI validates code changes; CD manages release automation
 
-- Continuous Delivery
-- Continuous Deployment
+- Continuous Integration (CI): merge small changes frequently and run automated checks on every push or pull request.
+- Continuous Delivery: keep the default branch releasable at all times.
+- Continuous Deployment: automatically deploy after all quality gates pass.
 
 ---
 layout: image-right
@@ -866,42 +867,48 @@ backgroundSize: contain
 
 # Vocabulary
 ## Core CI/CD Terminology
-- Build – Convert source code files into a standalone software that anyone can run on their machine.
 
-- Test – Evaluate and verify software can do what it is supposed to do.
+- Build: turn source code into an installable or runnable artifact.
+- Test: verify expected behavior automatically.
+- Release: version and publish an artifact for users.
+- Deploy: promote a release to an environment (staging/production).
+- Pipeline: ordered automation steps that enforce quality gates.
 ---
 layout: image-right
 image: /images/lecture-05/t04_from_s04.png
 backgroundSize: contain
 ---
 
-# How do we know this function works?
+# How Do We Know This Function Works?
+## Unit tests catch regressions early
 
-## Unit Tests!
 ```python
 def square(x):
     """Return the square of a number."""
-    return x*x
+    return x * x
 
-def test_square(x):
+def test_square():
     """Ensure the square function works correctly."""
     assert square(2) == 4
     assert square(-3) == 9
 ```
 
-- Different types of tests:
-  - Unit test – A test that verifies the functionality of a specific section of code, such as a function or method, in isolation from the rest of the software.
-  - Integration test – A test that verifies the interactions between different components or modules of the software to ensure they work together as expected.
-  - System test – A test that evaluates the complete and integrated software system to ensure it meets the specified requirements and functions correctly in a real-world environment.
-  - Regression test – A test that ensures that new code changes do not adversely affect existing functionality, often by re-running previously successful tests to confirm they still pass.
+- Run quickly with `pytest -q` locally and in CI.
+- Common test levels:
+  - Unit: isolated behavior in a function/module.
+  - Integration: interaction between components.
+  - System: end-to-end behavior in realistic conditions.
+  - Regression: prevents previously fixed bugs from returning.
 ---
 
-# Build
-## From Source Code to Runnable Artifacts
+# Typical Pipeline Stages
+## From commit to deploy in repeatable steps
 
-- Test – Evaluate and verify software can do what it is supposed to do.
-- Release – A build that is a new or upgraded version of the software.
-- Deploy – Make the software available for use.
+- Lint and format checks (`ruff`, `black --check`)
+- Unit/integration tests (`pytest`)
+- Package build (`python -m build`)
+- Optional checks (coverage, docs, security)
+- Release/deploy only when required checks succeed
 
 ---
 layout: image-right
@@ -912,56 +919,60 @@ backgroundSize: contain
 # Goal of CI/CD
 ## Keep changes close to `main` through frequent integration
 
-- Main
-- New Feature
-- Bugfix
-- v0
-- v1
-- v1.1
+- Prefer short-lived branches and small pull requests.
+- Run checks on every pull request before merge.
+- Block merge when required checks fail.
+- Reduce late merge conflicts and release surprises.
 ---
 
 # Why is CI/CD useful?
 ## Quality, reliability, and faster feedback cycles
 
-- Ensures disparate parts of the code base work together throughout development, preventing integration challenges.
-- Protects against release of broken software.
-- Allows for fast feedback from users and fast fixes from developers.
+- Makes failures visible within minutes, not days.
+- Prevents broken code from reaching shared branches.
+- Improves reproducibility for research code and analysis workflows.
+- Increases confidence when multiple contributors are involved.
 ---
 
-# How do we implement CI/CD in practice?
-## Version control (git)
+# Implementing CI/CD in Practice
+## A minimum viable pipeline for this course
 
-- Automatic testing (pytest)
-- Automatic building (setuptools, pyproject.toml)
-- Automatic deployment (twine, PyPI)
+- Version control with pull requests (`git` + GitHub).
+- Install dependencies from `pyproject.toml`.
+- Run linting and tests (`ruff`, `pytest`) on push and pull request.
+- Require passing checks before merging to `main`.
+- Optional extension: publish docs and releases automatically.
 ---
 
 # Additional CI/CD tools in the workflow
 ## Code quality, coverage, documentation, and security checks
 
-- Test coverage check (codecov)
-- Documentation (sphinx, numpydoc)
-- Security checks (CodeQL)
+- Coverage reporting (`pytest-cov`, Codecov)
+- Documentation build validation (Sphinx)
+- Dependency and static security scanning (Dependabot, CodeQL)
+- Branch protection rules (required checks and review)
 ---
 
 # Local CI/CD workflows
 ## Run checks locally before pushing to the repository
 
-- Can automatically run some actions using pre-commit
+- Use `pre-commit` to run fast checks before each commit.
+- Run the same commands locally that CI will run remotely.
+- This reduces failed pipelines and review delays.
+
+```bash
+pre-commit run --all-files
+ruff check .
+pytest -q
+```
 ---
 
 # Running the CI/CD workflow
 ## Selecting a Continuous Integration Platform
 
-  - Bitbucket (https://bitbucket.org/product/features/pipelines)
-  - Jenkins (https://jenkins.io)
-  - AWS CodePipeline (https://aws.amazon.com/codepipeline)
-  - CircleCI (https://circleci.com)
-  - Azure (https://azure.microsoft.com/)
-  - Gitlab (https://about.gitlab.com/)
-  - GitHub (https://github.com/)
-  - Etc.
-- These tools use a YAML file (or similar) to describe a series of actions that make up a workflow.
+- This course uses GitHub Actions because our repositories live on GitHub.
+- Other platforms include Jenkins, GitLab CI, CircleCI, and cloud-native CI tools.
+- Most CI systems define workflows as YAML files executed by hosted runners.
 
 ---
 layout: image-right
@@ -971,6 +982,10 @@ backgroundSize: contain
 
 # GitHub Actions Dashboard
 ## Viewing workflow runs and statuses
+
+- Check whether a run passed, failed, or was canceled.
+- Open failed jobs to inspect logs and traceback output.
+- Re-run failed jobs after fixing the issue.
 ---
 layout: image-right
 image: /images/lecture-05/t18_from_s23.png
@@ -979,6 +994,10 @@ backgroundSize: contain
 
 # GitHub Actions Workflow Example
 ## Reading a basic workflow YAML file
+
+- Core keys you will see: `name`, `on`, `jobs`, `runs-on`, `steps`.
+- Each job runs in a clean environment unless artifacts/cache are restored.
+- We will build one of these step-by-step in Lecture 8.
 ---
 layout: center
 class: text-center
@@ -1621,6 +1640,10 @@ class: text-center
 # Creating a GitHub Workflow
 ## Follow the official GitHub Actions quickstart
 
+- Goal: run automated checks whenever code is pushed or a PR is opened.
+- Start with one simple workflow, then extend it iteratively.
+- Keep commands in CI aligned with commands you run locally.
+
 ---
 layout: image-right
 image: /images/lecture-08/t05_from_s06.png
@@ -1630,9 +1653,9 @@ backgroundSize: contain
 # Workflow File Location
 ## Store workflow files in `.github/workflows`
 
-- Create the .github folder
-- Create the .github/workflows folder
-- Create github-actions-demo.yml
+- Workflow files must live in `.github/workflows/`.
+- Use descriptive names, for example: `ci.yml`, `tests.yml`, `docs.yml`.
+- One repository can have multiple workflow files.
 
 ---
 layout: image-right
@@ -1644,6 +1667,21 @@ backgroundSize: contain
 ## Workflow file structure and key sections
 
 - [https://docs.github.com/en/actions/quickstart](https://docs.github.com/en/actions/quickstart)
+
+```yaml
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+```
 ---
 layout: image
 image: /images/lecture-08/t07_from_s08-09.png
@@ -1652,14 +1690,19 @@ backgroundSize: contain
 
 # What Do These Two Lines Do?
 ## Understanding core workflow declarations
+
+- `name`: label displayed in the Actions UI.
+- `on`: events that trigger this workflow.
+- Example: `on: [push, pull_request]` catches both direct pushes and PR updates.
 ---
 
 # What Is `${{ }}`?
 ## GitHub expressions evaluate runtime context values
 
-- Expressions evaluate what’s inside them
-- `${{ github.actor }} evaluates to octocat in the example`
-- `${{ github.actor == ”octocat” }} evaluates to true`
+- Expressions are evaluated by Actions at runtime.
+- `${{ github.actor }}` resolves to the username that triggered the run.
+- `${{ github.ref_name }}` resolves to the branch or tag name.
+- Use expressions in `if:`, `env:`, `with:`, and step arguments.
 
 ---
 layout: image-right
@@ -1670,10 +1713,11 @@ backgroundSize: contain
 # What Do These Entries Do?
 ## Workflow triggers define when jobs run
 
-- There are other events. For example,this will trigger a job
-  - on a git push to the main branch
-  - when a Pull Request is opened
-  - if we hit ”Run workflow” in the Actionsdashboard
+- Common trigger patterns:
+  - push to specific branches (e.g., `main`)
+  - pull request opened/synchronized
+  - manual execution with `workflow_dispatch`
+- Use branch filters to avoid unnecessary runs.
 ---
 
 # Defining the jobs
@@ -1685,14 +1729,19 @@ backgroundSize: contain
 </div>
 <!-- photos:end -->
 
+- Each job has an ID (for example `test`, `lint`, `docs`).
+- Jobs can run in parallel unless dependencies are declared with `needs:`.
+- Keep job responsibilities narrow for clearer failures.
+
 ---
 
 # Defining the jobs: Key fields
 ## A workflow can contain one or more named jobs
 
-- `Explore-GitHub-Actions`: the job name.
-- `runs-on: ubuntu-latest`: run this job on an Ubuntu Linux virtual machine.
-- `steps`: ordered actions/commands for that job.
+- `runs-on`: execution environment (for example `ubuntu-latest`).
+- `steps`: ordered units of work inside the job.
+- `uses`: run a reusable action.
+- `run`: execute shell commands directly.
 
 ---
 layout: image-right
@@ -1702,12 +1751,22 @@ backgroundSize: contain
 
 # The full Explore-GitHub-Actions job
 ## Combining runner settings, steps, and actions
+
+- Read from top to bottom: setup, install, validate, report.
+- Every step should have a clear purpose and deterministic output.
+- Fail fast on setup errors to save runner time.
 ---
 
 # Building a Useful Sequence of Steps
 ## We can copy commands that work locally into run: operations
 
-- We can find common actions on the GitHub Marketplace: https://github.com/marketplace?type=actions
+- Good ordering:
+  - checkout repository
+  - setup Python
+  - install dependencies
+  - run lint/tests
+  - upload artifacts or coverage
+- Marketplace actions: https://github.com/marketplace?type=actions
 
 ---
 layout: image-right
@@ -1717,6 +1776,9 @@ backgroundSize: contain
 
 # GitHub Marketplace
 ## Finding reusable actions for workflows
+
+- Prefer well-maintained actions with clear documentation.
+- Check update frequency, issue activity, and publisher trust.
 ---
 layout: image-right
 image: /images/lecture-08/t15_from_s24.png
@@ -1725,6 +1787,9 @@ backgroundSize: contain
 
 # Search for Codecov
 ## Locating coverage-reporting actions
+
+- Add coverage upload only after tests reliably run in CI.
+- Coverage reports are useful for tracking testing gaps over time.
 ---
 layout: image-right
 image: /images/lecture-08/t16_from_s25.png
@@ -1733,6 +1798,9 @@ backgroundSize: contain
 
 # Use the Latest Version
 ## Selecting the latest action reference
+
+- Avoid unpinned `@main`.
+- Prefer stable major tags (for example `@v4`) or pinned SHAs for stricter reproducibility.
 ---
 layout: image-right
 image: /images/lecture-08/t17_from_s26.png
@@ -1741,6 +1809,11 @@ backgroundSize: contain
 
 # Copy the action as a step in your job
 ## Adding reusable actions under `steps`
+
+```yaml
+- name: Upload coverage
+  uses: codecov/codecov-action@v5
+```
 ---
 layout: image-right
 image: /images/lecture-08/t18_from_s27.png
@@ -1749,13 +1822,24 @@ backgroundSize: contain
 
 # Actions for Common CI Tasks
 ## Reusable actions for testing, docs, and releases
+
+- `actions/checkout` for repository checkout
+- `actions/setup-python` for Python runtime
+- `codecov/codecov-action` for coverage reporting
+- `actions/upload-artifact` for logs/build outputs
 ---
 
 # Exercise: Add a workflow to automatically run unit tests on git push to your repository
 ## Implement a workflow that runs `pytest`
 
-- Can you test on multiple versions of Python? Can you test on windows-latest and macos-latest?
-- Hint hint: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+- Minimum requirements:
+  - trigger on `push` and `pull_request`
+  - install dependencies from `pyproject.toml`
+  - run `pytest -q`
+- Stretch goals:
+  - add a Python matrix (for example 3.10, 3.11, 3.12)
+  - test on multiple OS runners (`ubuntu`, `macos`, `windows`)
+- Reference: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 ---
 layout: center
