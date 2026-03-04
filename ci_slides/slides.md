@@ -1243,81 +1243,147 @@ class: text-center
 
 - Techniques to Maintain Clean Code
   - Code formatters and linting
+
 - Utilizing pre-commit hooks to enforce coding standards and maintain code with Github.
+
 - Exercise
+
 ---
 
 # What is Clean Code?
 ## Readable, maintainable code is easier to review and evolve
 
 - Consistent formatting. Should follow PEP 8 standards for Python.
+
 - Meaningful names - descriptive variable, function, and class names.
+
 - Simple. Functions and classes should do one thing only, and do it well.
+
 - Well-documented.
+
 - Type hinted.
+
 - Testable.
+
 ---
 
 # PEP 8 Naming Conventions
 ## Classes - CamelCase (MyClass)
 
-- Variable - snake_case and lowercase (first_name)
-- functions - snake_case and lowercase (quick_sort())
-- Constants - snake_case and uppercase (PI = 3.14159)
-- Modules should have short, snake_case names and all lowercase (numpy)
+- *Variables* - snake_case and lowercase (`first_name`)
+
+- *Functions* - snake_case and lowercase (`quick_sort()`)
+
+- *Constants* - snake_case and uppercase (`PI = 3.14159`)
+
+- Modules should have short, snake_case names and all lowercase (`numpy`)
+
 - Single quotes and double quotes are treated the same (just pick one and be consistent)
-- Triple quotes should always be “””Your text here””” not ‘’’Your text here’’’
+
+- Triple quotes should always be """Your text here""" not '''Your text here'''
+
 ---
 
 # Variable Naming
 ## Use descriptive `snake_case` identifiers
 
-- Use descriptive, lowercase names – Variables should be meaningful and easy to understand.
-  - ✅ max_users = 100  ❌ mu = 100
-- Use underscores for multi-word names (snake case) – Improves readability.
-  - ✅ user_count = 10  ❌ userCount = 10 (CamelCase is for classes, not variables)
-- Avoid single-letter names (except for short loops) – Be explicit.
-  - ✅ temperature_celsius = 25.0  ❌ t = 25.0
-- Constants should be uppercase with underscores – Used for values that don’t change.
-  - ✅ MAX_RETRIES = 5  ❌ maxRetries = 5
-- Private variables start with an underscore – Signals internal use.
-  - ✅ _cache = {}   ❌ cache = {} (unless public)
-- Avoid reserved keywords – Prevent conflicts with Python’s built-in functions.
-  - ✅ class_name = "Intro to CI"    ❌ class = "Intro to CI" (conflicts with the class keyword)
+- Use descriptive, lowercase names – Variables should be meaningful and easy to understand.<br>
+  ✅ `max_users = 100`  
+  ❌ `mu = 100`
+
+- Use underscores for multi-word names (snake case) – Improves readability.<br>
+  ✅ `user_count = 10`  
+  ❌ `userCount = 10` *(CamelCase is for classes, not variables)*
+
+- Avoid single-letter names (except for short loops) – Be explicit.<br>
+  ✅ `temperature_celsius = 25.0`<br>
+  ❌ `t = 25.0` *(Is this Time? Temperature? ... Units?)*
+
+---
+
+# Variable Naming
+## Use descriptive `snake_case` identifiers
+
+- Constants should be uppercase with underscores – Used for values that don’t change.<br>
+  ✅ `MAX_RETRIES = 5`<br>
+  ❌ `maxRetries = 5`
+
+- Private variables start with an underscore – Signals internal use.<br>
+  ✅ `_cache = {}`<br>
+  ❌ `cache = {}` *(unless public)*
+
+- Avoid reserved keywords – Prevent conflicts with Python’s built-in functions.<br>
+  ✅ `class_name = "Intro to CI"`<br>
+  ❌ `class = "Intro to CI"` *(conflicts with the class keyword)*
+
 ---
 
 # Function Naming
 ## Choose verb-based, descriptive function names
 
-- Use lowercase with underscores – Improves readability and consistency.
-  - ✅ def get_user_data():  ❌ def GetUserData(): (CamelCase is for classes)
-- Use descriptive names – Functions should clearly indicate their purpose.
-  - ✅ def calculate_total_price():    ❌ def calc():
-- Use verbs for function names – Functions perform actions, so names should reflect that.
-  - ✅ def fetch_records():    ❌ def records():
-- Use a leading underscore for internal or private functions – Signals intended internal use.
-  - ✅ def _connect_to_db():    ❌ def connect_to_db(): (if meant to be private)
-- Avoid using built-in function names – Prevents accidental overrides.
-  - ✅ def format_report():    ❌ def format(): (overrides Python’s built-in format function)
-- Use double leading underscores only for name-mangling in classes – Rarely needed.
-  - ✅ class Example:  def __private_method(self): Double underscore automatically renamed within a class…
+- Use lowercase with underscores – Improves readability and consistency.<br>
+  ✅ `def get_user_data():`<br>
+  ❌ `def GetUserData():` *(CamelCase is for classes)*
+
+- Use descriptive names – Functions should clearly indicate their purpose.<br>
+  ✅ `def calculate_total_price():`  
+  ❌ `def calc():`
+
+- Use verbs for function names – Functions perform actions, so names should reflect that.<br>
+  ✅ `def fetch_records():`  
+  ❌ `def records():`
+
+---
+
+# Function Naming
+## Choose verb-based, descriptive function names
+
+- Use a leading underscore for internal or private functions – Signals intended internal use.<br>
+  ✅ `def _connect_to_db():`  
+  ❌ `def connect_to_db():` *(if meant to be private)*
+
+- Avoid using built-in function names – Prevents accidental overrides.<br>
+  ✅ `def format_report():`  
+  ❌ `def format():` *(overrides Python’s built-in format function)*
+
+- Use double leading underscores only for name-mangling in classes – Rarely needed.<br>
+  ✅ `class Example:  def __private_method(self):` <br>
+  *Double underscore automatically renamed within a class…*
+
 ---
 
 # Class Naming
 ## Use `PascalCase` nouns for class names
 
-- Use CapWords (PascalCase) – Each word starts with a capital letter, with no underscores.
-  - ✅ class DataProcessor:   ❌ class data_processor:
-- Class names should be nouns or noun phrases – Represents objects or entities.
-  - ✅ class UserProfile:    ❌ class processUser(): (Functions use verbs, not classes)
-- Avoid abbreviations – Use clear and meaningful names.
-  - ✅ class AuthenticationManager:    ❌ class AuthMgr:
-- Use leading underscores for internal classes – Signals that the class is for internal use only.
-  - ✅ class _InternalHelper:    ❌ class InternalHelper: (if not meant for external use)
-- Use metaclass naming convention – Append "Meta" if defining a metaclass.
-  - ✅ class CustomMeta(type):    ❌ class CustomMetaclass:
-- Exception classes should end with `Error` – Makes it clear they are exceptions.
-  - ✅ class ValidationError(Exception):    ❌ class ValidationIssue:
+- Use CapWords (PascalCase) – Each word starts with a capital letter, with no underscores.<br>
+  ✅ `class DataProcessor:`<br>
+  ❌ `class data_processor:`
+
+- Class names should be nouns or noun phrases – Represents objects or entities.<br>
+  ✅ `class UserProfile:`<br>
+  ❌ `class processUser():` *(Functions use verbs, not classes)*
+
+- Avoid abbreviations – Use clear and meaningful names.<br>
+  ✅ `class AuthenticationManager:`<br>
+  ❌ `class AuthMgr:`
+
+---
+
+# Class Naming
+## Use `PascalCase` nouns for class names
+
+- Use leading underscores for internal classes – Signals that the class is for internal use only.<br>
+  ✅ `class _InternalHelper:` <br>
+  ❌ `class InternalHelper:` *(if not meant for external use)*
+
+- Use metaclass naming convention – Append "Meta" if defining a metaclass.<br>
+  ✅ `class CustomMeta(type):` <br>
+  ❌ `class CustomMetaclass:`
+
+- Exception classes should end with `Error` – Makes it clear they are exceptions.<br>
+  ✅ `class ValidationError(Exception):`<br>
+  ❌ `class ValidationIssue:`
+
 ---
 
 # Line Formatting
@@ -1374,15 +1440,19 @@ print(x + y)
 # In-line Comments
 ## Comments Should Clarify, Not Contradict
 
-- comments should be complete sentences
-- comments should have a space after the # sign with the first word capitalized
-- don’t litter commented code throughout your software.
+- Comments should be complete sentences.
+
+- Comments should have a space after the # sign with the first word capitalized.
+
+- Don’t litter commented code throughout your software.
+
 ---
 
 # Documenting Code
-## Write clear, structured docstrings
+## Write clear, structured docstrings:
+<br>
+<div style="max-height: 400px; overflow-y: auto;">
 
-<!-- code:start -->
 ```python
 def divide(a: float, b: float) -> float:
     """
@@ -1409,34 +1479,22 @@ def divide(a: float, b: float) -> float:
         raise ZeroDivisionError("Cannot divide by zero.")
     return a / b
 ```
-<!-- code:end -->
 
-- def divide(a, b):
-- """
-- Divides two numbers.
-- Parameters
-- ----------
-- a : float
-- Numerator.
-- b : float
-- Denominator.
-- Returns
-- -------
-- float
-- Result of division.
-- Raises
-- ------
-- ZeroDivisionError
-- If b is zero.
+</div>
+
 ---
 
 # Coding Principles
 ## Don’t Repeat Yourself
 
 - Keep it Simple
+
 - Separation of Concerns
+
 - Split classes into multiple subclasses, inheritances, abstractions, interfaces.
+
 - SOLID Principles of Coding: (https://www.pentalog.com/blog/it-development-technology/solid-principles-object-oriented-programming/)
+
 ---
 
 # Methods to Improve Code Formatting
@@ -1463,7 +1521,9 @@ def load_dataset(path):
 <!-- code:end -->
 
 - Define inner function inside function to call instead of defining inner function in each function call
+
 - Improves modularity
+
 ---
 
 # Methods to Improve Code Formatting
@@ -1481,7 +1541,9 @@ with config_path.open("r", encoding="utf-8") as f:
 <!-- code:end -->
 
 - Manage how to interact with external databases and files.
+
 - Automatically opens and closes files, avoiding complications when errors occur.
+
 ---
 
 # Methods to Improve Code Formatting
@@ -1501,6 +1563,7 @@ for row in iter_valid_rows(records):
 <!-- code:end -->
 
 - Use functions to iterate through variables
+
 ---
 
 # Linting and Code Formatting
@@ -1508,16 +1571,23 @@ for row in iter_valid_rows(records):
 
 - Linting identifies formatting errors that can alter functionality of code and can correct for formatting
   - Indentation errors, unused variables, etc. Enforces PEP 8 standards.
+
 - Code formatting changes stylistic appearance of code
+
 - Linting is distinct from formatting because linting analyzes how the code runs and detects errors whereas formatting only restructures how code appears.
+
 ---
 
 # Automated Linting and Code Formatting
-## Pylint: Python Code Linter
 
-- Flake8: Python Code Linter to identify style differences in code
-- Black: code formatter
-- Ruff: rust optimized code formatter and linter
+- **Pylint:** Basic Python Code Linter
+
+- **Flake8:** Python Code Linter to identify style differences in code
+
+- **Black:** "Uncompromising and opinionated" PEP 8 compliant code formatter
+
+- **Ruff:** Extremely fast, Rust-based code formatter and linter
+
 ---
 
 # Black: Automated Code Formatting
@@ -1530,7 +1600,10 @@ black --check .
 black --diff .
 ```
 <!-- code:end -->
----
+
+<br>
+<hr>
+<br>
 
 # Ruff: Automated Code Linting
 ## Detect unused imports, variables, and style violations
@@ -1543,7 +1616,9 @@ ruff check . --fix
 <!-- code:end -->
 
 - Style guides for code and whitespace organization
+
 - 700 different rules
+
 ---
 
 # Configuring Ruff
@@ -1561,20 +1636,29 @@ ignore = ["D203", "D213"]
 ```
 <!-- code:end -->
 
-  - Naming
-  - Pydocstyles
-  - Pyupgrade
-  - Flake8 rules
+- Naming
+
+- Pydocstyles
+
+- Pyupgrade
+
+- Flake8 rules
+
 - Rules can be configured to specific styles or ignored to match the needs of your project
+
 - [https://docs.astral.sh/ruff/configuration/](https://docs.astral.sh/ruff/configuration/)
+
 ---
 
 # Configuring Ruff in VS Code and Other IDEs
 ## Enable real-time linting in your editor
 
-- Many IDEs such as vscode or pycharm have built in linters that identify smaller coding errors and improve code formatting
-- Possible to install Ruff into vscode
+- Many IDEs such as **VSCode** or **PyCharm** have built in linters that identify smaller coding errors and improve code formatting
+
+- Possible to install Ruff into **VSCode**
+
 - Linting is run when files are opened or saved
+
 ---
 
 # Integrate Ruff and Black with GitHub Pre-Commit Hooks
@@ -1596,18 +1680,24 @@ repos:
 <!-- code:end -->
 
 - Linters and formatters such as Ruff and Black can be integrated into Github
-- Install pre-commit in conda environment using pip install pre-commit or integrate pre-commit dependence in pyproject.toml
-- Add a pre-commit config file called .pre-commit-config.yaml to project
-- In yaml file: add ruff repo
+
+- Install pre-commit in conda environment using `pip install pre-commit` or integrate pre-commit dependence in pyproject.toml
+
+- Add a pre-commit config file called .pre-commit-config.yaml to project. Add ruff repo in .yaml.
+
 ---
 
 # Run Ruff Locally to Identify Errors
 ## Install Ruff and run an initial check
 
-  - Pip install Ruff
+- `pip install ruff`
+
 - Once installed, go to folder where repo is located
+
 - Go to src folder
+
 - Type “ruff check .” In command line
+
 ---
 
 # Setting Up Pre-Commit
@@ -1620,11 +1710,14 @@ pre-commit sample-config > .pre-commit-config.yaml
 ```
 <!-- code:end -->
 
-  - pip install pre-commit
-  - Add dependency in pyproject.toml (it should already be added)
-- create .pre-commit-config.yaml file and add to repo
-- In .pre-commit-config.yaml file
-  - Add the following pre-commit information
+- `pip install pre-commit`
+
+- Add dependency in *pyproject.toml* (it should already be added)
+
+- create *.pre-commit-config.yaml* file and add to repo
+
+- In *.pre-commit-config.yaml* file: add the following pre-commit information
+
 ---
 
 # Editing `.pre-commit-config.yaml`
