@@ -144,64 +144,79 @@ When a workflow is triggered, you can view its progress and results in the GitHu
 
 ---
 
-+# Activity: Add `pre-commit` + `ruff`
-+## Automatic linting before every commit
-+
-+- **Goal:** Developers catch style/quality issues *before* pushing (and before CI).
-+
-+- **1) Add an optional dependency group in `pyproject.toml`**
-+
-+Add a dev group (name can be `dev`, `lint`, or `tools`):
-+
-+```toml
-+[project.optional-dependencies]
-+dev = [
-+  "pre-commit",
-+  "ruff",
-+]
-+```
-+
-+*(If you already have optional groups, just append `pre-commit` + `ruff`.)*
-+
-+- **2) Install the tools**
-+
-+If you’re using pip:
-+
-+```bash
-+python -m pip install -e ".[dev]"
-+```
-+
-+Or if you’re not using editable installs:
-+
-+```bash
-+python -m pip install ".[dev]"
-+```
-+
-+- **3) Create `.pre-commit-config.yaml`**
-+
-+```yaml
-+repos:
-+  - repo: https://github.com/astral-sh/ruff-pre-commit
-+    rev: v0.9.0
-+    hooks:
-+      - id: ruff
-+        args: [--fix]
-+      - id: ruff-format
-+```
-+
-+- **4) Install and run pre-commit**
-+
-+```bash
-+pre-commit install
-+pre-commit run --all-files
-+```
-+
-+- **5) Verify it’s working**
-+  - Make a tiny formatting error in a `.py` file.
-+  - Try committing → confirm pre-commit blocks the commit until it’s fixed.
-+
-+- **Stretch goals**
-+  - Add `--show-fixes` or `--diff`.
-+  - Add more hooks (whitespace, trailing commas, check-yaml).
-+
+# Activity: Add `pre-commit` + `ruff`
+## Automatic linting before every commit
+
+- **Goal:** Developers catch style/quality issues *before* pushing (and before CI).
+
+- **1) Add an optional dependency group in `pyproject.toml`**
+
+Add a dev group (name can be `dev`, `lint`, or `tools`):
+
+```toml
+[project.optional-dependencies]
+dev = [
+  "pre-commit",
+  "ruff",
+]
+```
+
+*(If you already have optional groups, just append `pre-commit` + `ruff`.)*
+
 ---
+
+# Activity: Add `pre-commit` + `ruff`
+## Automatic linting before every commit
+
+- **2) Install the tools**
+
+If you’re using pip:
+
+```bash
+python -m pip install -e ".[dev]"
+```
+
+Or if you’re not using editable installs:
+
+```bash
+python -m pip install ".[dev]"
+```
+
+---
+
+# Activity: Add `pre-commit` + `ruff`
+## Automatic linting before every commit
+
+- **3) Create `.pre-commit-config.yaml`**
+
+```yaml
+repos:
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+  rev: v0.15.4
+  hooks:
+    # Run the linter.
+    - id: ruff-check
+    # Run the formatter.
+    - id: ruff-format
+```
+
+- **4) Install and run pre-commit**
+
+```bash
+pre-commit install
+pre-commit run --all-files
+```
+
+---
+
+# Activity: Add `pre-commit` + `ruff`
+## Automatic linting before every commit
+
+- **5) Verify it’s working**
+  - Make a tiny formatting error in a `.py` file.
+  - Try committing → confirm pre-commit blocks the commit until it’s fixed.
+
+- **Stretch goals**
+  - Add `--show-fixes` or `--diff`.
+  - Add more hooks (whitespace, trailing commas, check-yaml).
