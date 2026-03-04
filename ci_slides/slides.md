@@ -1245,3 +1245,63 @@ backgroundSize: contain
 ## Automate docs build and deployment with GitHub Actions
 
 - Hint: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
+
+
+
+
+
+#  Unit Tests
+#### How Do We Know This Function Works?
+
+```python
+def square(x):
+    """Return the square of a number."""
+    return x * x
+```
+
+#### You Write Tests
+```python
+def test_square():
+    """Ensure the square function works correctly."""
+    assert square(2) == 4
+    assert square(-3) == 9
+    assert square(0) == 0
+```
+
+---
+
+# Python Testing Frameworks
+## 
+
+**`unittest` (built-in)**
+  - ✅ Standard library, no extra dependency.
+  - ✅ Class-based test organization (`TestCase`), good for large suites.
+  - ✅ Comes with useful tools like `mock`.
+  - ❌ More boilerplate (classes, `self.assert...` methods).
+  - ❌ Less ergonomic parametrization/fixtures (though possible).
+
+**`pytest` (third-party)**
+  - ✅ Minimal boilerplate: plain `assert` and simple test functions.
+  - ✅ Powerful **fixtures** and **parametrization**.
+  - ✅ Great plugin ecosystem (`pytest-cov`, `pytest-xdist`, etc.).
+  - ❌ External dependency (needs installing/pinning).
+  - ❌ More “magic” (auto-discovery, fixture injection) to learn at first.
+
+---
+
+# Python Testing Frameworks
+## `pytest` vs `unittest`
+
+**Rule of thumb**
+  - Use **`pytest`** for most new projects (clean syntax + great CI experience).
+  - Use **`unittest`** when you need pure-stdlib or you’re extending an existing `unittest` suite.
+
+
+**Common test levels**
+  - *Unit:* isolated behavior in a function/module.
+  - *Integration:* interaction between components.
+  - *System:* end-to-end behavior in realistic conditions.
+  - *Regression:* prevents previously fixed bugs from returning.
+
+
