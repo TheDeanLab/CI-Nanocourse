@@ -27,3 +27,8 @@ Why this exists:
 - Verify there is one blank line between closing frontmatter `---` and the first heading (`# ...`).
 - Keep one `#` title and one `##` subtitle per slide.
 - Preserve existing slide metadata keys (`layout`, `image`, `backgroundSize`, etc.).
+
+## Text Density Limits
+- Full-width text slides: keep total text to about 700 characters maximum.
+- Half-width text slides (for example `layout: image-right`): keep total text to about 350 characters maximum.
+- If a concept needs more text than the limit, split it across two slides.
