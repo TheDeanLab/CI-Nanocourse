@@ -70,7 +70,7 @@ backgroundSize: contain
 ---
 
 # Github Essentials
-## Issue Creation: Helpful Additions
+## Issue Creation
 
 - Add screenshots or recordings when useful.
 

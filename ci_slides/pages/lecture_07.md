@@ -25,6 +25,19 @@ class: text-center
 
 ---
 
+# What is Clean Code?
+## Maintaining Structure as Projects Scale
+
+- Organizing code in Python is crucial for maintainability, scalability, and clarity.
+
+  - **Modularity:** Divide your code into modules and packages, each with a specific responsibility.
+  
+  - **Naming Conventions:** Use clear and descriptive naming conventions. For example:  `data_source.py`, `file_management.py`, `data_visualization.py`.
+  
+  - **Code Reusability:** Abstract out common functionalities into utility functions or base classes to avoid repetition and enhance reusability.
+
+---
+
 # PEP 8 Naming Conventions
 ## Classes - CamelCase (MyClass)
 
