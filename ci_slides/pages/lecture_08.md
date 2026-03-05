@@ -137,102 +137,120 @@ backgroundSize: contain
 
 ---
 
-# Fixtures in Pytest: Example in PyCalc
+# Fixtures in Pytest
 ## Using shared setup in `conftest.py`
 
-<img
-  src="/images/lecture-07/t12_from_s13.png"
-  style="max-width: 100%; max-height: 65vh; display: block; margin: 1rem auto; object-fit: contain;"
-/>
+- `conftest.py` is a special pytest file where you define **shared fixtures** for a folder (and its subfolders).
+- Tests can use fixtures by **naming them as function arguments** (pytest injects them automatically).
+- Use fixtures for: common objects, temp files/dirs, test data, or expensive setup.
+- Keep fixtures small and focused—one responsibility each.
 
-
----
-layout: image-right
-image: /images/lecture-07/t13_from_s14.png
-backgroundSize: contain
----
-
-# Key Binding Test in PyCalc Exercise
-## Shared test fixtures and setup
-
-- `test_controller.py`
-- Fixtures `conftest.py`
-- Yield keyword to free resources after test.
-
----
-layout: image-right
-image: /images/lecture-07/t14_from_s15.png
-backgroundSize: contain
----
-
-# What Does `yield` Do?
-## Fixture lifecycle: setup, yield, teardown
-
-- YIELD: give it to your tests
-- TEARDOWN: free your resources
----
-
-# Unit Testing Best Practices
-## Keep tests isolated, clear, and deterministic
-
-- Test only one code or component at a time.
-- Clear and consistent naming conventions.
-- Fix bugs before moving on!
-- “Test as you code”  Write you tests while the idea is still fresh.
----
-
-# Test-Driven Development (TDD)
-## Write tests first to drive implementation
-
----
-
-# Conclusions
-## Key takeaways from unit testing and pytest
-
-- Writing tests are useful for making sure code is functioning properly and removing bugs during development
-- Pytest is a useful framework for setting up tests
----
-
-# Final Activity: Write a function + a unit test
-## Mirror `src/` in `tests/`, then run `pytest`
-
-- **Goal:** Practice the full loop: implement → test → run.
-
-- **1) Create a small function in `src/`**
-  - Create `src/<package_name>/math_utils.py`:
-
-```python
-def add(a: float, b: float) -> float:
-    """Return the sum of two numbers."""
-    return a + b
-```
+Example structure:
 
 ```text
-def add(a: float, b: float) -> float:
-    """Return the sum of two numbers."""
-    return a + b
+tests/
+  conftest.py
+  test_math_utils.py
 ```
 
-- **2) Mirror the path in `tests/` and write a test**
-  - Create `tests/<package_name>/test_math_utils.py`:
+
+---
+
+# Fixtures in Pytest
+## Using shared setup in `conftest.py`
+
+`tests/conftest.py`:
+```text
+import pytest
+
+
+@pytest.fixture
+def sample_numbers() -> tuple[int, int]:
+    return (2, 3)
+```
+
+`tests/test_math_utils.py`:
+```text
+def test_add_uses_fixture(sample_numbers):
+    a, b = sample_numbers
+    assert a + b == 5
+```
+
+***Tip:** You don’t import fixtures into tests—pytest discovers them automatically from `conftest.py`.*
+
+---
+
+# Activity: Build a tiny test suite
+## Add `src/` code + `tests/` with a fixture, then run `pytest`
+
+- **Goal:** Build a clean, repeatable testing setup you can reuse in any repo.
+
+- **1) Create a tiny module (production code)**
+  - Create `src/<package_name>/stats.py`:
 
 ```text
-from <package_name>.math_utils import add
-
-
-def test_add() -> None:
-    assert add(2, 3) == 5
-    assert add(-1, 1) == 0
+def mean(values: list[float]) -> float:
+    if len(values) == 0:
+        raise ValueError("values must not be empty")
+    return sum(values) / len(values)
 ```
 
-- **3) Run the tests**
+- **2) Set up the tests folder (mirrors `src/`)**
+  - Create this structure:
+
+```text
+tests/
+  conftest.py
+  <package_name>/
+    test_stats.py
+```
+
+---
+
+# Activity: Build a tiny test suite
+## Add `src/` code + `tests/` with a fixture, then run `pytest`
+
+- **3) Write a fixture in `tests/conftest.py`**
+
+```text
+import pytest
+
+@pytest.fixture
+def sample_values() -> list[float]:
+    return [1.0, 2.0, 3.0]
+```
+
+- **4) Write tests that use the fixture**
+  - Create `tests/<package_name>/test_stats.py`:
+
+```text
+import pytest
+from <package_name>.stats import mean
+
+def test_mean_happy_path(sample_values):
+    assert mean(sample_values) == 2.0
+
+
+def test_mean_empty_raises():
+    with pytest.raises(ValueError):
+        mean([])
+```
+
+---
+
+# Activity: Build a tiny test suite
+## Add `src/` code + `tests/` with a fixture, then run `pytest`
+
+- **5) Run pytest and interpret results**
 
 ```bash
 pytest -q
+pytest -q -x
+pytest -q -k mean
 ```
 
-- **4) Stretch goals**
-  - Add a parameterized version of the test with `@pytest.mark.parametrize`.
-  - Add a failing case intentionally, see it fail, then fix it.
+- **Stretch goals**
+  - Parameterize `test_mean_happy_path` with 3 datasets.
+  - Add one intentionally failing assertion, see the failure output, then fix it.
 
----
+***Definition of done:** your repo has `src/…`, `tests/…`, a fixture in `conftest.py`, and `pytest -q` passes.*

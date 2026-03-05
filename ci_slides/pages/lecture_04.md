@@ -132,17 +132,11 @@ backgroundSize: contain
 ## Pull Request (PR) Workflow
 
 - Create a branch from `main` (often linked to an Issue).
-
 - Make small commits; reference the issue in commits/PR (`Fixes #123`).
-
-- Open a PR early (use **Draft PR** if it’s not ready).
-
+- Open a PR early (**Draft PR** if it’s not ready).
 - Request review; respond to feedback with additional commits.
-
 - Keep the PR up to date (resolve conflicts, re-run checks).
-
 - Merge (squash/merge/rebase) and delete the branch.
-
 - Confirm the issue is closed and the change is deployed/released if needed.
 
 --- 
