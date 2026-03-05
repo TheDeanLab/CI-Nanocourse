@@ -55,20 +55,22 @@ class: text-center
 
 ---
 
-# Variable Naming
-## Use descriptive `snake_case` identifiers
+# Variable Naming (What Actually Matters)
+## Make names searchable and unambiguous
 
-- Constants should be uppercase with underscores – Used for values that don’t change.<br>
-  ✅ `MAX_RETRIES = 5`<br>
-  ❌ `maxRetries = 5`
+- Use **descriptive `snake_case`**: `user_count`, `max_retries`, `temperature_celsius`.
 
-- Private variables start with an underscore – Signals internal use.<br>
-  ✅ `_cache = {}`<br>
-  ❌ `cache = {}` *(unless public)*
+- Prefer **explicit units / types** when helpful: `timeout_seconds`, `dataframe`, `user_id`.
 
-- Avoid reserved keywords – Prevent conflicts with Python’s built-in functions.<br>
-  ✅ `class_name = "Intro to CI"`<br>
-  ❌ `class = "Intro to CI"` *(conflicts with the class keyword)*
+- Constants are **UPPER_SNAKE_CASE**: `MAX_RETRIES`.
+
+- Private/internal: leading underscore: `_cache`.
+
+- Avoid ambiguous abbreviations and built-ins (`list`, `dict`, `id`, `class`).
+
+Examples:
+  - ✅ `timeout_seconds = 10`  
+  - ❌ `t = 10`
 
 ---
 
@@ -89,20 +91,20 @@ class: text-center
 
 ---
 
-# Function Naming
-## Choose verb-based, descriptive function names
+# Function Naming (High Impact)
+## Verbs + clarity beats cleverness
 
-- Use a leading underscore for internal or private functions – Signals intended internal use.<br>
-  ✅ `def _connect_to_db():`  
-  ❌ `def connect_to_db():` *(if meant to be private)*
+- Name functions as **verbs** that describe the action: `load_`, `parse_`, `compute_`, `validate_`, `save_`.
 
-- Avoid using built-in function names – Prevents accidental overrides.<br>
-  ✅ `def format_report():`  
-  ❌ `def format():` *(overrides Python’s built-in format function)*
+- If it returns a boolean, use **`is_` / `has_`**: `is_valid_email()`, `has_permission()`.
 
-- Use double leading underscores only for name-mangling in classes – Rarely needed.<br>
-  ✅ `class Example:  def __private_method(self):` <br>
-  *Double underscore automatically renamed within a class…*
+- Keep names consistent with your domain: `calculate_total()` not `do_math()`.
+
+- Internal helpers: leading underscore: `_parse_header()`.
+
+Examples:
+  - ✅ `def parse_csv(text: str) -> list[str]: ...`
+  - ❌ `def parse(text): ...`
 
 ---
 
@@ -123,20 +125,18 @@ class: text-center
 
 ---
 
-# Class Naming
-## Use `PascalCase` nouns for class names
+# Class Naming (High Impact)
+## Nouns, PascalCase, and predictable Exceptions
 
-- Use leading underscores for internal classes – Signals that the class is for internal use only.<br>
-  ✅ `class _InternalHelper:` <br>
-  ❌ `class InternalHelper:` *(if not meant for external use)*
+- Use **PascalCase nouns**: `UserRepository`, `ReportBuilder`, `DataProcessor`.
 
-- Use metaclass naming convention – Append "Meta" if defining a metaclass.<br>
-  ✅ `class CustomMeta(type):` <br>
-  ❌ `class CustomMetaclass:`
+- Exceptions end in **`Error`**: `ConfigError`, `ValidationError`.
 
-- Exception classes should end with `Error` – Makes it clear they are exceptions.<br>
-  ✅ `class ValidationError(Exception):`<br>
-  ❌ `class ValidationIssue:`
+- Avoid vague “Manager/Helper/Util” unless it’s truly the best domain name.
+
+Examples:
+  - ✅ `class CsvParser:`
+  - ❌ `class ParserThing:`
 
 ---
 
