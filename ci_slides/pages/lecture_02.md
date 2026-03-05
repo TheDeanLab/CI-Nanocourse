@@ -39,7 +39,7 @@ class: text-center
 ---
 
 # Advanced Environment Management
-## Activity #2
+## Activity
 
 ### 1. Install **[Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install)**
 
@@ -80,7 +80,7 @@ backgroundSize: contain
 ---
 
 # Advanced Environment Management
-## Activity #3
+## Activity
 
 - Create an Anaconda environment named `ci_nanocourse` with Python 3.9.7 or newer.
 
@@ -209,7 +209,7 @@ backgroundSize: contain
 ---
 
 # Advanced Environment Management
-## Activity #4
+## Activity
 
 - Make sure `ci_nanocourse` (or whatever you called it) is *activated*
 
@@ -236,7 +236,7 @@ backgroundSize: contain
 
 ---
 # Advanced Environment Management
-## Activity #5
+## Activity
 
 - Add Seaborn to your `pyproject.toml` file - **https://pypi.org/project/seaborn/**
 

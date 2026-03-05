@@ -237,7 +237,7 @@ backgroundSize: contain
 ---
 
 # Basic Git Workflows
-## Activity #1
+## Activity
 
 - Create a GitHub account
 

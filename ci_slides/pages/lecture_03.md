@@ -1,4 +1,3 @@
-
 ---
 layout: center
 class: text-center
@@ -204,28 +203,57 @@ backgroundSize: contain
 
 ---
 
+# Git Essentials
+## Activity
+
+Pair up with someone next to you. You’ll create **one shared repo** and both contribute to it.
+
+- **1) Create the shared repository (one partner does this)**
+  - Create a new GitHub repository (public or private is fine).
+  - Add a short description.
+  - *Initialize with a README* (recommended).
+  - Add your partner as a **Collaborator** (Settings → Collaborators).
+
 ---
 
 # Git Essentials
-## Activity #6
+## Activity
 
-- Make your own repo on GitHub and clone it locally.
-
-- Create a `pyproject.toml` file.
+- **2) Both partners clone to their own laptop**
+  - Confirm you both can run:
 
 ```bash
+git clone <repo_url>
+cd <repo_name>
+git status
+```
+
+- **3) Agree on a collaboration rule (important)**
+  - Use feature branches + PRs for changes.
+  - Use clear commit messages.
+
+---
+
+# Git Essentials
+## Activity
+
+- **4) Add a minimal Python project skeleton**
+
+Using Github Desktop, create a new branch for this work (e.g., `add-pyproject`). Then Partner A can create a minimal `pyproject.toml` file with basic project metadata. 
+
+```toml
 [project]
 name = "ci-nanocourse-demo"
 version = "0.1.0"
 description = "Demo project for CI nanocourse"
-authors = [{name = "Your Name"}]
+authors = [{name = "Partner A + Partner B"}]
 requires-python = ">=3.9"
 dependencies = []
 ```
 
-- Push the file to GitHub.
-```bash
-git add pyproject.toml
-git commit -m "Add project metadata"
-git push
-```
+Using Github Desktop, create a commit, push the code, and open a PR. Partner A can request a review from Partner B.
+
+Partner B: open the PR on GitHub, review it, and merge it.
+
+- **5) Pull and verify you’re in sync**
+

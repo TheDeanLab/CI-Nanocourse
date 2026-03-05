@@ -99,7 +99,7 @@ backgroundSize: contain
 ---
 
 # Code Organizational Strategies
-## Activity #7
+## Activity
 
 You’re going to take a “messy” repository and make it look like a professional Python project.
 
@@ -117,7 +117,7 @@ You’re going to take a “messy” repository and make it look like a professi
 ---
 
 # Code Organizational Strategies
-## Activity #7 (cont.)
+## Activity (cont.)
 
 - **3) Add “community health” files**
   - `README.md` (clear install + usage)
@@ -133,7 +133,7 @@ You’re going to take a “messy” repository and make it look like a professi
 ---
 
 # Code Organizational Strategies
-## Activity #7 (cont.)
+## Activity (cont.)
 
 - **5) Open one Issue + one PR**
   - Create an Issue using your new template.

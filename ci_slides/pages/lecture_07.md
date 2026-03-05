@@ -15,11 +15,11 @@ class: text-center
 
 - Meaningful names - descriptive variable, function, and class names.
 
-- Simple. Functions and classes should do one thing only, and do it well.
+- Functions and classes should do one thing only, and do it well.
 
 - Well-documented.
 
-- Type hinted.
+- Type-hinted.
 
 - Testable.
 
