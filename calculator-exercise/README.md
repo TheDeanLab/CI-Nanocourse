@@ -23,8 +23,8 @@ By the end of this activity, students will:
 
 ### **1️⃣ Student 1 Creates the Central GitHub Repository**
 
-- One group member will **Fork** this repository, creating a new Repo on their machine and GitHub account.
-- They will add the **other three group members as collaborators** to the Fork, with write access.
+- Assemble into groups of 4. Each student downloads their (ZIP file)[https://github.com/TheDeanLab/CI-Nanocourse/tree/main/calculator-exercise/Files%20for%20Students] containing a chunk of a full project.
+- Student 1 (creates a Repo)[https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository] for the group called **Calculator Exercise.**
 
 ### **2️⃣ Students 2-3 Clone the Repository Using GitHub Desktop**
 
