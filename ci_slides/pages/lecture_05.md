@@ -110,4 +110,3 @@ def main() -> None:
 
 This should execute the `main()` function in `src/<package_name>/hello.py` and print the message.
 
----

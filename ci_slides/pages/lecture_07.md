@@ -38,23 +38,6 @@ class: text-center
 
 ---
 
-# PEP 8 Naming Conventions
-## Classes - CamelCase (MyClass)
-
-- *Variables* - snake_case and lowercase (`first_name`)
-
-- *Functions* - snake_case and lowercase (`quick_sort()`)
-
-- *Constants* - snake_case and uppercase (`PI = 3.14159`)
-
-- Modules should have short, snake_case names and all lowercase (`numpy`)
-
-- Single quotes and double quotes are treated the same (just pick one and be consistent)
-
-- Triple quotes should always be """Your text here""" not '''Your text here'''
-
----
-
 # Variable Naming
 ## Use descriptive `snake_case` identifiers
 
@@ -217,12 +200,22 @@ print(x + y)
 
 - Don’t litter commented code throughout your software.
 
+```text
+MAX_RETRIES = 10  # Maximum number of retries allowed (obvious)
+
+while retries < MAX_RETRIES:
+    # Attempt to connect to the database (obvious)
+    if connect_to_database():
+        break
+
+    # Add 1 to the retry count (obvious).
+    retries += 1
+
+```
 ---
 
 # Documenting Code
 ## Write clear, structured docstrings:
-<br>
-<div style="max-height: 400px; overflow-y: auto;">
 
 ```python
 def divide(a: float, b: float) -> float:
@@ -246,12 +239,7 @@ def divide(a: float, b: float) -> float:
     ZeroDivisionError
         If `b` is 0.
     """
-    if b == 0:
-        raise ZeroDivisionError("Cannot divide by zero.")
-    return a / b
 ```
-
-</div>
 
 ---
 
@@ -263,8 +251,6 @@ def divide(a: float, b: float) -> float:
 - Separation of Concerns
 
 - Split classes into multiple subclasses, inheritances, abstractions, interfaces.
-
-- SOLID Principles of Coding: (https://www.pentalog.com/blog/it-development-technology/solid-principles-object-oriented-programming/)
 
 ---
 
@@ -321,7 +307,7 @@ with config_path.open("r", encoding="utf-8") as f:
 ## Iterators
 
 <!-- code:start -->
-```python
+```text
 def iter_valid_rows(rows):
     for row in rows:
         if row.get("is_valid"):
@@ -351,33 +337,13 @@ for row in iter_valid_rows(records):
 
 # Automated Linting and Code Formatting
 
-- **Pylint:** Basic Python Code Linter
-
-- **Flake8:** Python Code Linter to identify style differences in code
-
 - **Black:** "Uncompromising and opinionated" PEP 8 compliant code formatter
 
 - **Ruff:** Extremely fast, Rust-based code formatter and linter
 
----
-
-# Black: Automated Code Formatting
-## Automatically enforce consistent style with Black
-
-<!-- code:start -->
-```bash
-black src tests
-black --check .
-black --diff .
-```
-<!-- code:end -->
-
-<br>
-<hr>
 <br>
 
-# Ruff: Automated Code Linting
-## Detect unused imports, variables, and style violations
+### Ruff can be used to detect unused imports, variables, and style violations
 
 <!-- code:start -->
 ```bash
@@ -395,7 +361,6 @@ ruff check . --fix
 # Configuring Ruff
 ## Rule selection and configuration
 
-<!-- code:start -->
 ```toml
 [tool.ruff]
 line-length = 88
@@ -405,150 +370,95 @@ target-version = "py39"
 select = ["E", "F", "I", "UP", "D"]
 ignore = ["D203", "D213"]
 ```
-<!-- code:end -->
-
-- Naming
-
-- Pydocstyles
-
-- Pyupgrade
-
-- Flake8 rules
 
 - Rules can be configured to specific styles or ignored to match the needs of your project
 
-- [https://docs.astral.sh/ruff/configuration/](https://docs.astral.sh/ruff/configuration/)
-
 ---
 
-# Configuring Ruff in VS Code and Other IDEs
-## Enable real-time linting in your editor
+# Activity: Manual Clean-Code Refactor (Pairs)
+## Make unclear code readable (behavior must not change)
 
-- Many IDEs such as **VSCode** or **PyCharm** have built in linters that identify smaller coding errors and improve code formatting
+- Pair up with someone next to you.
+- Decide roles: **Driver** (types) and **Navigator** (reviews). Swap roles halfway.
 
-- Possible to install Ruff into **VSCode**
-
-- Linting is run when files are opened or saved
-
----
-
-# Integrate Ruff and Black with GitHub Pre-Commit Hooks
-## Run formatters and linters automatically at commit time
-
-<!-- code:start -->
-```yaml
-repos:
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.13.0
-    hooks:
-      - id: ruff
-      - id: ruff-format
-  - repo: https://github.com/psf/black
-    rev: 25.1.0
-    hooks:
-      - id: black
+### Before (intentionally messy)
+```python
+def f(a,b,c=False,d=0):
+  # do thing
+  if a==None or a=="":return []
+  r=[];i=0
+  for x in a.split(","):
+    x=x.strip()
+    if x=="":continue
+    if c:
+      x=x.lower()
+    if len(x)<3: continue
+    if d and i>=d: break
+    r.append(x);i+=1
+  return r
 ```
-<!-- code:end -->
-
-- Linters and formatters such as Ruff and Black can be integrated into Github
-
-- Install pre-commit in conda environment using `pip install pre-commit` or integrate pre-commit dependence in pyproject.toml
-
-- Add a pre-commit config file called .pre-commit-config.yaml to project. Add ruff repo in .yaml.
 
 ---
 
-# Run Ruff Locally to Identify Errors
-## Install Ruff and run an initial check
+# Activity: Manual Clean-Code Refactor (Pairs)
+## Make unclear code readable (behavior must not change)
 
-- `pip install ruff`
+### Your refactor constraints
+- Don’t change the outputs.
+- Rename the function and variables to be meaningful.
+- Add type hints and a clear docstring.
+- One statement per line; wrap long lines; consistent spacing.
+- Reduce nested logic where it improves readability.
 
-- Once installed, go to folder where repo is located
+### Quick behavior check (run mentally or in a scratch file)
+- Input: `"A, Bee, see"` with `lowercase=True` → should return 3 cleaned tokens.
+- Input: `"  , a, abc, ABC  "` with `lowercase=True, limit=2` → should stop at 2 tokens.
+- Input: empty string or `None` → should return `[]`.
 
-- Go to src folder
-
-- Type “ruff check .” In command line
+### Deliverable
+- Commit your refactored function as `src/<package_name>/clean_refactor.py`.
+- In the commit message, include *one* sentence describing the most important readability improvement.
 
 ---
 
-# Setting Up Pre-Commit
-## Install and initialize pre-commit
+# Activity: Real-time Ruff Linting (VSCode + PyCharm)
+## Make linting feedback instant while you code
 
-<!-- code:start -->
-```bash
-pip install pre-commit
-pre-commit sample-config > .pre-commit-config.yaml
+- **Goal:** Get live Ruff diagnostics (and optional auto-fixes) in your editor.
+- **VSCode setup (Astral Ruff extension)**
+  - Ruff should already be installed in your environment. If not, install it with `pip install ruff`.
+  - Install the VSCode extension: **“Ruff”** (publisher: *Astral Software*).
+  - Open your repo folder in VSCode.
+  - Make sure VSCode is using the correct Python interpreter (your venv).
+- Optional but recommended settings (User or Workspace `settings.json`):
+
+```json
+{
+  "ruff.enable": true,
+  "ruff.lint.enable": true,
+  "ruff.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  }
+}
 ```
-<!-- code:end -->
 
-- `pip install pre-commit`
+--- 
 
-- Add dependency in *pyproject.toml* (it should already be added)
+# Activity: Real-time Ruff Linting (VSCode + PyCharm)
+## Make linting feedback instant while you code
 
-- create *.pre-commit-config.yaml* file and add to repo
+  - **Verify:** introduce an unused import (e.g., `import os`) and confirm it’s underlined immediately.
 
-- In *.pre-commit-config.yaml* file: add the following pre-commit information
+- **3) PyCharm setup (Ruff plugin)**
+  - Open **Settings/Preferences → Plugins** and install **Ruff**.
+  - Open your repo and ensure the interpreter is your venv:
+    - **Settings/Preferences → Project → Python Interpreter**
+  - If the plugin asks for a Ruff executable, point it at the venv’s `ruff`.
+  - **Verify:** add an unused import and confirm PyCharm shows the warning inline.
 
----
-
-# Editing `.pre-commit-config.yaml`
-## Configure hooks for Ruff (and optionally Black)
-
-<!-- code:start -->
-```yaml
-repos:
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.13.0
-    hooks:
-      - id: ruff
-      - id: ruff-format
-```
-<!-- code:end -->
-
-- Add ruff pre-commit to pre-commit.yaml file to include ruff
-- Find information for other packages for pre-commits here:
-  - [https://pre-commit.com/](https://pre-commit.com/)
-  - [https://pre-commit.com/hooks.html](https://pre-commit.com/hooks.html)
-  - Push yaml file to repo on github
----
-
-# Using pre-commit
-## Install and run hooks from configuration
-
-<!-- code:start -->
-```bash
-pre-commit install
-pre-commit run --all-files
-pre-commit run ruff --all-files
-```
-<!-- code:end -->
-
-  - pre-commit install
-  - This install pre-commit hooks for each upcoming commit
-- To run pre-commit hooks on current files, go to specific directory and run
-  - Pre-commit run --all-files
-- This will identify all errors
-  - We can autofix errors by specifying autofix.
-
----
-
-# Conclusions
-## Clean, consistent code improves collaboration
-
-- Code formatters and linters such as ruff can be used to automatically format and detects formatting errors in code
-- Linting can be implemented as a precommit hook and can be part of IDEs such as vscode or pycharm
-- Clean code will lead to more understandable, reliable, and reproducible code.
----
-
-# Exercise
-## Configure local linting and pre-commit checks
-
-- Set up a pre-commit hook to run Ruff and black and install it in pyproject.toml to format calculator codebase.
----
-
-# Further Reading
-## Key references for linting and formatting
-
-- Black documentation: https://black.readthedocs.io/en/stable/
-- Linting in vscode: https://code.visualstudio.com/docs/python/linting
-- Pre-commit documentation: https://pre-commit.com
+- **4) Stretch goals**
+  - Add a Ruff config in `pyproject.toml` (`[tool.ruff]`) so everyone gets the same rules.
+  - Turn on “format on save” and compare the diff before/after.

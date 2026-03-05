@@ -18,7 +18,7 @@ class: text-center
 - **Continuous Deployment:** Automatically deploy after all quality gates pass.
 
 ## How do I do this?
-- Use a CI/CD platform (GitHub Actions, GitLab CI, etc.) to define workflows that run on repository events.
+- Use GitHub Actions to define workflows that run on repository events. These are saved in `.github/workflows/` as YAML files.
 
 ```yaml
 on:
@@ -168,24 +168,13 @@ dev = [
 # Activity: Add `pre-commit` + `ruff`
 ## Automatic linting before every commit
 
-- **2) Install the tools**
+- **2) Install the tools in your Anaconda environment**
 
 If you’re using pip:
 
 ```bash
-python -m pip install -e ".[dev]"
+pip install -e ".[dev]"
 ```
-
-Or if you’re not using editable installs:
-
-```bash
-python -m pip install ".[dev]"
-```
-
----
-
-# Activity: Add `pre-commit` + `ruff`
-## Automatic linting before every commit
 
 - **3) Create `.pre-commit-config.yaml`**
 
@@ -201,17 +190,18 @@ repos:
     - id: ruff-format
 ```
 
+
+---
+
+# Activity: Add `pre-commit` + `ruff`
+## Automatic linting before every commit
+
 - **4) Install and run pre-commit**
 
 ```bash
 pre-commit install
 pre-commit run --all-files
 ```
-
----
-
-# Activity: Add `pre-commit` + `ruff`
-## Automatic linting before every commit
 
 - **5) Verify it’s working**
   - Make a tiny formatting error in a `.py` file.
