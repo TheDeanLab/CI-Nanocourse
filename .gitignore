@@ -3,3 +3,4 @@
 # Ignore IDE and egg directories recursively
 .idea/
 .egg/
+*.egg-info/

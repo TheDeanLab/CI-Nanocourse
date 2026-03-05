@@ -88,6 +88,10 @@ backgroundSize: contain
 
 - Launch python, and run a basic print statement.
 
+#### NOTE: You can run python in a one-liner using `-c` flag: `python -c "print('hello world')"`
+
+#### Check version using `python --version`
+
 ---
 
 # Environment Management with Anaconda
@@ -207,11 +211,15 @@ backgroundSize: contain
 # Advanced Environment Management
 ## Activity #4
 
+- Make sure `ci_nanocourse` (or whatever you called it) is *activated*
+
 - Evaluate the .txt, .yaml, and .toml files in the repository.
 
-- Install the required dependencies for the CI-Nanocourse repository using the pyproject.toml file.
+- Try to import Numpy: `python -c "import numpy"`... What happens?
 
-- Confirm that the installation is correct and that the dependencies can be imported upon launching python.
+- Install the required dependencies for the CI-Nanocourse repository using the pyproject.toml file. <br> ***Make sure you are in the right directory!***
+
+- Confirm that the installation is correct and that the dependencies can be imported upon launching python. <br> Can you `import numpy` now?
 
 ---
 
