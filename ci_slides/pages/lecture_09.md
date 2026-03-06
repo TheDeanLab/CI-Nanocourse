@@ -86,7 +86,26 @@ jobs:
 ```
 
 ---
-layout: two-cols-header
+
+# Triggering Workflows: `push` vs `pull_request`
+## Why PR checks are usually the default
+
+- `push`: runs when commits are pushed to a branch.
+- `pull_request`: runs when proposed changes are opened or updated in a PR.
+- For CI, **PR checks are the default** because they catch problems **before merge**.
+- A common pattern is:
+  - run on every `pull_request`
+  - also run on `push` to `main` / `develop` after merges land
+
+```yaml
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+```
+ 
+---
+ layout: two-cols-header
 ---
 
 # What Is `${{ }}`?
@@ -200,7 +219,8 @@ jobs:
 ```
 
 ---
-
+layout: two-cols-header
+---
 # Useful Job/Step Fields (Quick Hits)
 ## Keys you will see in most real workflows
 
@@ -294,51 +314,26 @@ Artifact example:
 - Marketplace actions: https://github.com/marketplace?type=actions
 
 ---
-layout: image-right
-image: /images/lecture-08/t14_from_s23.png
-backgroundSize: contain
----
 
-# GitHub Marketplace
-## Finding reusable actions for workflows
+# Finding and Using Marketplace Actions
+## Search, evaluate, pin, and add under `steps`
 
-- Prefer well-maintained actions with clear documentation.
-- Check update frequency, issue activity, and publisher trust.
----
-layout: image-right
-image: /images/lecture-08/t15_from_s24.png
-backgroundSize: contain
----
+- Search the **GitHub Marketplace** for common tasks like coverage upload, docs deploy, or artifact handling.
+- Prefer actions with:
+  - clear documentation
+  - recent updates
+  - trusted publishers / healthy issue activity
+- Avoid unpinned `@main`; prefer a stable major tag like `@v5` or a pinned SHA.
+- Add optional actions only after your core CI (`ruff`, `pytest`) already works.
 
-# Search for Codecov
-## Locating coverage-reporting actions
-
-- Add coverage upload only after tests reliably run in CI.
-- Coverage reports are useful for tracking testing gaps over time.
----
-layout: image-right
-image: /images/lecture-08/t16_from_s25.png
-backgroundSize: contain
----
-
-# Use the Latest Version
-## Selecting the latest action reference
-
-- Avoid unpinned `@main`.
-- Prefer stable major tags (for example `@v4`) or pinned SHAs for stricter reproducibility.
----
-layout: image-right
-image: /images/lecture-08/t17_from_s26.png
-backgroundSize: contain
----
-
-# Copy the action as a step in your job
-## Adding reusable actions under `steps`
-
+Example:
 ```yaml
 - name: Upload coverage
   uses: codecov/codecov-action@v5
 ```
+
+- This step belongs under the job’s `steps:` list.
+
 ---
 layout: image-right
 image: /images/lecture-08/t18_from_s27.png
@@ -352,21 +347,63 @@ backgroundSize: contain
 - `actions/setup-python` for Python runtime
 - `codecov/codecov-action` for coverage reporting
 - `actions/upload-artifact` for logs/build outputs
+- `.../emoji commit` for fun commit messages
+
+Use these to avoid reinventing the wheel and to follow best practices.
+
 ---
 
-# Exercise: Add a workflow to automatically run unit tests on git push to your repository
-## Implement a workflow that runs `pytest`
+# Activity: Build a PR-first pytest workflow
+## Run tests on pull requests and on pushes to `main` / `develop`
 
-- Minimum requirements:
-  - trigger on `push` and `pull_request`
+- **Goal:** Create `.github/workflows/ci.yml` that runs `pytest` for proposed changes and merged code.
+
+- **Workflow requirements:**
+  - trigger on every `pull_request`
+  - trigger on `push` only for `main` and `develop`
+  - set up Python
   - install dependencies from `pyproject.toml`
   - run `pytest -q`
-- Stretch goals:
-  - add a Python matrix (for example 3.10, 3.11, 3.12)
-  - test on multiple OS runners (`ubuntu`, `macos`, `windows`)
-- Reference: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 ---
-layout: center
-class: text-center
+
+# Activity: Build a PR-first pytest workflow
+## Run tests on pull requests and on pushes to `main` / `develop`
+
+- **Starter YAML shape:**
+
+```yaml
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e ".[tests]"
+      - run: pytest -q
+```
+
 ---
+
+# Activity: Build a PR-first pytest workflow
+## Run tests on pull requests and on pushes to `main` / `develop`
+
+- **Starter files you may copy from this repo if helpful:**
+  - `pytest.ini`
+  - `test/` or `tests/`
+  - `conftest.py`
+  - `docs/` (optional, if you want a more complete project scaffold)
+
+- **Stretch goals:**
+  - add `ruff check .` before `pytest`
+  - add a Python matrix (`3.10`, `3.11`, `3.12`)
+  - verify the PR shows a green ✅ check before merge
+
+- Reference: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
