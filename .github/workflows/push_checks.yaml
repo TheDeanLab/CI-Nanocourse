@@ -1,0 +1,45 @@
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+name: Tests
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+        operating-system: [windows-latest]  # [ubuntu-latest, windows-latest]
+    env:
+      MPLBACKEND: Agg  # https://github.com/microsoft/azure-pipelines-tasks/issues/16426
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e '.[dev]'
+      - name: Test with pytest
+        env:
+            NAVIGATE_RUN_PLUGIN_INTEGRATION: "1"
+        run: |
+          python3 -m pytest
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage/reports/
+          env_vars: OS,PYTHON
+          fail_ci_if_error: false
+          files: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+          verbose: true

@@ -237,8 +237,7 @@ jobs:
 # Secrets and Permissions
 ## Keep credentials safe and minimize access
 
-- **Secrets:** stored in repo/org settings, referenced as `${{ secrets.NAME }}`.
-- Don’t print secrets in logs; treat logs as public within the repo.
+- **Secrets:** stored in repo/org settings, referenced as `${{ secrets.NAME }}`. 
 - **Permissions:** scope the default `GITHUB_TOKEN` to least privilege.
 
 ```yaml
@@ -253,6 +252,7 @@ jobs:
       id-token: write
 ```
 
+Don’t print secrets in logs; treat logs as public within the repo.
 ---
 
 # Artifacts and Caching
@@ -269,9 +269,6 @@ Artifact example:
     name: test-results
     path: .
 ```
-
-Caching idea (high-level):
-- Cache `pip` downloads so a reinstall is faster on the next run.
 
 ---
 

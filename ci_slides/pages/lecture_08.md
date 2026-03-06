@@ -103,27 +103,44 @@ pytest --version
 
 ---
 
-# Test Parameterization
-## Test multiple cases with `pytest.mark.parametrize`
+# Configuring Pytest with `pytest.ini`
+## Set repository-wide defaults for test runs
 
-<img
-  src="/images/lecture-07/t10_from_s10.png"
-  style="max-width: 100%; max-height: 65vh; display: block; margin: 1rem auto; object-fit: contain;"
-/>
+- `pytest.ini` lives at the **repository root** and applies to the whole project.
+- It keeps local runs and CI runs more **consistent**.
+- Common settings include:
+  - `addopts`: default flags every time you run `pytest`
+  - `testpaths`: where pytest should look for tests
+  - `markers`: register names like `unit` or `integration`
+  - `log_cli`: show logs directly in terminal output
 
-- Parameterization lets you test many input/output cases with **one** test function.
-
-- Keeps tests DRY: same logic, different examples (edge cases are easy to add).
-
-- When a case fails, pytest reports **which parameter set** failed.
-
-- Example pattern:
-  - `@pytest.mark.parametrize("x, expected", [(2, 4), (-3, 9), (0, 0)])`
+- This is where you move from **"pytest defaults"** to **"pytest configured for our repo"**.
 
 ---
-layout: image-right
-image: /images/lecture-07/t11_from_s12.png
-backgroundSize: contain
+
+# `pytest.ini` Example
+## A small, generic config for teaching repos
+
+```ini
+[pytest]
+addopts =
+    -ra
+    --strict-markers
+
+markers =
+    unit: fast tests for isolated behavior
+    integration: tests that rely on external systems or services
+
+testpaths =
+    tests
+
+log_cli = true
+```
+
+- `-ra`: show a short summary for skipped/xfailed tests.
+- `--strict-markers`: catch typos in custom marker names.
+- `testpaths = tests`: reinforces the `tests/` layout we’re using.
+
 ---
 
 # Fixtures in Pytest
