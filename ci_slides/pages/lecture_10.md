@@ -173,58 +173,123 @@ open _build/html/index.html
 
 - It is empty by default
 - You can add documents by listing them in three
+- `toctree` is usually placed in `index.rst` and defines the page hierarchy for your docs.
+
+```rst
+.. toctree::
+  :maxdepth: 2
+  :caption: Contents:
+
+  getting_started
+  installation
+  api
+```
+
+- Each listed page becomes part of the generated navigation.
+- Indentation matters: the child pages must be aligned under the directive.
 
 ---
 
 # Autosummary helps us with the API documentation
 ## Automatically generate API reference stubs
 
-<img src="/images/lecture-09/t22_from_s24-25.png">
+<img src="/images/lecture-09/t22_from_s24-25.png" alt="Autosummary-generated API documentation example">
 https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html
 
 ---
-layout: image-right
-image: /images/lecture-09/t23_from_s26.png
-backgroundSize: contain
----
 
-# Templating
-## Customize generated pages with Jinja templates
+# Turning docstrings into API pages
+## Use Sphinx extensions before you worry about templates
 
-- These allow us to change the way data is presented on different pages
-- For example, the autosummary module template is located at
+- For a beginner docs site, **extensions matter more than Jinja templates**.
+- A practical starting point in `conf.py` is:
 
+```text
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.napoleon",
+]
+```
 
----
-layout: image-right
-image: /images/lecture-09/t24_from_s27.png
-backgroundSize: contain
----
+- `autodoc`: pulls docstrings from your Python code.
+- `autosummary`: creates stub API pages automatically.
+- `napoleon`: understands Google-style and NumPy-style docstrings.
 
-# Templates enable us to produce a more comprehensive autosummary
-## Reference template for richer module pages
-
-
----
-layout: image-right
-image: /images/lecture-09/t25_from_s28.png
-backgroundSize: contain
----
-
-# Autosummary output with custom templates
-## Enhance generated pages with custom Jinja templates
+- Get the basic docs site working first; template customization can come later.
 
 ---
-layout: image-right
-image: /images/lecture-09/t26_from_s29.png
-backgroundSize: contain
+
+# Activity: Hands-on documentation practice
+## Add new pages and link them in the `toctree`
+
+
+- **1) Create two new pages** in `docs/source/`:
+  - `installation.rst`
+  - `quickstart.rst`
+
+- **2) Add a title + a few lines of content** to each file.
+  - Example title pattern:
+
+```rst
+Installation
+============
+
+Describe how to install your package here.
+```
+
 ---
 
-# Documentation Exercises
-## Hands-on documentation practice
+# Activity: Hands-on documentation practice
+## Add new pages and link them in the `toctree`
 
-- Write installation.rst and/or quickstart.rst. Compile the new docs to HTML. Verify the compilation worked by opening the docs in your web browser.
-- What happens if you change api.rst to the following? Why?
+- **3) Edit `docs/source/index.rst`** and add the new pages to the `toctree`:
+
+```rst
+.. toctree::
+  :maxdepth: 2
+  :caption: Contents:
+
+  installation
+  quickstart
+```
+
+- **Stretch goal:** also create `api.rst` and add it to the same `toctree`.
+
+---
+
+# Activity: Build and verify your new docs pages
+## Make sure the pages appear in the generated site
+
+- **4) Rebuild the docs** from the `docs/` folder:
+
+```bash
+cd docs
+make html
+```
+
+- **5) Open the generated homepage**:
+
+```bash
+open _build/html/index.html
+```
+
+- **6) Check your work**
+  - `installation` and `quickstart` appear in the sidebar/navigation.
+  - Clicking them opens the pages you created.
+  - The docs build finishes without errors.
+
+---
+
+# Activity: Hands-on documentation practice
+## Add new pages and link them in the `toctree`
+
+- **Definition of Done**
+  - `docs/source/installation.rst` exists
+  - `docs/source/quickstart.rst` exists
+  - `docs/source/index.rst` links them in the `toctree`
+  - `make html` succeeds
+
 ---
 
 # Publishing documentation with GitHub Pages
@@ -232,43 +297,145 @@ backgroundSize: contain
 
 - Ideally, we do this automatically, updating whenever new documentation is written.
 - GitHub actions lets you do this easily with GitHub Pages.
-
-
----
-layout: image-right
-image: /images/lecture-09/t28_from_s32.png
-backgroundSize: contain
----
-
-# GitHub Pages
-## Host documentation directly from your repository
-
 - [https://pages.github.com/](https://pages.github.com/)
 - Hosts websites directly out of a GitHub repository
 ---
 
-# Exercise: Create a GitHub workflow that builds your docs and deploys it to a GitHub page
-## Automate docs build and deployment with GitHub Actions
+# Activity: Automatically publish docs with GitHub
+## A Docs workflow outline
 
-- Hint: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+- **1) Make sure your docs build locally first**
+  - From the repo root, confirm this works:
+
+    ```bash
+    cd docs
+    make html
+    ```
+
+- **2) Create the workflow file**
+  - Create: `.github/workflows/docs.yml`
 
 ---
 
-#  Unit Tests
-#### How Do We Know This Function Works?
+# Activity: Automatically publish docs with GitHub
+## A Docs workflow outline
 
-```text
- def square(x):
-     """Return the square of a number."""
-     return x * x
- ```
- 
- #### You Write Tests
-```text
- def test_square():
-     """Ensure the square function works correctly."""
-     assert square(2) == 4
-     assert square(-3) == 9
-     assert square(0) == 0
+- **3) Add the workflow trigger**
+  - Run it on pushes to your main branch (or `develop` if that’s your default docs branch).
+
+```yaml
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
 ```
 
+- **4) Add the build job**
+  - Your workflow should:
+    - check out the repo
+    - set up Python
+    - install docs dependencies from `pyproject.toml`
+    - build the docs with `make html`
+
+---
+
+# Activity: Automatically publish docs with GitHub
+## A Docs workflow outline
+
+- **5) Add the deploy steps for GitHub Pages**
+  - Use the official GitHub Pages actions:
+    - `actions/configure-pages`
+    - `actions/upload-pages-artifact`
+    - `actions/deploy-pages`
+
+- **6) Upload the built HTML folder**
+  - The artifact path should be:
+
+```text
+docs/_build/html
+```
+
+---
+layout: two-cols-header
+---
+
+# Activity: Publish docs with GitHub Pages
+## Commit, enable Pages, and verify the site
+
+- **7) Minimal workflow outline**
+
+::left:: 
+
+```yaml
+name: Build and deploy docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+```
+
+::right::
+
+```yaml
+          
+      - run: python -m pip install -e ".[docs]"
+      - run: make html
+        working-directory: docs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/_build/html
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
+```
+
+---
+
+# Activity: Publish docs with GitHub Pages
+## Commit, enable Pages, and verify the site
+
+- **8) Commit and push the workflow**
+
+```bash
+git add .github/workflows/docs.yml
+git commit -m "Add docs build and deploy workflow"
+git push
+```
+
+- **9) Enable GitHub Pages in repository settings**
+  - Go to **Settings → Pages**
+  - Set **Source** to **GitHub Actions**
+
+- **10) Verify it worked**
+  - Open the **Actions** tab and watch the workflow run.
+  - When it finishes, open the Pages URL and confirm your docs site loads.
+
+---
+
+# Activity: Publish docs with GitHub Pages
+## Commit, enable Pages, and verify the site
+
+- **Definition of Done**
+  - `.github/workflows/docs.yml` exists
+  - the workflow run is green ✅
+  - your docs site is live on GitHub Pages
