@@ -375,90 +375,144 @@ ignore = ["D203", "D213"]
 
 ---
 
+# Activity: VS Code Setup (Interpreter + Environment)
+## Make sure you're running the right Python
+
+- **Goal:** Get VS Code installed and point it at your existing project environment (venv/conda).
+
+- **1) Install VS Code**
+  - Download and install: https://code.visualstudio.com/
+
+- **2) Install the Python extension**
+  - In VS Code → Extensions → install **Python** (publisher: Microsoft).
+
+- **3) Open your repository folder**
+  - File → Open Folder… → select your repo root.
+
+---
+
+# Activity: VS Code Setup (Interpreter + Environment)
+## Make sure you're running the right Python
+
+- **4) Select your interpreter (most important step)**
+  - Press `Cmd+Shift+P` → **Python: Select Interpreter**
+  - Choose the interpreter for your existing environment:
+    - `./.venv/bin/python` (common)
+    - `./venv/bin/python` (common)
+    - or your conda env interpreter
+
+---
+
+# Activity: VS Code Setup (Interpreter + Environment)
+## Make sure you're running the right Python
+
+- **5) Verify you're in the right environment**
+
+Open a terminal in VS Code and run:
+
+```bash
+python --version
+python -m pip --version
+python -c "import sys; print(sys.executable)"
+```
+
+- **6) (Optional) Save it for the workspace**
+  - If prompted, allow VS Code to create/update `.vscode/settings.json` so everyone on your team can be consistent.
+
+---
+
+# Activity: Real-time Ruff Linting (VS Code)
+## Get instant feedback while you type
+
+- **Goal:** See Ruff warnings/errors in the editor without running commands.
+
+- **1) Confirm Ruff is available (from Lecture 6)**
+
+```bash
+ruff --version
+```
+
+- **2) Install the VS Code extension**
+  - Extensions → install **Ruff** (publisher: *Astral Software*).
+
+- **3) Confirm VS Code is using your existing interpreter**
+  - `Cmd+Shift+P` → **Python: Select Interpreter** → pick your venv/conda env.
+
+
+---
+
+# Activity: Real-time Ruff Linting (VS Code)
+## Get instant feedback while you type
+
+- **4) Verify linting is live**
+  - Create a file like `src/<package_name>/scratch.py`:
+
+```text
+import os
+
+
+def hello(name):
+    return "hi, " + name
+
+
+print(hello("world"))
+```
+
+  - You should see Ruff flag at least:
+    - unused import (`os`)
+    - missing type hints (depending on your Ruff config)
+    - formatting suggestions
+
+
+---
+
+# Activity: Real-time Ruff Linting (VS Code)
+## Get instant feedback while you type
+
+- **5) Optional: quick auto-fixes**
+  - Try: `Cmd+Shift+P` → **Ruff: Fix all auto-fixable problems**.
+
+---
+
 # Activity: Manual Clean-Code Refactor (Pairs)
 ## Make unclear code readable (behavior must not change)
 
-- Pair up with someone next to you.
-- Decide roles: **Driver** (types) and **Navigator** (reviews). Swap roles halfway.
+- **Goal:** 
+  - Refactor this function for readability *without changing outputs*.
 
-### Before (intentionally messy)
+- **Rules:**
+  - Improve names, spacing, and structure.
+  - Add type hints + a short docstring.
+  - Keep behavior identical (same return values for the same inputs).
+
+- **Hint:**
+  - It parses a comma-separated string into a cleaned list of **unique** tokens,
+    optionally lowercases them, optionally limits how many are kept, and joins with `|`.
+
+---
+
+# Activity: Manual Clean-Code Refactor (Pairs)
+## Make unclear code readable (behavior must not change)
+
+
+### Before (intentionally ugly)
+
 ```python
-def f(a,b,c=False,d=0):
-  # do thing
-  if a==None or a=="":return []
-  r=[];i=0
-  for x in a.split(","):
+def p(s,n=0,f=False):
+  if s==None or s=="":return ""  # empty
+  t=s.split(",");o=[];i=0
+  for x in t:
     x=x.strip()
     if x=="":continue
-    if c:
-      x=x.lower()
-    if len(x)<3: continue
-    if d and i>=d: break
-    r.append(x);i+=1
-  return r
+    if f:x=x.lower()
+    if len(x)<2:continue
+    if x in o:continue
+    o.append(x);i+=1
+    if n and i>=n:break
+  return "|".join(o)
+
+# Examples (use to confirm you didn't change behavior)
+# p(" A, Bee, bee, ,  C ")            -> "A|Bee|bee|C"
+# p(" A, Bee, bee, ,  C ", f=True)    -> "a|bee|c"
+# p("A,B,C", n=2)                     -> "A|B"
 ```
-
----
-
-# Activity: Manual Clean-Code Refactor (Pairs)
-## Make unclear code readable (behavior must not change)
-
-### Your refactor constraints
-- Don’t change the outputs.
-- Rename the function and variables to be meaningful.
-- Add type hints and a clear docstring.
-- One statement per line; wrap long lines; consistent spacing.
-- Reduce nested logic where it improves readability.
-
-### Quick behavior check (run mentally or in a scratch file)
-- Input: `"A, Bee, see"` with `lowercase=True` → should return 3 cleaned tokens.
-- Input: `"  , a, abc, ABC  "` with `lowercase=True, limit=2` → should stop at 2 tokens.
-- Input: empty string or `None` → should return `[]`.
-
-### Deliverable
-- Commit your refactored function as `src/<package_name>/clean_refactor.py`.
-- In the commit message, include *one* sentence describing the most important readability improvement.
-
----
-
-# Activity: Real-time Ruff Linting (VSCode + PyCharm)
-## Make linting feedback instant while you code
-
-- **Goal:** Get live Ruff diagnostics (and optional auto-fixes) in your editor.
-- **VSCode setup (Astral Ruff extension)**
-  - Ruff should already be installed in your environment. If not, install it with `pip install ruff`.
-  - Install the VSCode extension: **“Ruff”** (publisher: *Astral Software*).
-  - Open your repo folder in VSCode.
-  - Make sure VSCode is using the correct Python interpreter (your venv).
-- Optional but recommended settings (User or Workspace `settings.json`):
-
-```json
-{
-  "ruff.enable": true,
-  "ruff.lint.enable": true,
-  "ruff.format.enable": true,
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
-  }
-}
-```
-
---- 
-
-# Activity: Real-time Ruff Linting (VSCode + PyCharm)
-## Make linting feedback instant while you code
-
-  - **Verify:** introduce an unused import (e.g., `import os`) and confirm it’s underlined immediately.
-
-- **3) PyCharm setup (Ruff plugin)**
-  - Open **Settings/Preferences → Plugins** and install **Ruff**.
-  - Open your repo and ensure the interpreter is your venv:
-    - **Settings/Preferences → Project → Python Interpreter**
-  - If the plugin asks for a Ruff executable, point it at the venv’s `ruff`.
-  - **Verify:** add an unused import and confirm PyCharm shows the warning inline.
-
-- **4) Stretch goals**
-  - Add a Ruff config in `pyproject.toml` (`[tool.ruff]`) so everyone gets the same rules.
-  - Turn on “format on save” and compare the diff before/after.
